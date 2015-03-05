@@ -1,0 +1,1 @@
+from apirest.tests.test_cargo import TestCargo
