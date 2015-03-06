@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class PublicacionEstructura(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='publicacion_estructura_id')
+    id = models.AutoField(primary_key=True,db_column='publicacion_estructura_id')
     descripcion = models.TextField(blank=True)
     fdesde = models.DateField(blank=True, null=True)
     fhasta = models.DateField(blank=True, null=True)

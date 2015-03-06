@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class Despacho(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='despacho_id')
+    id = models.AutoField(primary_key=True,db_column='despacho_id')
     numero = models.SmallIntegerField(blank=True, null=True)
     anio = models.SmallIntegerField(blank=True, null=True)
     tipocamara = models.TextField(blank=True)

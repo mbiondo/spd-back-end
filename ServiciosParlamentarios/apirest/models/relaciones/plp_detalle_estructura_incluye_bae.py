@@ -5,7 +5,7 @@ from apirest.models.relaciones.plp_detalle_estructura import PlpDetalleEstructur
 from apirest.models.publicaciones.bae import Bae
 
 class PlpDetalleEstructuraIncluyeBae(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='plp_detalle_estructura_incluye_bae_id')
+    id = models.AutoField(primary_key=True,db_column='plp_detalle_estructura_incluye_bae_id')
     fk_plp_detalle_estructura = models.ForeignKey(PlpDetalleEstructura, db_column='fk_plp_detalle_estructura')
     fk_bae = models.ForeignKey(Bae, db_column='fk_bae')
 

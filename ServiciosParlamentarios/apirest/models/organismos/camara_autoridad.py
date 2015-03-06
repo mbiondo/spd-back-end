@@ -5,7 +5,7 @@ from apirest.models.organismos.camara import Camara
 from apirest.models.individuos.legislador import Legislador
 
 class CamaraAutoridad(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='camara_autoridad_id')
+    id = models.AutoField(primary_key=True,db_column='camara_autoridad_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_camara = models.ForeignKey(Camara, db_column='fk_camara')
     cargo = models.TextField(blank=True)

@@ -5,7 +5,7 @@ from apirest.models.expedientes.expediente import Expediente
 from apirest.utils.constants import Constants
 
 class EntidadProduceExpediente(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='entidad_produce_expediente_id')
+    id = models.AutoField(primary_key=True,db_column='entidad_produce_expediente_id')
     fk_entidad = models.ForeignKey(Entidad, db_column='fk_entidad')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     class Meta:

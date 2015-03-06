@@ -5,7 +5,7 @@ from apirest.models.individuos.legislador import Legislador
 from apirest.models.votacion import Votacion
 
 class LegisladorVotacion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_votacion_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_votacion_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_votacion = models.ForeignKey(Votacion, db_column='fk_votacion')
     sentido = models.TextField(blank=True)

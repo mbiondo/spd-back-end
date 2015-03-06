@@ -5,7 +5,7 @@ from apirest.models.organismos.despacho import Despacho
 from apirest.models.tratamiento import Tratamiento
 
 class TratamientoProduceDespacho(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='tratamiento_produce_despacho_id')
+    id = models.AutoField(primary_key=True,db_column='tratamiento_produce_despacho_id')
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
     fk_tratamiento = models.ForeignKey(Tratamiento, db_column='fk_tratamiento')
     

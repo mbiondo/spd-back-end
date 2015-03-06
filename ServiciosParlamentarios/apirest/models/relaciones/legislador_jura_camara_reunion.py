@@ -5,7 +5,7 @@ from apirest.models.individuos.legislador import Legislador
 from apirest.models.organismos.camara_reunion import CamaraReunion
 
 class LegisladorJuraCamaraReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_jura_camara_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_jura_camara_reunion_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_camara_reunion = models.ForeignKey(CamaraReunion, db_column='fk_camara_reunion')
 

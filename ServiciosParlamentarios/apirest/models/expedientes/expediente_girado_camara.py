@@ -5,7 +5,7 @@ from apirest.models.organismos.camara import Camara
 from apirest.models.expedientes.expediente import Expediente
 
 class ExpedienteGiradoCamara(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='expediente_girado_camara_id')
+    id = models.AutoField(primary_key=True,db_column='expediente_girado_camara_id')
     fk_camara = models.ForeignKey(Camara, db_column='fk_camara')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     fecha = models.DateField(blank=True, null=True)

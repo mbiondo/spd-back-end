@@ -5,7 +5,7 @@ from apirest.models.expedientes.resultado import Resultado
 from apirest.utils.constants import Constants
 
 class ComunicacionResultado(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='comunicacion_resultado_id')
+    id = models.AutoField(primary_key=True,db_column='comunicacion_resultado_id')
     fk_resultado = models.ForeignKey(Resultado, db_column='fk_resultado')
     fk_comunicacion = models.ForeignKey(Comunicacion, db_column='fk_comunicacion')
     class Meta:

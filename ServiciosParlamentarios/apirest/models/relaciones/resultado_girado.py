@@ -5,7 +5,7 @@ from apirest.models.giro import Giro
 from apirest.models.expedientes.resultado import Resultado
 
 class ResultadoGirado(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='resultado_girado_id')
+    id = models.AutoField(primary_key=True,db_column='resultado_girado_id')
     fk_giro = models.ForeignKey(Giro, db_column='fk_giro', unique=True)
     fk_resultado = models.ForeignKey(Resultado, db_column='fk_resultado')
 

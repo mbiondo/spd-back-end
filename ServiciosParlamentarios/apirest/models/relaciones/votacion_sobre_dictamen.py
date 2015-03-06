@@ -6,7 +6,7 @@ from apirest.models.expedientes.dictamen import Dictamen
 from apirest.models.debate import Debate
 
 class VotacionSobreDictamen(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='votacion_sobre_dictamen_id')
+    id = models.AutoField(primary_key=True,db_column='votacion_sobre_dictamen_id')
     fk_votacion = models.ForeignKey(Votacion, db_column='fk_votacion')
     fk_dictamen = models.ForeignKey(Dictamen, db_column='fk_dictamen')
     fk_debate = models.ForeignKey(Debate, db_column='fk_debate')

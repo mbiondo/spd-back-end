@@ -5,7 +5,7 @@ from apirest.models.individuos.legislador import Legislador
 from apirest.models.organismos.comisiones.comision_reunion import ComisionReunion
 
 class LegisladorComisionReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_comision_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_comision_reunion_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_comision_reunion = models.ForeignKey(ComisionReunion, db_column='fk_comision_reunion')
     codigoasistencia = models.CharField(max_length=1)

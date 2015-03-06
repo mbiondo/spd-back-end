@@ -5,7 +5,7 @@ from apirest.models.solicitud import Solicitud
 from apirest.models.expedientes.expediente import Expediente
 
 class SolicitudReferidaExpediente(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='solicitud_referida_expediente_id')
+    id = models.AutoField(primary_key=True,db_column='solicitud_referida_expediente_id')
     fk_solicitud = models.ForeignKey(Solicitud, db_column='fk_solicitud')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     orden = models.SmallIntegerField(blank=True, null=True)

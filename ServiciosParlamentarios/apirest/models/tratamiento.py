@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class Tratamiento(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='tratamiento_id')
+    id = models.AutoField(primary_key=True,db_column='tratamiento_id')
     tipo = models.TextField(blank=True)
     orden = models.IntegerField(blank=True, null=True)
     resumen = models.TextField(blank=True)

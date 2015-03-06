@@ -5,7 +5,7 @@ from apirest.models.votacion import Votacion
 from apirest.models.planteamiento import Planteamiento
 
 class VotacionSobrePlanteamiento(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='votacion_sobre_planteamiento_id')
+    id = models.AutoField(primary_key=True,db_column='votacion_sobre_planteamiento_id')
     fk_votacion = models.ForeignKey(Votacion, db_column='fk_votacion')
     fk_planteamiento = models.ForeignKey(Planteamiento, db_column='fk_planteamiento', blank=True, null=True)
 

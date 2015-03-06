@@ -5,7 +5,7 @@ from apirest.utils.constants import Constants
 from apirest.models.tratamiento import Tratamiento
 
 class ExpedienteTenidoVista(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='expediente_tenido_vista_id')
+    id = models.AutoField(primary_key=True,db_column='expediente_tenido_vista_id')
     fk_tratamiento = models.ForeignKey(Tratamiento, db_column='fk_tratamiento')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     class Meta:

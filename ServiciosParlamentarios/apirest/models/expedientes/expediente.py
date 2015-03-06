@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class Expediente(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='expediente_id')
+    id = models.AutoField(primary_key=True,db_column='expediente_id')
     codigoexp = models.CharField(max_length=14, blank=True)
     codigonum = models.CharField(max_length=5, blank=True)
     codigoorigen = models.CharField(max_length=3, blank=True)

@@ -7,7 +7,7 @@ from apirest.models.organismos.despacho import Despacho
 from apirest.models.mocion import Mocion
 
 class PublicacionDetalleEstructura(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='publicacion_detalle_estructura_id')
+    id = models.AutoField(primary_key=True,db_column='publicacion_detalle_estructura_id')
     fk_publicacion_estructura = models.ForeignKey(PublicacionEstructura, db_column='fk_publicacion_estructura')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente', blank=True, null=True)
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho', blank=True, null=True)

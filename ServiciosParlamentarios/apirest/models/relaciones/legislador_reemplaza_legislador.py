@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.individuos.legislador import Legislador
 
 class LegisladorReemplazaLegislador(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_reemplaza_legislador_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_reemplaza_legislador_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_legislador_reemplazado = models.ForeignKey(Legislador, db_column='fk_legislador_reemplazado')
     finicio = models.DateField(blank=True, null=True)

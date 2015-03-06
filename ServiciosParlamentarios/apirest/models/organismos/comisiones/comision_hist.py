@@ -4,7 +4,7 @@ from apirest.models.organismos.comisiones.comision import Comision
 from apirest.utils.constants import Constants
        
 class ComisionHist(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='comision_hist_id')
+    id = models.AutoField(primary_key=True,db_column='comision_hist_id')
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='comision_hist')
     nombre = models.TextField(blank=True)
     nombrecorto = models.TextField(blank=True)

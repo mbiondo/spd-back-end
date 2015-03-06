@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.expedientes.expediente import Expediente
 
 class ExpedienteReferidoExpediente(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='expediente_referido_expediente_id')
+    id = models.AutoField(primary_key=True,db_column='expediente_referido_expediente_id')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     fk_expediente_referido = models.ForeignKey(Expediente, db_column='fk_expediente_referido')
 

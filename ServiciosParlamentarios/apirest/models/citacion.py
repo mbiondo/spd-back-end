@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.organismos.comisiones.comision import Comision
 
 class Citacion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='citacion_id')
+    id = models.AutoField(primary_key=True,db_column='citacion_id')
     fk_comision_cabecera = models.ForeignKey(Comision, db_column='fk_comision_cabecera')
     fecha = models.DateTimeField(blank=True, null=True)
     temario = models.TextField(blank=True)

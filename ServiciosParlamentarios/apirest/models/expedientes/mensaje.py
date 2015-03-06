@@ -4,7 +4,7 @@ from apirest.models.expedientes.expediente import Expediente
 from apirest.utils.constants import Constants
 
 class Mensaje(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='mensaje_id')
+    id = models.AutoField(primary_key=True,db_column='mensaje_id')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     num = models.CharField(max_length=10)
     anio = models.CharField(max_length=4)

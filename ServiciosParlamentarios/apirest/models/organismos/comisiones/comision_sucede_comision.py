@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.organismos.comisiones.comision import Comision
 
 class ComisionSucedeComision(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='comision_sucede_comision_id')
+    id = models.AutoField(primary_key=True,db_column='comision_sucede_comision_id')
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision')
     fk_comision_sucede = models.ForeignKey(Comision, db_column='fk_comision_sucede')
 

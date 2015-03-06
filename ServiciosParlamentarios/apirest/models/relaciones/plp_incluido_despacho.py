@@ -5,7 +5,7 @@ from apirest.models.plan_labor import PlanLabor
 from apirest.models.organismos.despacho import Despacho
 
 class PlpIncluidoDespacho(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='plp_incluido_despacho_id')
+    id = models.AutoField(primary_key=True,db_column='plp_incluido_despacho_id')
     fk_plan_labor = models.ForeignKey(PlanLabor, db_column='fk_plan_labor')
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
 

@@ -5,7 +5,7 @@ from apirest.models.citacion import Citacion
 from apirest.models.organismos.comisiones.comision import Comision
 
 class ComisionReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='comision_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='comision_reunion_id')
     fk_citacion = models.ForeignKey(Citacion, db_column='fk_citacion', blank=True, null=True)
     fk_comision_cabecera = models.ForeignKey(Comision, db_column='fk_comision_cabecera')
     temario = models.TextField(blank=True)

@@ -5,7 +5,7 @@ from apirest.models.organismos.comisiones.comision import Comision
 from apirest.models.individuos.legislador import Legislador
 
 class ComEstructura(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='com_estructura_id')
+    id = models.AutoField(primary_key=True,db_column='com_estructura_id')
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='integrantes')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     cargo = models.TextField(blank=True)

@@ -5,7 +5,7 @@ from apirest.models.mocion import Mocion
 from apirest.models.individuos.legislador import Legislador
 
 class LegisladorRealizaMocion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_realiza_mocion_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_realiza_mocion_id')
     fk_mocion = models.ForeignKey(Mocion, db_column='fk_mocion')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
 

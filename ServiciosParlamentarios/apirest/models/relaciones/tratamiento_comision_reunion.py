@@ -5,7 +5,7 @@ from apirest.models.tratamiento import Tratamiento
 from apirest.models.organismos.comisiones.comision_reunion import ComisionReunion
 
 class TratamientoComisionReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='tratamiento_comision_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='tratamiento_comision_reunion_id')
     fk_tratamiento = models.ForeignKey(Tratamiento, db_column='fk_tratamiento', unique=True)
     fk_comision_reunion = models.ForeignKey(ComisionReunion, db_column='fk_comision_reunion')
 

@@ -5,7 +5,7 @@ from apirest.models.cargos.cargo_persona_fisica import CargoPersonaFisica
 from apirest.models.expedientes.expediente import Expediente
 
 class CargoFirmante(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='cargo_persona_fisica_firma_expediente_id')
+    id = models.AutoField(primary_key=True,db_column='cargo_persona_fisica_firma_expediente_id')
     fk_cargo_persona_fisica = models.ForeignKey(CargoPersonaFisica, db_column='fk_cargo_persona_fisica',related_name='firmante')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     orden = models.SmallIntegerField(blank=True, null=True)

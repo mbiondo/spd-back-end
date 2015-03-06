@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.debate import Debate
 
 class Resultado(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='resultado_id')
+    id = models.AutoField(primary_key=True,db_column='resultado_id')
     fk_debate = models.ForeignKey(Debate, db_column='fk_debate', blank=True, null=True)
     resultado = models.TextField(blank=True)
     tipo = models.TextField(blank=True)

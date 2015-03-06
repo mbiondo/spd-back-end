@@ -5,7 +5,7 @@ from apirest.models.expedientes.observacion import Observacion
 from apirest.models.publicaciones.orden_dia import OrdenDia
 
 class Suplemento(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='suplemento_id')
+    id = models.AutoField(primary_key=True,db_column='suplemento_id')
     orden = models.SmallIntegerField()
     sumario = models.TextField()
     fk_observacion = models.ForeignKey(Observacion, db_column='fk_observacion')

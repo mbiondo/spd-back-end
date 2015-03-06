@@ -5,7 +5,7 @@ from apirest.models.publicaciones.diario_sesion import DiarioSesion
 from apirest.models.plp_estructura import PlpEstructura
 
 class PlpDetalleEstructura(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='plp_detalle_estructura_id')
+    id = models.AutoField(primary_key=True,db_column='plp_detalle_estructura_id')
     fk_plp_estructura = models.ForeignKey(PlpEstructura, db_column='fk_plp_estructura')
     fk_diario_sesion = models.ForeignKey(DiarioSesion, db_column='fk_diario_sesion', blank=True, null=True)
     seccion = models.TextField(blank=True)

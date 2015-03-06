@@ -5,7 +5,7 @@ from apirest.models.expedientes.norma import Norma
 from apirest.models.sancion import Sancion
 
 class Veto(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='veto_id')
+    id = models.AutoField(primary_key=True,db_column='veto_id')
     fk_norma = models.ForeignKey(Norma, db_column='fk_norma')
     fk_sancion = models.ForeignKey(Sancion, db_column='fk_sancion', blank=True, null=True)
     estotal = models.CharField(max_length=1, blank=True)

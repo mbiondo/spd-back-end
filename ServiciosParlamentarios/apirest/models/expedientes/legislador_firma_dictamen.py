@@ -5,7 +5,7 @@ from apirest.models.individuos.legislador import Legislador
 from apirest.utils.constants import Constants
 
 class LegisladorFirmaDictamen(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_firma_dictamen_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_firma_dictamen_id')
     fk_dictamen = models.ForeignKey(Dictamen, db_column='fk_dictamen')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     class Meta:

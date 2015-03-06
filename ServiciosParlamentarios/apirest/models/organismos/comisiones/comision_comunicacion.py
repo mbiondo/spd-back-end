@@ -5,7 +5,7 @@ from apirest.models.organismos.comisiones.comision import Comision
 from apirest.models.expedientes.comunicacion import Comunicacion
 
 class ComisionComunicacion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='comision_comunicacion_id')
+    id = models.AutoField(primary_key=True,db_column='comision_comunicacion_id')
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision')
     fk_comunicacion = models.ForeignKey(Comunicacion, db_column='fk_comunicacion')
 

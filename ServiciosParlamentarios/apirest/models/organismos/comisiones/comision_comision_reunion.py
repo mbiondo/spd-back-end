@@ -5,7 +5,7 @@ from apirest.models.organismos.comisiones.comision import Comision
 from apirest.models.organismos.comisiones.comision_reunion import ComisionReunion
 
 class ComisionComisionReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='comision_comision_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='comision_comision_reunion_id')
     fk_comision_reunion = models.ForeignKey(ComisionReunion, db_column='fk_comision_reunion')
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision')
     orden = models.SmallIntegerField(blank=True, null=True)

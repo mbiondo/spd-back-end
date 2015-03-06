@@ -4,7 +4,7 @@ from apirest.models.organismos.camara_reunion import CamaraReunion
 from apirest.utils.constants import Constants
 
 class Mocion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='mocion_id')
+    id = models.AutoField(primary_key=True,db_column='mocion_id')
     fk_camara_reunion = models.ForeignKey(CamaraReunion, db_column='fk_camara_reunion', blank=True, null=True)
     tipo = models.TextField(blank=True)
     descripcion = models.TextField(blank=True)

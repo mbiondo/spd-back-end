@@ -5,7 +5,7 @@ from apirest.models.individuos.legislador import Legislador
 from apirest.models.relaciones.plp_detalle_estructura import PlpDetalleEstructura
 
 class LegisladorIncluidoJuras(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_inluido_juras_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_inluido_juras_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_plp_detalle_estructura = models.ForeignKey(PlpDetalleEstructura, db_column='fk_plp_detalle_estructura')
 

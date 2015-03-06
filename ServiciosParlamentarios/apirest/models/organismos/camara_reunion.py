@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.sesion import Sesion
 
 class CamaraReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='camara_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='camara_reunion_id')
     fk_sesion = models.ForeignKey(Sesion, db_column='fk_sesion')
     finicio = models.DateTimeField(blank=True, null=True)
     ffin = models.DateTimeField(blank=True, null=True)

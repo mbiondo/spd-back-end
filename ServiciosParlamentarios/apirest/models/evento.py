@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class Evento(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='evento_id')
+    id = models.AutoField(primary_key=True,db_column='evento_id')
     nombre = models.TextField(blank=True)
     nombrecorto = models.TextField(blank=True)
     finicio = models.DateTimeField(blank=True, null=True)

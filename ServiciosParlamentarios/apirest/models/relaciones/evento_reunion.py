@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.evento import Evento
 
 class EventoReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='evento_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='evento_reunion_id')
     fk_evento = models.ForeignKey(Evento, db_column='fk_evento')
     finicio = models.DateTimeField(blank=True, null=True)
     ffin = models.DateTimeField(blank=True, null=True)

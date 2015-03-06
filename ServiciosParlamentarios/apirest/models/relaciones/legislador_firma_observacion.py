@@ -5,7 +5,7 @@ from apirest.models.individuos.legislador import Legislador
 from apirest.models.expedientes.observacion import Observacion
 
 class LegisladorFirmaObservacion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='legislador_firma_observacion_id')
+    id = models.AutoField(primary_key=True,db_column='legislador_firma_observacion_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_observacion = models.ForeignKey(Observacion, db_column='fk_observacion')
 

@@ -5,7 +5,7 @@ from apirest.models.debate import Debate
 from apirest.models.planteamiento import Planteamiento
 
 class PlanteamientoSobreDebate(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='planteamiento_sobre_debate_id')
+    id = models.AutoField(primary_key=True,db_column='planteamiento_sobre_debate_id')
     fk_debate = models.ForeignKey(Debate, db_column='fk_debate')
     fk_planteamiento = models.ForeignKey(Planteamiento, db_column='fk_planteamiento', blank=True, null=True)
 

@@ -5,7 +5,7 @@ from apirest.models.publicaciones.publicacion_detalle_estructura import Publicac
 from apirest.models.expedientes.resultado import Resultado
 
 class ResultadoPubDetalleEstructura(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='resultado_pub_detalle_estructura_id')
+    id = models.AutoField(primary_key=True,db_column='resultado_pub_detalle_estructura_id')
     fk_publicacion_detalle_estructura = models.ForeignKey(PublicacionDetalleEstructura, db_column='fk_publicacion_detalle_estructura')
     fk_resultado = models.ForeignKey(Resultado, db_column='fk_resultado', blank=True, null=True)
     orden = models.SmallIntegerField(blank=True, null=True)

@@ -5,7 +5,7 @@ from apirest.models.organismos.comisiones.comision import Comision
 from apirest.utils.constants import Constants
 
 class Giro(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='giro_id')
+    id = models.AutoField(primary_key=True,db_column='giro_id')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente', related_name='giros')
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='comision')
     orden = models.SmallIntegerField(blank=True, null=True)

@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class Periodo(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='periodo_id')
+    id = models.AutoField(primary_key=True,db_column='periodo_id')
     nroperiodo = models.SmallIntegerField(unique=True, blank=True, null=True)
     finicio = models.DateField(blank=True, null=True)
     ffin = models.DateField(blank=True, null=True)

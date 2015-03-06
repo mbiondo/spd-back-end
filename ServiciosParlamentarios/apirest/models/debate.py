@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.organismos.camara_reunion import CamaraReunion
 
 class Debate(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='debate_id')
+    id = models.AutoField(primary_key=True,db_column='debate_id')
     fk_camara_reunion = models.ForeignKey(CamaraReunion, db_column='fk_camara_reunion', blank=True, null=True)
     fecha = models.DateTimeField(blank=True, null=True)
     orden = models.SmallIntegerField(blank=True, null=True)

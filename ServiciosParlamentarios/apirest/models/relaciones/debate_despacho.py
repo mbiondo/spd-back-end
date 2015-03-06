@@ -5,7 +5,7 @@ from apirest.models.debate import Debate
 from apirest.models.organismos.despacho import Despacho
 
 class DebateDespacho(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='debate_despacho_id')
+    id = models.AutoField(primary_key=True,db_column='debate_despacho_id')
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
     fk_debate = models.ForeignKey(Debate, db_column='fk_debate')
     tipoconsideracion = models.TextField(blank=True)

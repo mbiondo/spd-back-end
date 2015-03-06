@@ -5,7 +5,7 @@ from apirest.models.entidad import Entidad
 from apirest.models.relaciones.evento_reunion import EventoReunion
 
 class EntidadParticipaEventoReunion(models.Model):
-    id = models.IntegerField(primary_key=True,db_column='entidad_participa_evento_reunion_id')
+    id = models.AutoField(primary_key=True,db_column='entidad_participa_evento_reunion_id')
     fk_entidad = models.ForeignKey(Entidad, db_column='fk_entidad')
     fk_evento_reunion = models.ForeignKey(EventoReunion, db_column='fk_evento_reunion')
     participacion = models.TextField(blank=True)
