@@ -4,10 +4,11 @@ from apirest.serializers.expedientes.expediente import ExpedienteSerializer
 from apirest.filters.expediente_filter import ExpedienteFilter
 
 class ExpedienteViewSet(viewsets.ReadOnlyModelViewSet):
-  
+    
+    model = Expediente
     queryset = Expediente.objects.all()
     serializer_class = ExpedienteSerializer
-    filter_class = ExpedienteFilter 
+    filter_class = ExpedienteFilter
 #     search_fields = ( 'codigoexp','codigoorigen','sumario','tipocamara','tipo','codigoestado',
 #                       'fechacaducidad','fecha','periodo','titulo','voces',)
 #        
