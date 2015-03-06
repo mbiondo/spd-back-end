@@ -21,3 +21,4 @@ class Expediente(models.Model):
         managed = False
         db_table = Constants().EXPEDIENTE
         app_label = Constants().APIREST
+        ordering = ('id',)
