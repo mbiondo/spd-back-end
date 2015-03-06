@@ -1,0 +1,12 @@
+# Compiled source #
+###################
+*.pyc
+
+# Settings file #
+#################
+settings.py
+
+# Project generated files #
+######################
+.project
+.pydevproject

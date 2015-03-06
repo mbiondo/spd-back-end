@@ -7,6 +7,7 @@ from apirest.views.organismos.comisiones import comision
 from apirest.views.organismos.bloques import bloque
 from rest_framework_nested import routers
 from apirest.views.firmantes import FirmantesViewSet
+from apirest.views.giros import GirosViewSet
 from apirest.views.persona_fisica_detalle import PersonaFisicaDetalleViewSet
 
 router = DefaultRouter()
@@ -27,6 +28,7 @@ router.register(r'bloques', bloque.BloqueViewSet)
 
 expediente_router = routers.NestedSimpleRouter(router, r'expedientes', lookup='expediente')
 expediente_router.register(r'firmantes',FirmantesViewSet)
+expediente_router.register(r'giros',GirosViewSet)
 
 urlpatterns = patterns('apirest.views',
     url(r'^', include(router.urls)),

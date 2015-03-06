@@ -5,7 +5,7 @@ from apirest.utils.constants import Constants
 class Giros(models.Model):
     expediente_id = models.IntegerField(blank=True, null=True)
     comision_id = models.IntegerField(blank=True, null=True)
-    giro_id = models.IntegerField(blank=True, null=True)
+    giro_id = models.IntegerField(blank=True, null=True, primary_key=True)
     codigoexp = models.CharField(max_length=14, blank=True)
     comision_nombre = models.TextField(blank=True)
     comision_nombre_corto = models.TextField(blank=True)
