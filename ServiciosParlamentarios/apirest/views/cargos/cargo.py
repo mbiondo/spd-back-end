@@ -1,14 +1,17 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from apirest.models.cargos.cargo import Cargo
 from apirest.serializers.cargos.cargo import CargoSerializer
 from apirest.filters.cargo_filter import CargoFilter
 
 # class CargoViewSet(viewsets.ReadOnlyModelViewSet):
 class CargoViewSet(viewsets.ModelViewSet):    
-  
+    
+    model = Cargo
     queryset = Cargo.objects.all()
     serializer_class = CargoSerializer
     filter_class = CargoFilter
+    ordering_fields = ('descripcion',)
+    search_fields = ('descripcion',)
     
     #get all
     def list(self, request, *args, **kwargs):

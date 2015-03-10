@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from apirest.models.expedientes.expediente import Expediente
 from apirest.serializers.expedientes.expediente import ExpedienteSerializer
 from apirest.filters.expediente_filter import ExpedienteFilter
@@ -8,7 +8,11 @@ class ExpedienteViewSet(viewsets.ReadOnlyModelViewSet):
     model = Expediente
     queryset = Expediente.objects.all()
     serializer_class = ExpedienteSerializer
+    filter_backends = (filters.OrderingFilter,)
     filter_class = ExpedienteFilter
+    ordering_fields = '__all__'
+
+    
 #     search_fields = ( 'codigoexp','codigoorigen','sumario','tipocamara','tipo','codigoestado',
 #                       'fechacaducidad','fecha','periodo','titulo','voces',)
 #        
