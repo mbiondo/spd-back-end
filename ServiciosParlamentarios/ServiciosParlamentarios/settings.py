@@ -73,10 +73,10 @@ DATABASES = {
     },
     'pap_nueva_pruebas': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pap_nueva_prueba_v2', #PROD
+        'NAME': 'pap_nueva_folio', #PROD
         'USER': 'migracion',
         'PASSWORD': 'migr4ci@n',
-        'HOST': '190.210.109.21',
+        'HOST': '186.33.210.21',
         'PORT': '5432',
     },
     'pap_nueva_pruebas_test': {
@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'pap_nueva_pruebas_test', #TEST
         'USER': 'migracion',
         'PASSWORD': 'migr4ci@n',
-        'HOST': '190.210.109.21',
+        'HOST': '186.33.210.21',
         'PORT': '5432',
     } 
 }
@@ -120,7 +120,11 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend','rest_framework.filters.SearchFilter',), #pip install django-filter
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ), #pip install django-filter
     'DEFAULT_RENDERER_CLASSES': (
         'apirest.utils.JSONURenderer.JSONURenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
