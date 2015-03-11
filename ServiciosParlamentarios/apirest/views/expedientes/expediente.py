@@ -8,14 +8,10 @@ class ExpedienteViewSet(viewsets.ReadOnlyModelViewSet):
     model = Expediente
     queryset = Expediente.objects.all()
     serializer_class = ExpedienteSerializer
-    filter_backends = (filters.OrderingFilter,)
     filter_class = ExpedienteFilter
     ordering_fields = '__all__'
-
-    
-#     search_fields = ( 'codigoexp','codigoorigen','sumario','tipocamara','tipo','codigoestado',
-#                       'fechacaducidad','fecha','periodo','titulo','voces',)
-#        
+    search_fields = ('id', 'codigoexp', 'codigonum', 'codigoorigen', 'codigoanio', 'sumario', 'tipocamara','tipo', 'codigoestado', 'fechacaducidad','fecha', 'periodo', 'titulo', 'voces',)
+        
     
     def list(self, request, *args, **kwargs):
         """

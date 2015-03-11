@@ -2,50 +2,42 @@ from rest_framework import viewsets
 from apirest.models.organismos.bloques.bloque import Bloque
 from apirest.serializers.organismos.bloques.bloque import BloqueSerializer,\
     BloqueIntegrantesSerializer
-from apirest.filters.bloque_filter import BloqueFilter, BloqueDetalleFilter
+from apirest.filters.bloque_filter import BloqueFilter#, BloqueDetalleFilter
 from django.db.models import Q
 
-class BloqueDetalleViewSet(viewsets.ReadOnlyModelViewSet):
-    
-    queryset = Bloque.objects.all()
-    serializer_class = BloqueIntegrantesSerializer
-    filter_class = BloqueDetalleFilter
-    
-    def list(self, request, *args, **kwargs):
-        """
-        Lista los bloques con todos sus integrantes o a una fecha determinada.
-        \n
-        Filtros posible:\n
-        -fecha=[AAAA-MM-DD]\n
-        -nombre=[Nombre bloque]\n
-        -nombre_legislador=[Nombre o apellido del legislador]\n
-        -tipo_camapara=[D,S] 
-        """
-        return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
-    
-    def retrieve(self, request, *args, **kwargs):
-        """
-        Devuelve un bloque por id con sus integrantes.
-        """
-        return viewsets.ReadOnlyModelViewSet.retrieve(self, request, *args, **kwargs)
+# class BloqueDetalleViewSet(viewsets.ReadOnlyModelViewSet):
+#     
+#     queryset = Bloque.objects.all()
+#     serializer_class = BloqueIntegrantesSerializer
+#     filter_class = BloqueDetalleFilter
+#     
+#     def list(self, request, *args, **kwargs):
+#         """
+#         Lista los bloques con todos sus integrantes o a una fecha determinada.
+#         \n
+#         Filtros posible:\n
+#         -fecha=[AAAA-MM-DD]\n
+#         -nombre=[Nombre bloque]\n
+#         -nombre_legislador=[Nombre o apellido del legislador]\n
+#         -tipo_camapara=[D,S] 
+#         """
+#         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
+#     
+#     def retrieve(self, request, *args, **kwargs):
+#         """
+#         Devuelve un bloque por id con sus integrantes.
+#         """
+#         return viewsets.ReadOnlyModelViewSet.retrieve(self, request, *args, **kwargs)
     
 class BloqueViewSet(viewsets.ReadOnlyModelViewSet):
   
     model = Bloque
+    queryset = Bloque.objects.all()
     serializer_class = BloqueSerializer
     filter_class = BloqueFilter
-#     search_fields = ('bloque_id','nombre','nrointegrantes','finicio','ffin','tipocamara','nota','sigla')
-
-    def get_queryset(self):
-                
-        queryset = Bloque.objects.all().distinct('id')
-#         queryset = Bloque.objects.all().distinct('bloque_id')
-        date = self.request.QUERY_PARAMS.get('fecha', None)
-        if date is not None:
-            queryset = queryset.filter(Q(finicio__lte=date), Q(ffin__isnull=True) | Q(ffin__gt=date))
-        return queryset
-        
-
+    ordering_fields = '__all__'
+    search_fields = ('nombre','nrointegrantes','finicio','ffin','tipocamara','nota','sigla')    
+                 
     def list(self, request, *args, **kwargs):
         """
         Lista los bloques.
