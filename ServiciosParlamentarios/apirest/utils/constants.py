@@ -119,6 +119,7 @@ class Constants():
     PRESIDENCIA_CAMARA_PRODUCE_EXPEDIENTE = 'presidencia_camara_produce_expediente'
     PROPUESTA = 'propuesta'
     PROYECTO = 'proyecto'
+    PROYECTOS = 'proyectos'
     PUBLICACION = 'publicacion'
     PUBLICACION_DETALLE_ESTRUCTURA = 'publicacion_detalle_estructura'
     PUBLICACION_ESTRUCTURA = 'publicacion_estructura'
