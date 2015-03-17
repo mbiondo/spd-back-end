@@ -23,23 +23,19 @@ class TestBloque(APITestCase):
         """
         Prueba que se obtengan los datos correctos de un bloque
         """        
-        response = self.client.get('/apirest/bloques_detalle/317/')
-        integrantes_len = len(response.data["integrantes"])
+        response = self.client.get('/apirest/bloques/170/')
 
         self.assertEqual(response.data["nombre"], self.NOMBRE_BLOQUE)
         self.assertEqual(response.data["tipocamara"], self.TIPO_CAMARA)
-        self.assertEqual(integrantes_len, self.CANT_INTEGRANTES_TOTALES)
         
     def test_get_bloque_integrantes(self):
         """
         Prueba que se obtengan los datos correctos de un bloquey sus integrantes actuales.
         """        
-        response = self.client.get('/apirest/bloques_detalle/?nombre=frente para la victoria&fecha=2014-10-10&tipo_camara=D')
-        integrantes_len = len(response.data["results"][0]["integrantes"])
+        response = self.client.get('/apirest/bloques/?nombre=frente para la victoria&fecha=2014-10-10&tipo_camara=D')
             
         self.assertEqual(response.data["results"][0]["nombre"], self.NOMBRE_BLOQUE)
-        self.assertEqual(response.data["results"][0]["tipocamara"], self.TIPO_CAMARA)
-        self.assertEqual(integrantes_len, self.CANT_INTEGRANTES_FPV_2014)        
+        self.assertEqual(response.data["results"][0]["tipocamara"], self.TIPO_CAMARA)     
 
     def test_bloque_filter(self):
         """
@@ -52,7 +48,7 @@ class TestBloque(APITestCase):
         """
         Prueba que el filtro de fecha y tipo de camara funcionen correctamente
         """
-        response = self.client.get('/apirest/bloques_detalle/?fecha=2014-01-01&tipo_camara=D')
+        response = self.client.get('/apirest/bloques/?fecha=2014-01-01&tipo_camara=D')
         self.assertEqual(response.data["count"], self.CANT_BLOQUES_FECHA_2014)
 
     def test_bloque_filter_name_date(self):
