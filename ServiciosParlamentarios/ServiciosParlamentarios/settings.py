@@ -81,7 +81,7 @@ DATABASES = {
     },
     'pap_nueva_pruebas_test': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pap_nueva_pruebas_test', #TEST
+        'NAME': 'pap_nueva_folio', #TEST
         'USER': 'migracion',
         'PASSWORD': 'migr4ci@n',
         'HOST': '186.33.210.21',
@@ -151,3 +151,18 @@ SWAGGER_SETTINGS = {
 }
 
 DATABASE_ROUTERS = ['apirest.routers.apirest_router.ApirestRouter','apirest.routers.default_router.DefaultRouter']
+
+# Authentication Server
+AUTH_SERVER = {
+    'HOST': '10.105.5.55',
+    'PORT': '9000',
+}
+
+# Oauth2 client credentials
+AUTH_CLIENT_CREDENTIALS = {
+    'CLIENT_ID': 'b=5ScaFmagIxpaAriSV;.?P@AfzMdh7Y9LnRDukY',
+    'CLIENT_SECRET': 'hyZGfL58D?K4hIeKvGx@9@QGFeKqpYq:GuPuynHTIEuie?:!SJOG!IYszh;=@ph1I4He0-.QZ:r=lWBAB1cr2a9nhp8iAySuNgDTcgn=C!pZHb7wiPPU!5Pim0k8apnk',
+}
+
+AUTHENTICATION = False
+

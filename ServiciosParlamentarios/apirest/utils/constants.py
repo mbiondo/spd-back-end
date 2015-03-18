@@ -166,11 +166,14 @@ class Constants():
     AUTH_HEADER_CREDENTIALS='Credential {0} {1}'
     IS_AUTHORIZED_KEY="is_authorized"
     
-    #### ERROR MSGS ####
-    HAS_PERMISSION_SERVICE ='http://localhost:9000/o/has_permission/{0}/{1}/{2}/'
-    AUTH_HEADER_KEY='Authorization'
-    AUTH_HEADER_CREDENTIALS='Credential {0} {1}'
+    #### authorization Exceptions constants     
+    NO_AUTH_EXCP = "EXCEPTION: There is NO Authorization in http header."
+    NOT_AUTHORIZED_EXCP = "EXCEPTION: Invalid Token. User unauthorized."
+    AUTH_FORMAT_EXCP = "EXCEPTION: Invalid Authorization Format. E.g. 'Authorization: Bearer EfbWyP71D6JHcE8vbQ3tBwqVI5iRAz'"
+    AUTH_CONNECTION_EXCP = "EXCEPTION: Could not connect to authentication server."
     
+    #### ERROR MSGS ####
+   
     NO_HEADER_EXC="Header invalido, vacio o inexistente"
     AUTH_FORMAT_EXCP_STR="Authorization header con formato incorrecto. E.g. 'Authorization: Bearer EfbWyP71D6JHcE8vbQ3tBwqVI5iRAz'"
     NO_PERMISSION_STR="Permisos no concedidos."
@@ -184,3 +187,6 @@ class Constants():
     MISSING_TOKEN_CODE=432
     NO_ROL_PERMISSION_CODE=440
     
+    #Logging
+    LOG_PROPERTIES='properties.json'
+    LOGGING_FOLDER_EXC="No permission to log"
