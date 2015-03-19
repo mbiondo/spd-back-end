@@ -30,7 +30,7 @@ class Logger(object):
     _thread = None
     _on = True
     
-    _LOG_FOLDER_='./'
+    _LOG_FOLDER_='/var/log/ServiciosParlamentarios/'
     _LOG_PROPERTIES_ERROR="Properties file not loaded correctly. Using default values."
     
     LEVELS = {'warning': logging.WARNING,
