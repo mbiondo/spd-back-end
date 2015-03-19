@@ -1,7 +1,7 @@
 from rest_framework import viewsets, filters
 from apirest.models.expedientes.expediente import Expediente
 from apirest.serializers.expedientes.expediente import ExpedienteSerializer
-from apirest.filters.expediente_filter import ExpedienteFilter
+from apirest.filters.expedientes.expediente_filter import ExpedienteFilter
 
 class ExpedienteViewSet(viewsets.ReadOnlyModelViewSet):
     

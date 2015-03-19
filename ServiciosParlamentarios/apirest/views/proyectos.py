@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from apirest.models.db_views.proyectos import Proyectos
 from apirest.serializers.db_views.proyectos import ProyectoSerializer
-from apirest.filters.proyectos_filter import ProyectosFilter
+from apirest.filters.db_views.proyectos_filter import ProyectosFilter
 from django.db.models import Q
 
 class ProyectosViewSet(viewsets.ReadOnlyModelViewSet):

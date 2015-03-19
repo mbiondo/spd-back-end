@@ -1,7 +1,7 @@
 from rest_framework import viewsets, filters
 from apirest.models.cargos.cargo import Cargo
 from apirest.serializers.cargos.cargo import CargoSerializer
-from apirest.filters.cargo_filter import CargoFilter
+from apirest.filters.cargos.cargo_filter import CargoFilter
 from apirest.authorizers.authorizator import HasPermission,\
     hand_unauthorized_exc
 

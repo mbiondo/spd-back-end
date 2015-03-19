@@ -1,1 +1,1 @@
-from apirest.tests.test_cargo import TestCargo
+from apirest.tests.cargos.cargo import TestCargo
