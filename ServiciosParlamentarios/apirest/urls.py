@@ -28,7 +28,7 @@ router.register(r'bloques', bloque.BloqueViewSet)
 router.register(r'proyectos', ProyectosViewSet)
 # router.register(r'bloques_detalle', bloque.BloqueDetalleViewSet)
 
-expediente_router = routers.NestedSimpleRouter(router, r'expedientes', lookup='expedientes')
+expediente_router = routers.NestedSimpleRouter(router, r'expedientes', lookup='expediente')
 expediente_router.register(r'firmantes',FirmantesViewSet)
 expediente_router.register(r'giros',GirosViewSet)
 #expediente_router.register(r'proyectos', ProyectosViewSet)
