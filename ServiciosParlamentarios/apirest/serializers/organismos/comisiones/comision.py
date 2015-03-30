@@ -5,12 +5,13 @@ from datetime import datetime
 from django.db.models import Q
 from apirest.models.db_views.comision_detalle import ComisionesDetalle
 from apirest.serializers.db_views.comisiones_detalle import ComisionesDetalleSerializer
+from django.db.models.base import Model
 
 class ComisionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comision
-#         fields = ('id','caracter','tipocamara','finicio','ffin','sigla','normacreacion')
+        fields = ('id','caracter','tipocamara','finicio','ffin','sigla','normacreacion')
 
 # class ComisionIntegrantesSerializer(serializers.ModelSerializer):
 #     
@@ -74,6 +75,3 @@ class ComisionExpedienteSerializer(serializers.ModelSerializer):
         model = Comision
         fields = ('id', 'caracter', 'tipocamara', 'finicio', 'ffin', 'sigla', 'normacreacion', 'nombre')
            
-        
-        
-            

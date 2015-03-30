@@ -8,7 +8,7 @@ class Comision(models.Model):
     caracter = models.TextField(blank=True)
     tipocamara = models.CharField(max_length=2, blank=True)
     finicio = models.DateField(blank=True, null=True)
-    ffin = models.DateField(blank=True, null=True)
+    ffin = models.DateField(blank=True, null=True)    
     sigla = models.TextField(blank=True)
     normacreacion = models.TextField(blank=True)
     
