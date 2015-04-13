@@ -7,6 +7,9 @@ class CitacionFilter(django_filters.FilterSet):
     temario = django_filters.CharFilter(lookup_type='icontains',name="temario")
     lugar = django_filters.CharFilter(lookup_type='icontains',name="lugar")
     visibilidad = django_filters.NumberFilter(lookup_type='icontains',name="visibilidad")
+
+    
+    
     
     class Meta:
         model = Citacion

@@ -12,7 +12,7 @@ class ComisionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comision
         fields = ('id','caracter','tipocamara','finicio','ffin','sigla','normacreacion')
-
+        
 # class ComisionIntegrantesSerializer(serializers.ModelSerializer):
 #     
 #     date = None
@@ -75,3 +75,8 @@ class ComisionExpedienteSerializer(serializers.ModelSerializer):
         model = Comision
         fields = ('id', 'caracter', 'tipocamara', 'finicio', 'ffin', 'sigla', 'normacreacion', 'nombre')
            
+class ComisionExpedienteIdSerializer(serializers.ModelSerializer):
+     
+    class Meta:
+        model = Comision
+        fields = ('id',)
