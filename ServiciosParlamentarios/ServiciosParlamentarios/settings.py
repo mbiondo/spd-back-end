@@ -156,6 +156,7 @@ DATABASE_ROUTERS = ['apirest.routers.apirest_router.ApirestRouter','apirest.rout
 AUTH_SERVER = {
     'HOST': '10.105.5.55',
     'PORT': '9000',
+    'RESOURCE_NAME': 'servicios-parlamentarios',    
 }
 
 # Oauth2 client credentials
