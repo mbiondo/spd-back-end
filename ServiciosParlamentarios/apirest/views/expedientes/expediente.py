@@ -35,11 +35,11 @@ class ExpedienteViewSet(viewsets.ReadOnlyModelViewSet):
         """
         return viewsets.ReadOnlyModelViewSet.retrieve(self, request, *args, **kwargs)
 
-
-class ProyectoViewSet(ExpedienteViewSet):
-  
-    search_fields = ( 'codigoexp','codigoorigen','sumario','tipocamara','tipo','codigoestado',
-                      'fechacaducidad','fecha','periodo','titulo','voces',
-                      'firmantes__fk_cargo_persona_fisica__fk_persona_fisica__numerodoc',)
+# 
+# class ProyectoViewSet(ExpedienteViewSet):
+#   
+#     search_fields = ( 'codigoexp','codigoorigen','sumario','tipocamara','tipo','codigoestado',
+#                       'fechacaducidad','fecha','periodo','titulo','voces',
+#                       'firmantes__fk_cargo_persona_fisica__fk_persona_fisica__numerodoc',)
        
     
