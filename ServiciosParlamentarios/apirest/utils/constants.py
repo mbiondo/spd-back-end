@@ -1,4 +1,5 @@
 from apirest.utils.utils import singleton
+from ServiciosParlamentarios import settings
 
 @singleton
 class Constants():
@@ -161,7 +162,9 @@ class Constants():
     PAP = "pap_nueva_pruebas"
     
     #### AUTHENTICATION SERVER DATA ####
-    HAS_PERMISSION_SERVICE ='http://localhost:9000/o/has_permission/{0}/{1}/{2}/'
+#     HAS_PERMISSION_SERVICE ='http://10.105.5.55:9000/o/has_permission/{0}/{1}/{2}/'
+#     HAS_PERMISSION_SERVICE ='http://10.105.5.55:9000/o/has_permission/{0}/{1}/{2}/{3}/'
+    HAS_PERMISSION_SERVICE ='http://'+settings.AUTH_SERVER['HOST']+ ':' +settings.AUTH_SERVER['PORT']+'/o/has_permission/{0}/{1}/{2}/{3}/'
     AUTH_HEADER_KEY='Authorization'
     AUTH_HEADER_CREDENTIALS='Credential {0} {1}'
     IS_AUTHORIZED_KEY="is_authorized"
@@ -178,9 +181,12 @@ class Constants():
     AUTH_FORMAT_EXCP_STR="Authorization header con formato incorrecto. E.g. 'Authorization: Bearer EfbWyP71D6JHcE8vbQ3tBwqVI5iRAz'"
     NO_PERMISSION_STR="Permisos no concedidos."
     NO_ROL_PERMISSION_STR="El usuario no tiene permisos para acceder al servicio"
+    NO_SERVICE_PATH="Ruta de servicio inexistente"
+    BAD_FORMAT_ERROR="La URL del servicio solicitada no coincide con el formato estipulado. [No Match Error]"
     
     AUTH_HEADER_KEY_CONST='HTTP_AUTHORIZATION'
     BEARER_KEY="Bearer "
+    SERVICE_PATH = 'PATH_INFO'
     
     #### ERROR CODES ####
     NO_PERMISSION_EXC_CODE=434
@@ -190,3 +196,7 @@ class Constants():
     #Logging
     LOG_PROPERTIES='properties.json'
     LOGGING_FOLDER_EXC="No permission to log"
+    
+    SERVICES_UNIQUE_NAME='servicios-parlamentarios'
+    
+    #Error message
