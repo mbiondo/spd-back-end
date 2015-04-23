@@ -39,4 +39,3 @@ urlpatterns = patterns('apirest.views',
     url(r'^', include(router.urls)),
     url(r'^', include(expediente_router.urls)),
 )
-
