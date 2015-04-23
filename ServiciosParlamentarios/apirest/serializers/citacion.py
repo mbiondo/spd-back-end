@@ -5,6 +5,7 @@ from apirest.models.citacion import Citacion
 class CitacionSerializer(serializers.ModelSerializer):
 
     fk_comision_cabecera = ComisionSerializer()
+    comisiones = ComisionSerializer(many=True)
     
     class Meta():
         model = Citacion
