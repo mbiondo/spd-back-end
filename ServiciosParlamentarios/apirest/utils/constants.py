@@ -7,6 +7,7 @@ class Constants():
     #### TABLE NAME ####    
     ACUERDO = 'acuerdo'
     APROBACION_SIMPLE = 'aprobacion_simple'
+    AUX_ESTADO = 'aux_estado'
     BAE = 'bae'
     BAT_BN = 'bat_bn'
     BLOQUE = 'bloque'
@@ -32,6 +33,7 @@ class Constants():
     COMISION_COMUNICACION = 'comision_comunicacion'
     COMISION_REUNION = 'comision_reunion'
     COMISION_SUCEDE_COMISION = 'comision_sucede_comision'
+    COMISIONES_ACTUALES = 'comisiones_actuales'
     COMISIONES_DETALLE = 'comisiones_detalle'
     COMISION_HIST = 'comision_hist'
     COMUNICACION = 'comunicacion'
@@ -90,6 +92,7 @@ class Constants():
     LEGISLADOR_REEMPLAZA_LEGISLADOR = 'legislador_reemplaza_legislador'
     LEGISLADOR_VOTACION = 'legislador_votacion'
     LICENCIA = 'licencia'
+    LUGAR = 'lugar'
     MEDIA_SANCION = 'media_sancion'
     MENSAJE = 'mensaje'
     MOCION = 'mocion'

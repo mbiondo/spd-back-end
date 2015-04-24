@@ -1,11 +1,13 @@
 from rest_framework import viewsets
 from apirest.models.citacion import Citacion
 from apirest.serializers.citacion import CitacionSerializer
+from apirest.filters.citacion_filter import CitacionFilter
 
 class CitacionViewSet(viewsets.ReadOnlyModelViewSet):
     
     queryset =  Citacion.objects.all()
     serializer_class = CitacionSerializer
+    filter_class = CitacionFilter
     
     def list (self, request, *args, **kwargs):
         """
