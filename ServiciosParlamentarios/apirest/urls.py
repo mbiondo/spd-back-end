@@ -11,6 +11,8 @@ from apirest.views.giros import GirosViewSet
 from apirest.views.persona_fisica_detalle import PersonaFisicaDetalleViewSet
 from apirest.views.proyectos import ProyectosViewSet
 from apirest.views.citacion import CitacionViewSet
+from apirest.views.expedientes.dictamen import DictamenViewSet
+from apirest.views.organismos.despacho import DespachoViewSet
 
 router = DefaultRouter()
 
@@ -30,6 +32,10 @@ router.register(r'proyectos', ProyectosViewSet)
 # router.register(r'bloques_detalle', bloque.BloqueDetalleViewSet)
 
 router.register(r'citaciones', CitacionViewSet)
+
+router.register(r'dictamenes', DictamenViewSet)
+router.register(r'despachos',DespachoViewSet)
+
 
 expediente_router = routers.NestedSimpleRouter(router, r'expedientes', lookup='expediente')
 expediente_router.register(r'firmantes',FirmantesViewSet)
