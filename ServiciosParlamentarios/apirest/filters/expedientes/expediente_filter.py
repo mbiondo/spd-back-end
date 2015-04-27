@@ -21,7 +21,7 @@ class ExpedienteFilter(django_filters.FilterSet):
     firm_cargo_tipo = django_filters.CharFilter(name="firmantes__cargo_tipo")
     firm_nombre_leg_func = django_filters.CharFilter(name="firmantes__nombre_leg_func")
     
-    # Giro
+    # Giro filters
     giro_comision_id = django_filters.CharFilter(name="giros__comision_id")
     giro_comision_nombre = django_filters.CharFilter(name="giros__comision_nombre")
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
