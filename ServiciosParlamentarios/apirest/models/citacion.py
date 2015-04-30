@@ -3,7 +3,6 @@ from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.organismos.comisiones.comision import Comision
 from apirest.models.relaciones.citacion_comision import CitacionComision
-from apirest.models.db_views.comisiones_actuales import ComisionesActuales
 from apirest.models.lugar import Lugar
 from apirest.models.aux_estado import AuxEstado
    
