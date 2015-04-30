@@ -17,7 +17,7 @@ class Citacion(models.Model):
     observaciones = models.TextField(blank=True)
     visibilidad = models.IntegerField(blank=True, null=True)
     breunionconjunta = models.CharField(max_length=1, blank=True)    
-    comisiones = models.ManyToManyField(ComisionesActuales, through=CitacionComision, related_name='comisiones')
+    comisiones = models.ManyToManyField(Comision, through=CitacionComision, related_name='comisiones')
  
     class Meta:
         managed = False

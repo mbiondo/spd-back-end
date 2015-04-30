@@ -17,6 +17,8 @@ class Expediente(models.Model):
     periodo = models.SmallIntegerField(blank=True, null=True)
     titulo = models.TextField(blank=True)
     voces = models.TextField(blank=True)
+    firmantes = models.ManyToManyField('Firmantes', related_name='firmantes')
+    giros = models.ManyToManyField('Giros', related_name='giros')
     
     class Meta:
         managed = False
