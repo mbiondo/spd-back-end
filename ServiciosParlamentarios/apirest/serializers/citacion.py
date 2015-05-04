@@ -10,4 +10,4 @@ class CitacionSerializer(serializers.ModelSerializer):
     class Meta():
         model = Citacion
         fields = ('id','fk_comision_cabecera','fk_lugar','fk_estado','fecha','resumen','observaciones',
-                  'visibilidad','breunionconjunta', 'comisiones')
+                  'visibilidad','breunionconjunta', 'comisiones','invitados')

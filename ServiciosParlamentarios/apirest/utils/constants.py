@@ -28,6 +28,7 @@ class Constants():
     CITACION_INVITA_ENTIDAD = 'citacion_invita_entidad'
     CITACION_GPA = 'citacion_gpa'
     CITACION_GPA_GPA ='citacion_gpa_gpa'
+    CITACION_GPA_INVITA_ENTIDAD = 'citacion_gpa_invita_entidad'
     CITACION_TEMARIO = 'citacion_temario'
     COMISION_ESTRUCTURA = 'com_estructura'
     COMISION = 'comision'
