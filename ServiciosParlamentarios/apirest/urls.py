@@ -13,6 +13,9 @@ from apirest.views.proyectos import ProyectosViewSet
 from apirest.views.citacion import CitacionViewSet
 from apirest.views.expedientes.dictamen import DictamenViewSet
 from apirest.views.organismos.despacho import DespachoViewSet
+from apirest.views.lugar import LugarViewSet
+from apirest.views.aux_estado import AuxEstadoViewSet
+from apirest.views.individuos.invitados import CitacionInvitaEntidadViewSet
 
 router = DefaultRouter()
 
@@ -27,6 +30,9 @@ router.register(r'legisladores', legislador.LegisladorViewSet)
 router.register(r'personas_fisicas', persona_fisica.PersonaFisicaViewSet)
 router.register(r'personas_fisicas_detalle', PersonaFisicaDetalleViewSet)
 router.register(r'proyectos', ProyectosViewSet)
+router.register(r'lugares', LugarViewSet)
+router.register(r'estados', AuxEstadoViewSet)
+router.register(r'invitados', CitacionInvitaEntidadViewSet)
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)

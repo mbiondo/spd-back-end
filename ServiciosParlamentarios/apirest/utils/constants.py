@@ -60,7 +60,7 @@ class Constants():
     ENTIDAD_COMISION_REUNION = 'entidad_comision_reunion'
     ENTIDAD_PARTICIPA_EVENTO_REUNION = 'entidad_participa_evento_reunion'
     ENTIDAD_PRODUCE_EXPEDIENTE = 'entidad_produce_expediente'
-    ESTADO = 'estado'
+    ESTADO_EXPEDIENTE = 'estado_expediente'
     EVENTO = 'evento'
     EVENTO_REUNION = 'evento_reunion'
     EXPEDIENTE = 'expediente'

@@ -18,7 +18,7 @@ class Citacion(models.Model):
     visibilidad = models.IntegerField(blank=True, null=True)
     breunionconjunta = models.CharField(max_length=1, blank=True)    
     comisiones = models.ManyToManyField(Comision, through=CitacionComision, related_name='comisiones')
-    invitados = models.ManyToManyField('Entidad', through=CitacionInvitaEntidad, related_name='invitados')
+    invitados = models.ManyToManyField(CitacionInvitaEntidad, related_name='invitados')
     
     class Meta:
         managed = False
