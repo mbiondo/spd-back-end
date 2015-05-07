@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models       
 from apirest.utils.constants import Constants
+from apirest.models.expedientes.resultado_sobre_expediente import ResultadoSobreExpediente
 
 class Expediente(models.Model):
     id = models.AutoField(primary_key=True,db_column='expediente_id')
@@ -19,6 +20,7 @@ class Expediente(models.Model):
     voces = models.TextField(blank=True)
     firmantes = models.ManyToManyField('Firmantes', related_name='firmantes')
     giros = models.ManyToManyField('Giros', related_name='giros')
+    resultados = models.ManyToManyField('Resultado',through=ResultadoSobreExpediente, related_name='resultados')
     
     class Meta:
         managed = False

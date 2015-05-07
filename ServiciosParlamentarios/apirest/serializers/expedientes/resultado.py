@@ -5,4 +5,4 @@ class ResultadoSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Resultado
-#         fields = ('id','fk_debate','resultado','tipo','titulo','sumario','texto')
+        fields = ('id','fk_debate','resultado','tipo','titulo','sumario','texto')
