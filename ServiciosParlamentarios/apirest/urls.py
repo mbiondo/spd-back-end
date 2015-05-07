@@ -16,6 +16,7 @@ from apirest.views.organismos.despacho import DespachoViewSet
 from apirest.views.lugar import LugarViewSet
 from apirest.views.aux_estado import AuxEstadoViewSet
 from apirest.views.individuos.invitados import CitacionInvitaEntidadViewSet
+from apirest.views.expedientes.resultado import ResultadoViewSet
 
 router = DefaultRouter()
 
@@ -33,6 +34,7 @@ router.register(r'proyectos', ProyectosViewSet)
 router.register(r'lugares', LugarViewSet)
 router.register(r'estados', AuxEstadoViewSet)
 router.register(r'invitados', CitacionInvitaEntidadViewSet)
+router.register(r'resultados',ResultadoViewSet)
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)
@@ -44,6 +46,8 @@ router.register(r'invitados', CitacionInvitaEntidadViewSet)
 expediente_router = routers.NestedSimpleRouter(router, r'expedientes', lookup='expediente')
 expediente_router.register(r'firmantes',FirmantesViewSet)
 expediente_router.register(r'giros',GirosViewSet)
+
+
 
 urlpatterns = patterns('apirest.views',
     url(r'^', include(router.urls)),
