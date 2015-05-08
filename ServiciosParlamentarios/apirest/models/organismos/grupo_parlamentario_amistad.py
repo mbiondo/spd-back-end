@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.entidad import Entidad
 
 class GrupoParlamentarioAmistad(models.Model):
-    id = models.ForeignKey(Entidad, primary_key=True, db_column='grupo_parlamentario_amistad',unique=True)
+    id = models.ForeignKey(Entidad, primary_key=True, db_column='grupo_parlamentario_amistad_id',unique=True)
     caracter = models.CharField(max_length=1, blank=True)
     tipocamara = models.CharField(max_length=2, blank=True)
     finicio = models.DateField(blank=True, null=True)

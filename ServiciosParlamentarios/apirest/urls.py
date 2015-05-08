@@ -17,6 +17,9 @@ from apirest.views.lugar import LugarViewSet
 from apirest.views.aux_estado import AuxEstadoViewSet
 from apirest.views.individuos.invitados import CitacionInvitaEntidadViewSet
 from apirest.views.expedientes.resultado import ResultadoViewSet
+from apirest.views.citacion_gpa import CitacionGpaViewSet
+from apirest.views.organismos.gpa import GpaViewSet
+from apirest.views.individuos.invitados_gpa import CitacionGpaInvitaEntidadViewSet
 
 router = DefaultRouter()
 
@@ -35,6 +38,9 @@ router.register(r'lugares', LugarViewSet)
 router.register(r'estados', AuxEstadoViewSet)
 router.register(r'invitados', CitacionInvitaEntidadViewSet)
 router.register(r'resultados',ResultadoViewSet)
+router.register(r'citaciones_gpa', CitacionGpaViewSet)
+router.register(r'gpas', GpaViewSet)
+router.register(r'invitados_gpa', CitacionGpaInvitaEntidadViewSet)
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)

@@ -10,6 +10,7 @@ class ComisionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Comision.objects.all()
     serializer_class = ComisionSerializer
     #filter_class = ComisionFilter
+    filter_fields = ('id',)
     
     def list(self, request, *args, **kwargs):
         """
