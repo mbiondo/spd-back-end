@@ -9,11 +9,11 @@ class BloqueEstructura(models.Model):
     fk_bloque = models.ForeignKey(Bloque, db_column='fk_bloque',related_name='integrantes')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador',related_name='legislador')
     cargo = models.TextField(blank=True)
-    cargomuestracomo = models.TextField(blank=True)
+    cargo_muestra_como = models.TextField(blank=True, db_column='cargomuestracomo')
     jerarquia = models.SmallIntegerField(blank=True, null=True)
     estado = models.CharField(max_length=1, blank=True)
-    fdesde = models.DateTimeField(blank=True, null=True)
-    fhasta = models.DateTimeField(blank=True, null=True)
+    fecha_desde = models.DateTimeField(blank=True, null=True, db_column='fdesde')
+    fecha_hasta = models.DateTimeField(blank=True, null=True, db_column='fhasta')
     
     class Meta:
         managed = False

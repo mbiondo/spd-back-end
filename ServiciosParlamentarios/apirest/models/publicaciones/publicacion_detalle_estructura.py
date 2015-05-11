@@ -12,13 +12,13 @@ class PublicacionDetalleEstructura(models.Model):
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente', blank=True, null=True)
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho', blank=True, null=True)
     fk_mocion = models.ForeignKey(Mocion, db_column='fk_mocion', blank=True, null=True)
-    ordenitem = models.SmallIntegerField(blank=True, null=True)
+    orden_item = models.SmallIntegerField(blank=True, null=True,db_column='ordenitem')
     item = models.TextField(blank=True)
-    tituloitem = models.TextField(blank=True)
-    ordensubitem = models.SmallIntegerField(blank=True, null=True)
+    titulo_item = models.TextField(blank=True,db_column='tituloitem')
+    orden_subitem = models.SmallIntegerField(blank=True, null=True,db_column='ordensubitem')
     subitem = models.TextField(blank=True)
-    titulosubitem = models.TextField(blank=True)
-    contadorsubitem = models.SmallIntegerField(blank=True, null=True)
+    titulo_subitem = models.TextField(blank=True,db_column='titulosubitem')
+    contador_subitem = models.SmallIntegerField(blank=True, null=True,db_column='contadorsubitem')
     
     class Meta:
         managed = False

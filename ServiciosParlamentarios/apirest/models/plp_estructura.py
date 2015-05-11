@@ -5,8 +5,8 @@ from apirest.utils.constants import Constants
 class PlpEstructura(models.Model):
     id = models.AutoField(primary_key=True,db_column='plp_estructura_id')
     descripcion = models.TextField()
-    fdesde = models.DateField()
-    fhasta = models.DateField(blank=True, null=True)
+    fecha_desde = models.DateField(db_column='fdesde')
+    fecha_hasta = models.DateField(blank=True, null=True,db_column='fhasta')
 
     class Meta:
         managed = False

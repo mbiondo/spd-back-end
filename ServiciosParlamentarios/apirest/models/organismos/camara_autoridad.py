@@ -9,11 +9,11 @@ class CamaraAutoridad(models.Model):
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_camara = models.ForeignKey(Camara, db_column='fk_camara')
     cargo = models.TextField(blank=True)
-    cargomuestracomo = models.TextField(blank=True)
+    cargo_muestra_como = models.TextField(blank=True,db_column='cargomuestracomo')
     jerarquia = models.TextField(blank=True)
     estado = models.TextField(blank=True)
-    fdesde = models.DateField(blank=True, null=True)
-    fhasta = models.DateField(blank=True, null=True)
+    fecha_desde = models.DateField(blank=True, null=True,db_column='fdesde')
+    fecha_hasta = models.DateField(blank=True, null=True,db_column='fhasta')
 
     class Meta:
         managed = False

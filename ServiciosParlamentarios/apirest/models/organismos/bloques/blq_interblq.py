@@ -8,8 +8,8 @@ class BlqInterblq(models.Model):
     id = models.AutoField(primary_key=True,db_column='blq_interblq_id')
     fk_bloque = models.ForeignKey(Bloque, db_column='fk_bloque')
     fk_interbloque = models.ForeignKey(Interbloque, db_column='fk_interbloque')
-    finicio = models.DateField(blank=True, null=True)
-    ffin = models.DateField(blank=True, null=True)
+    fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
+    fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
     caracter = models.TextField(blank=True)
     
     class Meta:

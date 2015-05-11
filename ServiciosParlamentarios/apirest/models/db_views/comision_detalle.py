@@ -7,16 +7,16 @@ class ComisionesDetalle(models.Model):
     nombre_corto = models.TextField(blank=True)
     comision_id = models.IntegerField(blank=True, null=True)
     caracter = models.CharField(max_length=1, blank=True)
-    tipocamara = models.CharField(max_length=2, blank=True)
-    finicio = models.DateField(blank=True, null=True)
-    ffin = models.DateField(blank=True, null=True)
+    tipo_camara = models.CharField(max_length=2, blank=True,db_column='tipocamara')
+    fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
+    fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
     sigla = models.TextField(blank=True)
-    normacreacion = models.TextField(blank=True)
+    norma_creacion = models.TextField(blank=True,db_column='normacreacion')
     nombre_legislador = models.TextField(blank=True)
     cargo = models.TextField(blank=True)
     estado = models.CharField(max_length=1, blank=True)
-    fdesde = models.DateTimeField(blank=True, null=True)
-    fhasta = models.DateTimeField(blank=True, null=True)
+    fecha_desde = models.DateTimeField(blank=True, null=True,db_column='fdesde')
+    fecha_hasta = models.DateTimeField(blank=True, null=True,db_column='fhasta')
     
     class Meta:
         managed = False

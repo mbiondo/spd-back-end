@@ -6,8 +6,8 @@ from apirest.models.evento import Evento
 class EventoReunion(models.Model):
     id = models.AutoField(primary_key=True,db_column='evento_reunion_id')
     fk_evento = models.ForeignKey(Evento, db_column='fk_evento')
-    finicio = models.DateTimeField(blank=True, null=True)
-    ffin = models.DateTimeField(blank=True, null=True)
+    fecha_inicio = models.DateTimeField(blank=True, null=True,db_column='finicio')
+    fecha_fin = models.DateTimeField(blank=True, null=True,db_column='ffin')
     lugar = models.TextField(blank=True)
     estado = models.TextField(blank=True)
 

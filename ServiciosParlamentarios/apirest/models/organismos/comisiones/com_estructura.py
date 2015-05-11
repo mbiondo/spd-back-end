@@ -9,11 +9,11 @@ class ComEstructura(models.Model):
     fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='integrantes')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     cargo = models.TextField(blank=True)
-    cargomuestracomo = models.TextField(blank=True)
+    cargo_muestra_como = models.TextField(blank=True,db_column='cargomuestracomo')
     jerarquia = models.SmallIntegerField(blank=True, null=True)
     estado = models.CharField(max_length=1, blank=True)
-    fdesde = models.DateTimeField(blank=True, null=True)
-    fhasta = models.DateTimeField(blank=True, null=True)
+    fecha_desde = models.DateTimeField(blank=True, null=True,db_column='fdesde')
+    fecha_hasta = models.DateTimeField(blank=True, null=True,db_column='fhasta')
     nota = models.TextField(blank=True)
     
     class Meta:

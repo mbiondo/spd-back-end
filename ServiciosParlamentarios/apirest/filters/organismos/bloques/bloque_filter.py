@@ -5,7 +5,7 @@ from django.db.models import Q
 class BloqueFilter(django_filters.FilterSet):
       
     nombre = django_filters.CharFilter(lookup_type='icontains',name="nombre")
-    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipocamara")
+    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
     
     class Meta:
         model = Bloque

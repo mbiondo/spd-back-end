@@ -8,9 +8,9 @@ class LegisladorComisionReunion(models.Model):
     id = models.AutoField(primary_key=True,db_column='legislador_comision_reunion_id')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     fk_comision_reunion = models.ForeignKey(ComisionReunion, db_column='fk_comision_reunion')
-    codigoasistencia = models.CharField(max_length=1)
+    codigo_asistencia = models.CharField(max_length=1,db_column='codigoasistencia')
     nota = models.TextField(blank=True)
-    nivelpublicacion = models.TextField(blank=True)
+    nivel_publicacion = models.TextField(blank=True,db_column='nivelpublicacion')
 
     class Meta:
         managed = False

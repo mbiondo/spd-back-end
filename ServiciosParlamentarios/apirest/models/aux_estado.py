@@ -8,8 +8,8 @@ class AuxEstado(models.Model):
     entidad = models.TextField(blank=True)
     orden = models.SmallIntegerField(blank=True, null=True)
     descripcion = models.TextField(blank=True)
-    fdesde = models.DateTimeField(blank=True, null=True)
-    fhasta = models.DateTimeField(blank=True, null=True)
+    fecha_desde = models.DateTimeField(blank=True, null=True, db_column='fdesde')
+    fecha_hasta = models.DateTimeField(blank=True, null=True, db_column='fhasta')
 
     class Meta:
         managed = False

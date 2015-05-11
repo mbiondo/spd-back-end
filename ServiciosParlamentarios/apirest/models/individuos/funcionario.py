@@ -5,8 +5,8 @@ from apirest.utils.constants import Constants
 
 class Funcionario(models.Model):
     id = models.ForeignKey(CargoPersonaFisica, primary_key=True, db_column='funcionario_id',unique=True)
-    finicio = models.DateField()
-    ffin = models.DateField(blank=True, null=True)
+    fecha_inicio = models.DateField(db_column='finicio')
+    fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
     cargo = models.TextField(blank=True)
     
     class Meta:

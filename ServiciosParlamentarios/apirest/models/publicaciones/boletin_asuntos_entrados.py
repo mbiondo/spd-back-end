@@ -3,10 +3,10 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class BoletinAsuntosEntrados(models.Model):
-    boletin_asuntos_entrados = models.ForeignKey('Publicacion', primary_key=True,db_column='boletin_asuntos_entrados_id')
+    id = models.ForeignKey('Publicacion', primary_key=True,db_column='boletin_asuntos_entrados_id')
     numero = models.SmallIntegerField(blank=True, null=True)
-    fhapertura = models.DateTimeField(blank=True, null=True)
-    fhcierre = models.DateTimeField(blank=True, null=True)
+    fecha_hora_apertura = models.DateTimeField(blank=True, null=True,db_column='fhapertura')
+    fecha_hora_cierre = models.DateTimeField(blank=True, null=True,db_column='fhcierre')
     fk_camara_reunion = models.ForeignKey('CamaraReunion', db_column='fk_camara_reunion', blank=True, null=True)
 
     class Meta:

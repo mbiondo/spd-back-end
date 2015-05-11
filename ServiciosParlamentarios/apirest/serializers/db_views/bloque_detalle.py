@@ -5,6 +5,6 @@ class BloqueDetalleSerializer(serializers.ModelSerializer):
  
     class Meta:
         model = BloqueDetalle
-        fields = ('nombre_legislador','cargo','jerarquia','estado','fdesde',
-                  'fhasta','cargo_legislador','partido','finicio_legislador','ffin_legislador')
+        fields = ('nombre_legislador','cargo','jerarquia','estado','fecha_desde',
+                  'fecha_hasta','cargo_legislador','partido','fecha_inicio_legislador','fecha_fin_legislador')
         

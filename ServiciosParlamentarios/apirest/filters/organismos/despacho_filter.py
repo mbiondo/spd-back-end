@@ -7,7 +7,7 @@ class DespachoFilter(django_filters.FilterSet):
     tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
     numero = django_filters.CharFilter(lookup_type='icontains',name="numero")
     anio = django_filters.CharFilter(lookup_type='icontains',name="anio")
-    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipocamara")
+    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
       
     class Meta:
         model = Despacho

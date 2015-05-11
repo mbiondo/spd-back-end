@@ -10,7 +10,7 @@ class Dictamen(models.Model):
     tipo = models.TextField(blank=True)
     copete = models.TextField(blank=True)
     accion = models.TextField(blank=True)
-    bconmodificacion = models.CharField(max_length=1, blank=True)
+    con_modificacion = models.CharField(max_length=1, blank=True,db_column='bconmodificacion')
     
     class Meta:
         managed = False

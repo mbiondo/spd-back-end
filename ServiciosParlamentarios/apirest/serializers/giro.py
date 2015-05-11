@@ -7,7 +7,7 @@ class GiroSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Giro
-        fields = ('id','fk_expediente','fk_comision','orden','caracter','nota','nrogiro','fvigencia','fecha','fremito')
+        fields = ('id','fk_expediente','fk_comision','orden','caracter','nota','nrogiro','fecha_vigencia','fecha','fecha_remito')
             
 
 class GiroExpedienteSerializer(serializers.ModelSerializer):
@@ -16,5 +16,5 @@ class GiroExpedienteSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Giro
-        fields = ('id','fk_comision','orden','caracter','nota','nrogiro','fvigencia','fecha','fremito')
+        fields = ('id','fk_comision','orden','caracter','nota','nrogiro','fecha_vigencia','fecha','fecha_remito')
         depth=1

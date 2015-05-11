@@ -5,4 +5,4 @@ class LegisladoresDetalleSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = LegisladoresDetalle
-        fields = ('nombre_legislador','finicio','ffin','fincorporacion','fcese','cargo','distrito','bloque')
+        fields = ('nombre_legislador','fecha_inicio','fecha_fin','fecha_incorporacion','fecha_cese','cargo','distrito','bloque')

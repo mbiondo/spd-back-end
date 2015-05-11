@@ -5,8 +5,8 @@ from apirest.utils.constants import Constants
 
 class Licencia(models.Model):
     id = models.ForeignKey(Solicitud, primary_key=True, db_column='licencia_id',unique=True)
-    fechadesde = models.DateTimeField(blank=True, null=True)
-    fechahasta = models.DateTimeField(blank=True, null=True)
+    fecha_desde = models.DateTimeField(blank=True, null=True,db_column='fechadesde')
+    fecha_hasta = models.DateTimeField(blank=True, null=True,db_column='fechahasta')
     motivo = models.TextField(blank=True)
     consueldo = models.CharField(max_length=1, blank=True)
     

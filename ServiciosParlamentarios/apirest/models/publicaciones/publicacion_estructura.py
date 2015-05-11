@@ -5,8 +5,8 @@ from apirest.utils.constants import Constants
 class PublicacionEstructura(models.Model):
     id = models.AutoField(primary_key=True,db_column='publicacion_estructura_id')
     descripcion = models.TextField(blank=True)
-    fdesde = models.DateField(blank=True, null=True)
-    fhasta = models.DateField(blank=True, null=True)
+    fecha_desde = models.DateField(blank=True, null=True,db_column='fdesde')
+    fecha_hasta = models.DateField(blank=True, null=True,db_column='fhasta')
     tipo = models.TextField(blank=True)
     
     class Meta:

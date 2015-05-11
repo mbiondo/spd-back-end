@@ -6,7 +6,7 @@ from apirest.models.expedientes.expediente import Expediente
 class CaducidadHist(models.Model):
     id = models.AutoField(primary_key=True,db_column='caducidad_hist_id')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
-    fcaducidad = models.DateTimeField(blank=True, null=True)
+    fecha_caducidad = models.DateTimeField(blank=True, null=True,db_column='fcaducidad')
     observaciones = models.TextField(blank=True)
 
     class Meta:

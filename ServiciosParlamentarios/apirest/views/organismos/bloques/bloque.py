@@ -36,7 +36,7 @@ class BloqueViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = BloqueSerializer
     filter_class = BloqueFilter
     ordering_fields = '__all__'
-    search_fields = ('nombre','nrointegrantes','finicio','ffin','tipocamara','nota','sigla')    
+    search_fields = ('nombre','nro_integrantes','fecha_inicio','fecha_fin','tipo_camara','nota','sigla')    
                  
     def list(self, request, *args, **kwargs):
         """

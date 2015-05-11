@@ -9,11 +9,11 @@ class Sesion(models.Model):
     fk_tipo_sesion_periodo = models.ForeignKey(TipoSesionPeriodo, db_column='fk_tipo_sesion_periodo')
     fk_camara_cita = models.ForeignKey(Camara, db_column='fk_camara_cita', blank=True, null=True)
     fk_camara_celebra = models.ForeignKey(Camara, db_column='fk_camara_celebra', blank=True, null=True)
-    tipocamara = models.TextField()
+    tipo_camara = models.TextField(db_column='tipocamara')
     tipo = models.TextField(blank=True)
     numero = models.SmallIntegerField(blank=True, null=True)
     nota = models.TextField(blank=True)
-    benminoria = models.CharField(max_length=1, blank=True)
+    en_minoria = models.CharField(max_length=1, blank=True,db_column='benminoria')
     
     class Meta:
         managed = False

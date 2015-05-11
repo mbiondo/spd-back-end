@@ -5,4 +5,4 @@ class DictamenSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Dictamen
-        fields = ('id','despacho','tipo','copete','accion','bconmodificacion')       
+        fields = ('id','despacho','tipo','copete','accion','con_modificacion')       

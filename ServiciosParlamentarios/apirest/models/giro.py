@@ -11,10 +11,10 @@ class Giro(models.Model):
     orden = models.SmallIntegerField(blank=True, null=True)
     caracter = models.TextField(blank=True)
     nota = models.TextField(blank=True)
-    nrogiro = models.SmallIntegerField()
-    fvigencia = models.DateField(blank=True, null=True)
+    nro_giro = models.SmallIntegerField(db_column='nrogiro')
+    fecha_vigencia = models.DateField(blank=True, null=True,db_column='fvigencia')
     fecha = models.DateField(blank=True, null=True)
-    fremito = models.DateField(blank=True, null=True)
+    fecha_remito = models.DateField(blank=True, null=True,db_column='fremito')
     
     class Meta:
         managed = False

@@ -3,10 +3,10 @@ from apirest.models.publicaciones.boletin_asuntos_entrados import BoletinAsuntos
 
 class BoletinAsuntosEntradosFilter(django_filters.FilterSet):
     
-    fhapertura = django_filters.DateTimeFilter(name="fhapertura")
-    fhcierre = django_filters.DateTimeFilter(name="fhcierre")
+    fecha_hora_apertura = django_filters.DateTimeFilter(name="fecha_hora_apertura")
+    fecha_hora_cierre = django_filters.DateTimeFilter(name="fecha_hora_cierre")
     numero = django_filters.NumberFilter(name="numero")
             
     class Meta:
         model = BoletinAsuntosEntrados
-        fields = ['fhapertura', 'fhcierre','numero']
+        fields = ['fecha_hora_cierre', 'fecha_hora_apertura','numero']

@@ -5,5 +5,5 @@ class AuxEstadoSerializer(serializers.ModelSerializer):
 
     class Meta():
         model = AuxEstado
-        fields = ('id','valor','entidad','orden','descripcion','fdesde','fhasta')
+        fields = ('id','valor','entidad','orden','descripcion','echa_desde','fecha_hasta')
         

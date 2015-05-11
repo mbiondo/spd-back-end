@@ -9,14 +9,14 @@ class ComisionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comision
-        fields = ( 'id','caracter','tipocamara','finicio','ffin','sigla','normacreacion', 'comision_hist')
+        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion', 'comision_hist')
 
 
 class ComisionChildSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Comision
-        fields = ( 'id','caracter','tipocamara','finicio','ffin','sigla','normacreacion')
+        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion')
         
         
 class ComisionExpedienteSerializer(serializers.ModelSerializer):
@@ -34,7 +34,7 @@ class ComisionExpedienteSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comision
-        fields = ('id', 'caracter', 'tipocamara', 'finicio', 'ffin', 'sigla', 'normacreacion', 'nombre')
+        fields = ('id', 'caracter', 'tipo_camara', 'fecha_inicio', 'fecha_fin', 'sigla', 'norma_creacion', 'nombre')
            
 class ComisionExpedienteIdSerializer(serializers.ModelSerializer):
      

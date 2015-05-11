@@ -8,5 +8,5 @@ class BloqueEstructuraSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = BloqueEstructura
-        fields = ('id','fk_legislador','cargo','cargomuestracomo','jerarquia','estado','fdesde','fhasta')
+        fields = ('id','fk_legislador','cargo','cargo_muestra_como','jerarquia','estado','fecha_desde','fecha_hasta')
     

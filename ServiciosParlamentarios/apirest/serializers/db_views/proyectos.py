@@ -5,4 +5,4 @@ class ProyectoSerializer(serializers.ModelSerializer):
     
     class Meta: 
         model = Proyectos
-        fields = ('expediente_id','codigoexp','codigonum','codigoorigen','codigoanio','sumario','tipocamara','tipo','fechacaducidad','fecha','periodo','titulo','voces','resultado','tipoproy','nroley')  
+        fields = ('expediente_id','codigo_exp','codigo_num','codigo_origen','codigo_anio','sumario','tipo_camara','tipo','fecha_caducidad','fecha','periodo','titulo','voces','resultado','tipo_proy','nro_ley')  

@@ -8,7 +8,7 @@ class Mocion(models.Model):
     fk_camara_reunion = models.ForeignKey(CamaraReunion, db_column='fk_camara_reunion', blank=True, null=True)
     tipo = models.TextField(blank=True)
     descripcion = models.TextField(blank=True)
-    fechahora = models.DateTimeField(blank=True, null=True)
+    fecha_hora = models.DateTimeField(blank=True, null=True,db_column='fechahora')
     resultado = models.TextField(blank=True)
     orden = models.SmallIntegerField(blank=True, null=True)
     nivel = models.SmallIntegerField(blank=True, null=True)

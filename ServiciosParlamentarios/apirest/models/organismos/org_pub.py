@@ -8,8 +8,8 @@ class OrgPub(models.Model):
     nombre = models.TextField(blank=True)
     sigla = models.TextField(blank=True)
     fk_org_pub = models.ForeignKey('self', db_column='fk_org_pub', blank=True, null=True)
-    finicio = models.DateField(blank=True, null=True)
-    ffin = models.DateField(blank=True, null=True)
+    fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
+    fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
     nota = models.TextField(blank=True)
     
     class Meta:

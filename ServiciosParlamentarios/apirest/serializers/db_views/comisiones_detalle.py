@@ -5,4 +5,4 @@ class ComisionesDetalleSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = ComisionesDetalle
-        fields = ('nombre_legislador','cargo','estado','fdesde','fhasta')
+        fields = ('nombre_legislador','cargo','estado','fecha_desde','fecha_hasta')

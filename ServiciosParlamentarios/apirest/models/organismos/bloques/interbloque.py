@@ -6,8 +6,8 @@ class Interbloque(models.Model):
     id = models.AutoField(primary_key=True,db_column='interbloque_id')
     nombre = models.TextField()
     caracter = models.TextField(blank=True)
-    finicio = models.DateField(blank=True, null=True)
-    ffin = models.DateField(blank=True, null=True)
+    fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
+    fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
     
     class Meta:
         managed = False

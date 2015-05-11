@@ -5,11 +5,11 @@ from apirest.models.publicaciones.publicacion import Publicacion
 from apirest.models.publicaciones.boletin_asuntos_entrados import BoletinAsuntosEntrados
 
 class TramiteParlamentario(models.Model):
-    tramite_parlamentario = models.ForeignKey(Publicacion, primary_key=True)
+    id = models.ForeignKey(Publicacion, primary_key=True,db_column='tramite_parlamentario_id' )
     fk_boletin_asuntos_entrados = models.ForeignKey(BoletinAsuntosEntrados, db_column='fk_boletin_asuntos_entrados', blank=True, null=True)
     numero = models.SmallIntegerField()
-    fhapertura = models.DateTimeField(blank=True, null=True)
-    fhcierre = models.DateTimeField(blank=True, null=True)
+    fecha_hora_apertura = models.DateTimeField(blank=True, null=True,db_column='fhapertura')
+    fecha_hora_cierre = models.DateTimeField(blank=True, null=True,db_column='fhcierre')
     
 
     class Meta:

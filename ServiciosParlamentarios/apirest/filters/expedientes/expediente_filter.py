@@ -4,14 +4,14 @@ from apirest.models.expedientes.expediente import Expediente
 class ExpedienteFilter(django_filters.FilterSet):
     
     tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
-    codigoOrigen = django_filters.CharFilter(lookup_type='icontains',name="codigoorigen")
-    tipoCamara = django_filters.CharFilter(lookup_type='icontains',name="tipocamara")
-    codigoExp = django_filters.CharFilter(lookup_type='icontains',name="codigoexp")
-    codigoNum = django_filters.CharFilter(lookup_type='icontains',name="codigonum")
-    codigoAnio = django_filters.CharFilter(lookup_type='icontains',name="codigoanio")
-    fechaCaducidad = django_filters.DateFilter(name="fechacaducidad")
-    fechaDesde = django_filters.DateFilter(name="fecha", lookup_type='gte')
-    fechaHasta = django_filters.DateFilter(name="fecha", lookup_type='lte')
+    codigo_origen = django_filters.CharFilter(lookup_type='icontains',name="codigo_origen")
+    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
+    codigo_exp = django_filters.CharFilter(lookup_type='icontains',name="codigo_exp")
+    codigo_num = django_filters.CharFilter(lookup_type='icontains',name="codigo_num")
+    codigo_anio = django_filters.CharFilter(lookup_type='icontains',name="codigo_anio")
+    fecha_caducidad = django_filters.DateFilter(name="fecha_caducidad")
+    fecha_desde = django_filters.DateFilter(name="fecha", lookup_type='gte')
+    fecha_hasta = django_filters.DateFilter(name="fecha", lookup_type='lte')
     periodo = django_filters.NumberFilter(name="periodo")
     
     # Firmante filters
@@ -29,8 +29,8 @@ class ExpedienteFilter(django_filters.FilterSet):
  
     class Meta:
         model = Expediente
-        fields = ['tipo','codigoOrigen','tipoCamara','codigoExp','codigoNum','codigoAnio','fechaDesde',
-                  'fechaHasta','fechaCaducidad','periodo','firm_orden','firm_cargo','firm_cargo_tipo',
+        fields = ['tipo','codigo_origen','tipo_camara','codigo_exp','codigo_num','codigo_anio','fecha_desde',
+                  'fecha_hasta','fecha_caducidad','periodo','firm_orden','firm_cargo','firm_cargo_tipo',
                   'firm_persona_fisica_id','firm_nombre_leg_func','giro_comision_id','giro_comision_nombre',
                   'giro_comision_nombre_corto']
         order_by = True

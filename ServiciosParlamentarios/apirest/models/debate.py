@@ -15,8 +15,8 @@ class Debate(models.Model):
     tipo = models.TextField(blank=True)
     nota = models.TextField(blank=True)
     fk_debate_padre = models.ForeignKey('self', db_column='fk_debate_padre', blank=True, null=True)
-    bcontinuacion = models.CharField(max_length=1, blank=True)
-    textolegado = models.TextField(blank=True)
+    continuacion = models.CharField(max_length=1, blank=True,db_column='bcontinuacion')
+    texto_legado = models.TextField(blank=True,db_column='textolegado')
     
     class Meta:
         managed = False

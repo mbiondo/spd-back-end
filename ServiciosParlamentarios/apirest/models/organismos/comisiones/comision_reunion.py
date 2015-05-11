@@ -13,7 +13,7 @@ class ComisionReunion(models.Model):
     lugar = models.TextField(blank=True)
     art108par1 = models.CharField(max_length=1, blank=True)
     visibilidad = models.IntegerField(blank=True, null=True)
-    visibilidadparte = models.IntegerField(blank=True, null=True)
+    visibilidad_parte = models.IntegerField(blank=True, null=True,db_column='visibilidadparte')
     nota = models.TextField(blank=True)
 
     class Meta:

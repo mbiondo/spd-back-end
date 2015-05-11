@@ -11,7 +11,7 @@ class Lugar(models.Model):
     oficina = models.TextField(blank=True)
     telefono = models.TextField(blank=True)
     interno = models.TextField(blank=True)
-    capacidadmax = models.SmallIntegerField(blank=True, null=True)
+    capacidad_max = models.SmallIntegerField(blank=True, null=True,db_column='capacidadmax')
     observaciones = models.TextField(blank=True)
 
     class Meta:

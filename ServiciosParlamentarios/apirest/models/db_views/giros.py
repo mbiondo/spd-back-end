@@ -7,7 +7,7 @@ class Giros(models.Model):
     expediente_id = models.ForeignKey(Expediente, db_column='expediente_id',related_name='giros')
     comision_id = models.IntegerField(blank=True, null=True)
     giro_id = models.IntegerField(blank=True, null=True, primary_key=True)
-    codigoexp = models.CharField(max_length=14, blank=True)
+    codigo_exp = models.CharField(max_length=14, blank=True,db_column='codigoexp')
     comision_nombre = models.TextField(blank=True)
     comision_nombre_corto = models.TextField(blank=True)
     camara = models.CharField(max_length=2, blank=True)

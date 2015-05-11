@@ -5,5 +5,5 @@ class ComisionesActualesSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = ComisionesActuales
-        fields = ('comision_id','nombre_comision','nombre_corto','correo','orden','caracter','tipocamara',
-                  'finicio','ffin','sigla','normacreacion')
+        fields = ('comision_id','nombre_comision','nombre_corto','correo','orden','caracter','tipo_camara',
+                  'fecha_inicio','fecha_fin','sigla','norma_creacion')

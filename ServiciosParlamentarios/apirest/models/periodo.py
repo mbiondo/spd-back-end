@@ -4,10 +4,10 @@ from apirest.utils.constants import Constants
 
 class Periodo(models.Model):
     id = models.AutoField(primary_key=True,db_column='periodo_id')
-    nroperiodo = models.SmallIntegerField(unique=True, blank=True, null=True)
-    finicio = models.DateField(blank=True, null=True)
-    ffin = models.DateField(blank=True, null=True)
-    anioparlamentario = models.SmallIntegerField(blank=True, null=True)
+    nro_periodo = models.SmallIntegerField(unique=True, blank=True, null=True,db_column='nroperiodo')
+    fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
+    fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
+    anio_parlamentario = models.SmallIntegerField(blank=True, null=True,db_column='anioparlamentario')
     
     class Meta:
         managed = False

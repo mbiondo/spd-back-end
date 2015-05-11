@@ -5,9 +5,9 @@ from apirest.utils.constants import Constants
               
 class PersonaFisica(models.Model):
     id = models.ForeignKey(Entidad, primary_key=True, db_column='persona_fisica_id',unique=True)
-    tipodoc = models.CharField(max_length=2, blank=True)
-    numerodoc = models.CharField(max_length=9, blank=True)
-    fechanacimiento = models.DateField(blank=True, null=True)
+    tipo_doc = models.CharField(max_length=2, blank=True,db_column='tipodoc')
+    numero_doc = models.CharField(max_length=9, blank=True,db_column='numerodoc')
+    fecha_nacimiento = models.DateField(blank=True, null=True,db_column='fechanacimiento')
     
     class Meta:
         managed = False

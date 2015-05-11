@@ -10,7 +10,8 @@ class ProyectosViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProyectoSerializer
     filter_class = ProyectosFilter
     ordering_fields = '__all__'
-    search_fields = ('codigoexp','codigonum','codigoorigen','codigoanio','sumario','tipocamara','tipo','codigoestado','fechacaducidad','fecha','periodo','titulo','voces','resultado','tipoproy','nroley')
+    search_fields = ('codigo_exp','codigo_num','codigo_origen','codigo_anio','sumario','tipo_camara',
+                     'tipo','codigo_estado','fecha_caducidad','fecha','periodo','titulo','voces','resultado','tipo_proy','nro_ley')
     
       
     def list (self, request, *args, **kwargs):
@@ -19,7 +20,7 @@ class ProyectosViewSet(viewsets.ReadOnlyModelViewSet):
         \n
         Filtros posible:\n
          
-        - tipoProy=[tipo de proyecto]
+        - tipo_proy=[tipo de proyecto]
         """
         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
     

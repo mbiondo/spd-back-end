@@ -8,7 +8,7 @@ class DebateDespacho(models.Model):
     id = models.AutoField(primary_key=True,db_column='debate_despacho_id')
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
     fk_debate = models.ForeignKey(Debate, db_column='fk_debate')
-    tipoconsideracion = models.TextField(blank=True)
+    tipo_consideracion = models.TextField(blank=True,db_column='tipoconsideracion')
     comunicacion = models.TextField(blank=True)
     
     class Meta:

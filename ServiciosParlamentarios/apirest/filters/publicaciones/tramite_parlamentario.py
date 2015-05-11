@@ -3,10 +3,10 @@ from apirest.models.publicaciones.tramite_parlamentario import TramiteParlamenta
 
 class TramiteParlamentarioFilter(django_filters.FilterSet):
     
-    fhapertura = django_filters.DateTimeFilter(name="fhapertura")
-    fcierre = django_filters.DateTimeFilter(name="fcierre")
+    fecha_hora_apertura = django_filters.DateTimeFilter(name="fecha_hora_apertura")
+    fecha_hora_cierre = django_filters.DateTimeFilter(name="fecha_hora_cierre")
     numero = django_filters.NumberFilter(name="numero")
             
     class Meta:
         model = TramiteParlamentario
-        fields = ['fhapertura', 'fcierre','numero']
+        fields = ['fecha_hora_apertura', 'fecha_hora_cierre','numero']

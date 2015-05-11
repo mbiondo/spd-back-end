@@ -6,4 +6,4 @@ class FirmanteSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Firmantes
-        fields = ('expediente_id','persona_fisica_id','cargo_persona_fisica_id','codigoexp','nombre_leg_func','tipocamara','cargo','orden','distrito','nombre_del_bloque')
+        fields = ('expediente_id','persona_fisica_id','cargo_persona_fisica_id','codigo_exp','nombre_leg_func','tipo_camara','cargo','orden','distrito','nombre_del_bloque')

@@ -6,7 +6,7 @@ from apirest.utils.constants import Constants
 class Comunicacion(models.Model):
     id = models.ForeignKey(Expediente, primary_key=True, db_column='comunicacion_id',unique=True)
     subtipo = models.TextField(blank=True)
-    fecharecepcion = models.DateField(blank=True, null=True)
+    fecha_recepcion = models.DateField(blank=True, null=True, db_column='fecharecepcion')
     orden = models.SmallIntegerField(blank=True, null=True)
     
     class Meta:

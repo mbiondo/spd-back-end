@@ -43,4 +43,4 @@ class BloqueIntegrantesSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Bloque
-        fields = ('id','nombre','nrointegrantes','finicio','ffin','tipocamara','nota','sigla','integrantes')
+        fields = ('id','nombre','nro_integrantes','fecha_inicio','fecha_fin','tipo_camara','nota','sigla','integrantes')

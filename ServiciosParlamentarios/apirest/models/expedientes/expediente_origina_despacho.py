@@ -9,7 +9,7 @@ class ExpedienteOriginaDespacho(models.Model):
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente')
     fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
     orden = models.IntegerField(blank=True, null=True)
-    bsolovista = models.CharField(max_length=1, blank=True)
+    solo_vista = models.CharField(max_length=1, blank=True,db_column='bsolovista')
     
     class Meta:
         managed = False

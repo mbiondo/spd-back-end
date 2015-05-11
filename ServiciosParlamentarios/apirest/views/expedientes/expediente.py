@@ -10,7 +10,8 @@ class ExpedienteViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ExpedienteSerializer
     filter_class = ExpedienteFilter
     ordering_fields = '__all__'
-    search_fields = ('id', 'codigoexp', 'codigonum', 'codigoorigen', 'codigoanio', 'sumario', 'tipocamara','tipo', 'codigoestado', 'fechacaducidad','fecha', 'periodo', 'titulo', 'voces',)
+    search_fields = ('id', 'codigo_exp', 'codigo_num', 'codigo_origen', 'codigo_anio', 'sumario', 'tipo_camara','tipo', 
+                     'codigo_estado', 'fecha_caducidad','fecha', 'periodo', 'titulo', 'voces',)
         
     
     def list(self, request, *args, **kwargs):

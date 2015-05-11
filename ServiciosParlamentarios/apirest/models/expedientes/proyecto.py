@@ -7,9 +7,9 @@ class Proyecto(models.Model):
     id = models.ForeignKey(Expediente, primary_key=True,db_column='proyecto_id',unique=True)
     fk_proyecto_reproduce = models.ForeignKey('self', db_column='fk_proyecto_reproduce', blank=True, null=True)
     estado = models.TextField(blank=True)
-    tipoproy = models.TextField(blank=True)
-    subtipoproy = models.TextField(blank=True)
-    codigodigesto = models.CharField(max_length=6, blank=True)
+    tipo_proy = models.TextField(blank=True,db_column='tipoproy')
+    subtipo_proy = models.TextField(blank=True,db_column='subtipoproy')
+    codigo_digesto = models.CharField(max_length=6, blank=True,db_column='codigodigesto')
     
     class Meta:
         managed = False

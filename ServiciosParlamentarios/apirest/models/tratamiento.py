@@ -7,8 +7,8 @@ class Tratamiento(models.Model):
     tipo = models.TextField(blank=True)
     orden = models.IntegerField(blank=True, null=True)
     resumen = models.TextField(blank=True)
-    bfueradetemario = models.CharField(max_length=1, blank=True)
-    bsobretablas = models.CharField(max_length=1, blank=True)
+    fuera_de_temario = models.CharField(max_length=1, blank=True,db_column='bfueradetemario')
+    sobre_tablas = models.CharField(max_length=1, blank=True,db_column='bsobretablas')
     
     class Meta:
         managed = False
