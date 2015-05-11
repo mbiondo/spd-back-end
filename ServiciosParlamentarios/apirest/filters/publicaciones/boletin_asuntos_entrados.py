@@ -4,9 +4,9 @@ from apirest.models.publicaciones.boletin_asuntos_entrados import BoletinAsuntos
 class BoletinAsuntosEntradosFilter(django_filters.FilterSet):
     
     fhapertura = django_filters.DateTimeFilter(name="fhapertura")
-    fcierre = django_filters.DateTimeFilter(name="fcierre")
+    fhcierre = django_filters.DateTimeFilter(name="fhcierre")
     numero = django_filters.NumberFilter(name="numero")
             
     class Meta:
         model = BoletinAsuntosEntrados
-        fields = ['fhapertura', 'fcierre','numero']
+        fields = ['fhapertura', 'fhcierre','numero']
