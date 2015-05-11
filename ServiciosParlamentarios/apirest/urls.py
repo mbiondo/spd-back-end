@@ -20,6 +20,12 @@ from apirest.views.expedientes.resultado import ResultadoViewSet
 from apirest.views.citacion_gpa import CitacionGpaViewSet
 from apirest.views.organismos.gpa import GpaViewSet
 from apirest.views.individuos.invitados_gpa import CitacionGpaInvitaEntidadViewSet
+from apirest.views.publicaciones.publicacion import PublicacionViewSet
+from apirest.views.publicaciones.tramite_parlamentario import TramiteParlamentarioViewSet
+from apirest.views.publicaciones.boletin_asuntos_entrados import BoletinAsuntosEntradosViewSet
+from apirest.views.publicaciones.boletin_asuntos_tratados import BoletinAsuntosTratadosViewSet
+from apirest.views.publicaciones.boletin_novedades import BoletinNovedadesViewSet
+from apirest.views.publicaciones.diario_asuntos_entrados import DiarioAsuntosEntradosViewSet
 
 router = DefaultRouter()
 
@@ -41,6 +47,12 @@ router.register(r'resultados',ResultadoViewSet)
 router.register(r'citaciones_gpa', CitacionGpaViewSet)
 router.register(r'gpas', GpaViewSet)
 router.register(r'invitados_gpa', CitacionGpaInvitaEntidadViewSet)
+router.register(r'publicacion', PublicacionViewSet)
+router.register(r'tramites_parlamentarios', TramiteParlamentarioViewSet)
+router.register(r'boletin_asuntos_entrados', BoletinAsuntosEntradosViewSet)
+router.register(r'boletin_asuntos_tratados', BoletinAsuntosTratadosViewSet)
+router.register(r'boletin_novedades', BoletinNovedadesViewSet)
+router.register(r'diario_asuntos_entrados', DiarioAsuntosEntradosViewSet)
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)
