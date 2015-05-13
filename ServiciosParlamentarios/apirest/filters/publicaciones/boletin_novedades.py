@@ -4,10 +4,10 @@ from apirest.models.publicaciones.boletin_novedades import BoletinNovedades
 class BoletinNovedadesFilter(django_filters.FilterSet):
     
     tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
-    fecha_cierre = django_filters.DateTimeFilter(name="fecha_cierre")
+    fecha_hora_cierre = django_filters.DateTimeFilter(name="fecha_hora_cierre")
     numero = django_filters.NumberFilter(name="numero")
     tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
             
     class Meta:
         model = BoletinNovedades
-        fields = ['tipo', 'fecha_cierre','numero','tipo_camara']
+        fields = ['tipo', 'fecha_hora_cierre','numero','tipo_camara']
