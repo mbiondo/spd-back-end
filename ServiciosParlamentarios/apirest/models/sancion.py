@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 from apirest.models.expedientes.resultado import Resultado
 
 class Sancion(models.Model):
-    id = models.ForeignKey(Resultado, primary_key=True, db_column='sancion_definitiva_id',unique=True)
+    id = models.ForeignKey(Resultado, primary_key=True, db_column='sancion_id',unique=True)
     nro_ley = models.CharField(max_length=5, blank=True,db_column='nroley')
     sancion_promulgada = models.TextField(blank=True,db_column='sancionpromulgada')
     sancion_vetada = models.TextField(blank=True,db_column='sancionvetada')
