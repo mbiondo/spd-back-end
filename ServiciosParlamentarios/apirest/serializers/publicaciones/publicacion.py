@@ -5,5 +5,4 @@ class PublicacionSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Publicacion
-#         fields = ('id','fk_periodo','fimpresion','tipo','visibilidad')
         
