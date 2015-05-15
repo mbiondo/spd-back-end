@@ -9,7 +9,7 @@ class TramiteParlamentario(Publicacion):
     tramite_parlamentario = models.OneToOneField(Publicacion, parent_link=True)
     fk_boletin_asuntos_entrados = models.ForeignKey(BoletinAsuntosEntrados, db_column='fk_boletin_asuntos_entrados', blank=True, null=True)
     numero = models.SmallIntegerField()
-    fhapertura = models.DateTimeField(blank=True, null=True)
+    fecha_hora_apertura = models.DateTimeField(blank=True, null=True, db_column='fhapertura')
     fecha_hora_cierre = models.DateTimeField(blank=True, null=True, db_column='fhcierre')
 
     class Meta:

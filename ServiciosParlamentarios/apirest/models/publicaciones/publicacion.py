@@ -7,7 +7,7 @@ class Publicacion(models.Model):
     
     publicacion_id = models.IntegerField(primary_key=True)
     fk_periodo = models.ForeignKey(Periodo, db_column='fk_periodo', blank=True, null=True)
-    fimpresion = models.DateField(blank=True, null=True)
+    fecha_impresion = models.DateField(blank=True, null=True,db_column='fimpresion')
     tipo = models.TextField(blank=True)
     visibilidad = models.SmallIntegerField(blank=True, null=True)
 
