@@ -1,9 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
 from apirest.utils.constants import Constants
+from apirest.models.publicaciones.publicacion import Publicacion
 
-class BoletinNovedades(models.Model):
-    id = models.ForeignKey('Publicacion', primary_key=True,db_column='boletin_novedades_id')
+class BoletinNovedades(Publicacion):
+ 
+    boletin_novedades = models.OneToOneField(Publicacion, parent_link=True)
     tipo = models.TextField()
     numero = models.SmallIntegerField(blank=True, null=True)
     fecha_hora_cierre = models.DateTimeField(blank=True, null=True, db_column='fhcierre')
