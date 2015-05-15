@@ -6,7 +6,7 @@ from apirest.utils.constants import Constants
 class Dictamen(models.Model):
     
     id = models.AutoField(primary_key=True,db_column='dictamen_id')
-    despacho = models.ForeignKey(Despacho, db_column='fk_despacho', related_name='despacho')
+    despacho = models.ForeignKey(Despacho, db_column='fk_despacho', related_name='dictamenes')
     tipo = models.TextField(blank=True)
     copete = models.TextField(blank=True)
     accion = models.TextField(blank=True)

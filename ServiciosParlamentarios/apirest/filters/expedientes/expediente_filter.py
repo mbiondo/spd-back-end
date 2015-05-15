@@ -26,13 +26,16 @@ class ExpedienteFilter(django_filters.FilterSet):
     giro_comision_nombre = django_filters.CharFilter(name="giros__comision_nombre")
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
     
+    # Despacho filters
+    dictamen = django_filters.CharFilter(lookup_type='icontains',name="despachos__tipo_camara") 
+    
  
     class Meta:
         model = Expediente
         fields = ['tipo','codigo_origen','tipo_camara','codigo_exp','codigo_num','codigo_anio','fecha_desde',
                   'fecha_hasta','fecha_caducidad','periodo','firm_orden','firm_cargo','firm_cargo_tipo',
                   'firm_persona_fisica_id','firm_nombre_leg_func','giro_comision_id','giro_comision_nombre',
-                  'giro_comision_nombre_corto']
+                  'giro_comision_nombre_corto','dictamen']
         order_by = True
         
 
