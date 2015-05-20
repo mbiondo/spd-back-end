@@ -16,7 +16,7 @@ class Despacho(models.Model):
     tramite_especial = models.TextField(blank=True,db_column='tramiteespecial')
     modificaciones = models.CharField(max_length=1, blank=True,db_column='bmodificaciones')
     texto_legado = models.TextField(blank=True,db_column='textolegado')
-    
+        
     class Meta:
         managed = False
         db_table = Constants().DESPACHO

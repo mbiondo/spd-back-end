@@ -5,4 +5,3 @@ class PublicacionSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Publicacion
-        
