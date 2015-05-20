@@ -26,6 +26,9 @@ from apirest.views.publicaciones.boletin_asuntos_tratados import BoletinAsuntosT
 from apirest.views.publicaciones.boletin_novedades import BoletinNovedadesViewSet
 from apirest.views.publicaciones.diario_asuntos_entrados import DiarioAsuntosEntradosViewSet
 from apirest.views.publicaciones.orden_dia import OrdenDiaViewSet
+from apirest.views.sancion import SancionViewSet
+
+
 router = DefaultRouter()
 
 router.register(r'bloques', bloque.BloqueViewSet)
@@ -52,6 +55,7 @@ router.register(r'boletines_asuntos_tratados', BoletinAsuntosTratadosViewSet)
 router.register(r'boletines_novedades', BoletinNovedadesViewSet)
 router.register(r'diarios_asuntos_entrados', DiarioAsuntosEntradosViewSet)
 router.register(r'ordenes_del_dia', OrdenDiaViewSet)
+router.register(r'sanciones', SancionViewSet)
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)
