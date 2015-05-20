@@ -7,7 +7,7 @@ from apirest.utils.constants import Constants
 class OrdenDia(Publicacion):
     
     orden_dia = models.OneToOneField(Publicacion, parent_link=True)
-    fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
+    despacho = models.ForeignKey(Despacho, db_column='fk_despacho', related_name='ordenes_del_dia')
     anio = models.SmallIntegerField(blank=True, null=True)
     numero = models.SmallIntegerField(blank=True, null=True)
     f113 = models.DateField(blank=True, null=True)

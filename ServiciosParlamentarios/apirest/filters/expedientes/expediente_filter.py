@@ -29,13 +29,16 @@ class ExpedienteFilter(django_filters.FilterSet):
     # Despacho filters
     dictamen = django_filters.CharFilter(lookup_type='icontains',name="despachos__tipo_camara") 
     
- 
+    # Orden del dia filter
+    od_numero = django_filters.NumberFilter(name="despachos__ordenes_del_dia__numero")
+    od_anio = django_filters.NumberFilter(name="despachos__ordenes_del_dia__anio")  
+    
     class Meta:
         model = Expediente
         fields = ['tipo','codigo_origen','tipo_camara','codigo_exp','codigo_num','codigo_anio','fecha_desde',
                   'fecha_hasta','fecha_caducidad','periodo','firm_orden','firm_cargo','firm_cargo_tipo',
                   'firm_persona_fisica_id','firm_nombre_leg_func','giro_comision_id','giro_comision_nombre',
-                  'giro_comision_nombre_corto','dictamen']
+                  'giro_comision_nombre_corto','dictamen','od_numero','od_anio']
         order_by = True
         
 
