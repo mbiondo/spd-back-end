@@ -1,5 +1,6 @@
 from rest_framework.compat import django_filters
 from apirest.models.expedientes.expediente import Expediente
+from apirest.filters.custom_filter_list import CustomFilterList
 
 class ExpedienteFilter(django_filters.FilterSet):
     
@@ -27,18 +28,23 @@ class ExpedienteFilter(django_filters.FilterSet):
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
     
     # Despacho filters
-    dictamen = django_filters.CharFilter(lookup_type='icontains',name="despachos__tipo_camara") 
+    dictamen_camara = django_filters.CharFilter(lookup_type='icontains',name="despachos__tipo_camara")
     
     # Orden del dia filter
     od_numero = django_filters.NumberFilter(name="despachos__ordenes_del_dia__numero")
     od_anio = django_filters.NumberFilter(name="despachos__ordenes_del_dia__anio")  
     
+    # Resultado filters
+    nro_ley = django_filters.CharFilter(name="resultados__sanciones__nro_ley")
+    resultado = CustomFilterList(name="resultados__resultado", lookup_type="in")    
+     
     class Meta:
         model = Expediente
         fields = ['tipo','codigo_origen','tipo_camara','codigo_exp','codigo_num','codigo_anio','fecha_desde',
                   'fecha_hasta','fecha_caducidad','periodo','firm_orden','firm_cargo','firm_cargo_tipo',
                   'firm_persona_fisica_id','firm_nombre_leg_func','giro_comision_id','giro_comision_nombre',
-                  'giro_comision_nombre_corto','dictamen','od_numero','od_anio']
+                  'giro_comision_nombre_corto','dictamen_camara','od_numero','od_anio','resultado', 'nro_ley']
+
         order_by = True
         
 
