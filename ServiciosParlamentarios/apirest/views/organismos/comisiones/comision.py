@@ -1,16 +1,13 @@
 from rest_framework import viewsets
 from apirest.models.organismos.comisiones.comision import Comision
 from apirest.serializers.organismos.comisiones.comision import ComisionSerializer#,\
-#     ComisionHistoricoSerializer, ComisionIntegrantesSerializer
-# from apirest.filters.comision_filter import ComisionDetalleFilter
-from apirest.models.db_views.comision_detalle import ComisionesDetalle
+from apirest.filters.organismos.comisiones.comision_filter import ComisionFilter
        
 class ComisionViewSet(viewsets.ReadOnlyModelViewSet):
   
     queryset = Comision.objects.all()
     serializer_class = ComisionSerializer
-    #filter_class = ComisionFilter
-    filter_fields = ('id',)
+    filter_class = ComisionFilter
     
     def list(self, request, *args, **kwargs):
         """
