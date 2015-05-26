@@ -5,8 +5,8 @@ class DespachoFilter(django_filters.FilterSet):
     
     # Dictamen filters.
     tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
-    numero = django_filters.CharFilter(lookup_type='icontains',name="numero")
-    anio = django_filters.CharFilter(lookup_type='icontains',name="anio")
+    numero = django_filters.NumberFilter(name="numero")
+    anio = django_filters.NumberFilter(name="anio")
     tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
       
     class Meta:

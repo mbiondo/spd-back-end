@@ -1,4 +1,4 @@
-from rest_framework import viewsets, filters
+from rest_framework import viewsets
 from apirest.models.organismos.despacho import Despacho
 from apirest.serializers.organismos.despacho import DespachoSerializer
 from apirest.filters.organismos.despacho_filter import DespachoFilter
