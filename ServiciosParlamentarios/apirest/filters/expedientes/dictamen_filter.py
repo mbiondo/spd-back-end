@@ -11,10 +11,10 @@ class DictamenFilter(django_filters.FilterSet):
         
     # Despacho Filters. 
     # Obtener todos los dictamenes de un despacho
-    despacho_numero = django_filters.CharFilter(name="despacho__numero")    
-    despacho_tipo_camara = django_filters.CharFilter(name="despacho__tipo_camara")
-    despacho_tipo = django_filters.CharFilter(name="despacho__tipo")
-    despacho_anio = django_filters.CharFilter(name="despacho__anio")
+    despacho_numero = django_filters.NumberFilter(name="despacho__numero")    
+    despacho_tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="despacho__tipo_camara")
+    despacho_tipo = django_filters.CharFilter(lookup_type='icontains',name="despacho__tipo")
+    despacho_anio = django_filters.NumberFilter(name="despacho__anio")
       
     class Meta:
         model = Dictamen
