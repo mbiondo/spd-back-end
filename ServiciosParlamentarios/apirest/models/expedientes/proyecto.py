@@ -14,7 +14,7 @@ class Proyecto(Expediente):
     subtipo_proy = models.TextField(blank=True,db_column='subtipoproy')
     codigo_digesto = models.CharField(max_length=6, blank=True,db_column='codigodigesto')
     firmantes = models.ManyToManyField('Firmantes', related_name='firmantes')
-    giros = models.ManyToManyField('Giros', related_name='giros')
+#     giros = models.ManyToManyField('giros', related_name='giros')
     resultados = models.ManyToManyField('Resultado',through=ResultadoSobreExpediente, related_name='resultados')
     despachos = models.ManyToManyField('Despacho',through=ExpedienteOriginaDespacho, related_name='despachos')
     

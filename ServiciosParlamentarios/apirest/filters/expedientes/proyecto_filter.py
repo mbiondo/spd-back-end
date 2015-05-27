@@ -9,6 +9,7 @@ class ProyectoFilter(django_filters.FilterSet):
     estado = django_filters.CharFilter(lookup_type='icontains',name="estado")
     tipo_proy = django_filters.CharFilter(lookup_type='icontains',name="tipo_proy")
     subtipo_proy = django_filters.CharFilter(lookup_type='icontains',name="subtipo_proy")
+    codigo_anio = django_filters.CharFilter(lookup_type='icontains',name="codigo_anio")
 
     # Orden del dia filter
     od_numero = django_filters.NumberFilter(name="despachos__ordenes_del_dia__numero")
@@ -22,10 +23,9 @@ class ProyectoFilter(django_filters.FilterSet):
     dictamen_camara = django_filters.CharFilter(lookup_type='icontains',name="despachos__tipo_camara")
     
     # Giro filters
-#     giro_comision_id = django_filters.CharFilter(name="giros__comision_id")
-#     giro_comision_nombre = django_filters.CharFilter(name="giros__comision_nombre")
-#     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")  
-#     codigo_anio = django_filters.CharFilter(lookup_type='icontains',name="codigo_anio")
+    giro_comision_id = django_filters.CharFilter(name="giros__comision_id")
+    giro_comision_nombre = django_filters.CharFilter(name="giros__comision_nombre")
+    giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
 
     # Firmantes filters
 #     firm_persona_fisica_id = django_filters.CharFilter(name="firmantes__persona_fisica_id")
@@ -38,5 +38,5 @@ class ProyectoFilter(django_filters.FilterSet):
         model = Proyecto
         fields = ['fk_proyecto_reproduce','estado','tipo_proy','subtipo_proy','codigo_digesto','codigo_exp','codigo_num','codigo_anio'
                 ,'codigo_origen','tipo_camara','tipo','fecha_caducidad','fecha','periodo','od_numero','od_anio','nro_ley','resultado'
-                ,'dictamen_camara'] 
+                ,'dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto'] 
         order_by = True
