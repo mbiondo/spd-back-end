@@ -5,7 +5,7 @@ class OrdenDiaSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = OrdenDia
-        fields = ('publicacion_id','periodo','fecha_impresion','tipo','visibilidad','despacho','numero','anio','f113')
+        fields = ('publicacion_id','periodo','fecha_impresion','tipo','visibilidad','despacho','numero','anio','fecha_art113')
         
 # class OrdenDiaSerializerId(serializers.ModelSerializer):
 #     

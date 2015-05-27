@@ -10,7 +10,7 @@ class OrdenDia(Publicacion):
     despacho = models.ForeignKey(Despacho, db_column='fk_despacho', related_name='ordenes_del_dia')
     anio = models.SmallIntegerField(blank=True, null=True)
     numero = models.SmallIntegerField(blank=True, null=True)
-    f113 = models.DateField(blank=True, null=True)
+    fecha_art113 = models.DateField(blank=True, null=True, db_column='f113')
     
     class Meta:
         managed = False
