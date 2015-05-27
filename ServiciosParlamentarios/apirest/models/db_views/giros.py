@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
 from django.db import models
 from apirest.utils.constants import Constants
-from apirest.models.expedientes.expediente import Expediente
+from apirest.models.expedientes.proyecto import Proyecto
 
 class Giros(models.Model):
-    expediente_id = models.ForeignKey(Expediente, db_column='expediente_id',related_name='giros')
+    expediente_id = models.ForeignKey(Proyecto, db_column='expediente_id',related_name='giros')
     comision_id = models.IntegerField(blank=True, null=True)
     giro_id = models.IntegerField(blank=True, null=True, primary_key=True)
     codigo_exp = models.CharField(max_length=14, blank=True,db_column='codigoexp')
