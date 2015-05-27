@@ -1,9 +1,14 @@
 from rest_framework import serializers
 from apirest.models.individuos.persona_fisica import PersonaFisica
 from apirest.serializers.individuos.persona_fisica_hist import PersonaFisicaHistSerializer
-from apirest.serializers.individuos.legislador import LegisladorSerializer
-from apirest.serializers.individuos.funcionario import FuncionarioSerializer
-import datetime
+class PersonaFisicaSerializer(serializers.ModelSerializer):
+    
+    historico = PersonaFisicaHistSerializer(many = True)
+    
+    class Meta:
+        model = PersonaFisica 
+        fields = ('id','tipo_doc','numero_doc','fecha_nacimiento','historico')
+
 
 # class PersonaFisicaActualSerializer(serializers.ModelSerializer):
 #     
@@ -38,33 +43,4 @@ import datetime
 #         fields = ('persona_fisica_id','tipodoc','numerodoc','fechanacimiento','datos_actuales','cargo_actual')
 # 
 # 
-# class PersonaFisicaFullSerializer(serializers.ModelSerializer):
-#     
-#     historial = PersonaFisicaHistSerializer()
-#     cargos = serializers.SerializerMethodField('get_hijo')
-# 
-#     def get_hijo(self, personafisica):
-#         cargos = []
-# 
-#         for c in personafisica.cargo.all():
-#             if c.selector == 'LEGISLADOR':
-#                 cargos.append(LegisladorSerializer(c.legislador).data)
-#             elif c.selector == 'FUNCIONARIO':
-#                 cargos.append(FuncionarioSerializer(c.funcionario).data)
-#                              
-#         return cargos    
-#     
-#     class Meta:
-#         model = PersonaFisica 
-#         fields = ('persona_fisica_id','tipodoc','numerodoc','fechanacimiento','cargos','historial')
-#         depth=1
-#         
-#         
 
-class PersonaFisicaSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = PersonaFisica 
-#         fields = ('id','tipodoc','numerodoc','fechanacimiento')
-
-        

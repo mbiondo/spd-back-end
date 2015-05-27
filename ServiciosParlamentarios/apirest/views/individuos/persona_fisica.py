@@ -3,6 +3,7 @@ from apirest.models.individuos.persona_fisica import PersonaFisica
 # from apirest.serializers.individuos.persona_fisica import PersonaFisicaFullSerializer,\
 #     PersonaFisicaActualSerializer
 from apirest.serializers.individuos.persona_fisica import PersonaFisicaSerializer     
+from apirest.filters.individuos.persona_fisica_filter import PersonaFisicaFilter
 # from apirest.filters.persona_fisica_filter import PersonaFisicaFilter
 # from django.db.models import Q
 # import datetime
@@ -12,6 +13,7 @@ class PersonaFisicaViewSet(viewsets.ReadOnlyModelViewSet):
     model = PersonaFisica
     queryset = PersonaFisica.objects.all()
     serializer_class = PersonaFisicaSerializer
+    filter_class = PersonaFisicaFilter
     
     def list(self, request, *args, **kwargs):
         """

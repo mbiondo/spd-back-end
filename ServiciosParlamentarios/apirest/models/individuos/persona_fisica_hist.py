@@ -1,12 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
-from apirest.models.individuos.persona_fisica import PersonaFisica
 from apirest.models.expedientes.expediente import Expediente
 from apirest.utils.constants import Constants
  
 class PersonaFisicaHist(models.Model):
     id = models.AutoField(primary_key=True, db_column='persona_fisica_hist_id')
-    fk_persona_fisica = models.ForeignKey(PersonaFisica, db_column='fk_persona_fisica',related_name='historial')
+    fk_persona_fisica = models.ForeignKey('PersonaFisica', db_column='fk_persona_fisica', related_name='historico')
     fk_expediente = models.ForeignKey(Expediente, db_column='fk_expediente', blank=True, null=True)
     nombre = models.TextField(blank=True)
     apellido = models.TextField(blank=True)

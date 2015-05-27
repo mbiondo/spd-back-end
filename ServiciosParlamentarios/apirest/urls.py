@@ -8,7 +8,6 @@ from apirest.views.organismos.bloques import bloque
 from rest_framework_nested import routers
 from apirest.views.firmantes import FirmantesViewSet
 from apirest.views.giros import GirosViewSet
-from apirest.views.persona_fisica_detalle import PersonaFisicaDetalleViewSet
 from apirest.views.proyectos import ProyectosViewSet
 from apirest.views.citacion import CitacionViewSet
 from apirest.views.expedientes.dictamen import DictamenViewSet
@@ -40,7 +39,6 @@ router.register(r'dictamenes', DictamenViewSet)
 router.register(r'expedientes', expediente.ExpedienteViewSet)
 router.register(r'legisladores', legislador.LegisladorViewSet)
 router.register(r'personas_fisicas', persona_fisica.PersonaFisicaViewSet)
-router.register(r'personas_fisicas_detalle', PersonaFisicaDetalleViewSet)
 router.register(r'proyectos', ProyectosViewSet)
 router.register(r'lugares', LugarViewSet)
 router.register(r'estados', AuxEstadoViewSet)
