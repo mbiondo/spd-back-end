@@ -59,14 +59,12 @@ router.register(r'proyectos',ProyectoViewSet)
 # router.register(r'comisiones_detalle', comision.ComisionDetalleViewSet)
 # router.register(r'bloques_detalle', bloque.BloqueDetalleViewSet)
 
-
-# proyecto_router = routers.NestedSimpleRouter(router, r'proyectos', lookup='proyectos')
-# proyecto_router.register(r'firmantes',FirmantesViewSet)
-# proyecto_router.register(r'giros',GirosViewSet)
-
-
+# 
+proyecto_router = routers.NestedSimpleRouter(router, r'proyectos', lookup='proyectos')
+proyecto_router.register(r'firmantes',FirmantesViewSet)
+proyecto_router.register(r'giros',GirosViewSet)
 
 urlpatterns = patterns('apirest.views',
     url(r'^', include(router.urls)),
-#     url(r'^', include(proyecto_router.urls)),
+    url(r'^', include(proyecto_router.urls)),
 )

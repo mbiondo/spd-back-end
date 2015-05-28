@@ -28,15 +28,16 @@ class ProyectoFilter(django_filters.FilterSet):
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
 
     # Firmantes filters
-#     firm_persona_fisica_id = django_filters.CharFilter(name="firmantes__persona_fisica_id")
-#     firm_orden = django_filters.CharFilter(name="firmantes__orden")
-#     firm_cargo = django_filters.CharFilter(name="firmantes__cargo")
-#     firm_cargo_tipo = django_filters.CharFilter(name="firmantes__cargo_tipo")
-#     firm_nombre_leg_func = django_filters.CharFilter(name="firmantes__nombre_leg_func")
+    firm_persona_fisica_id = django_filters.CharFilter(name="firmantes__persona_fisica_id")
+    firm_orden = django_filters.CharFilter(name="firmantes__orden")
+    firm_cargo = django_filters.CharFilter(name="firmantes__cargo")
+    firm_cargo_tipo = django_filters.CharFilter(name="firmantes__cargo_tipo")
+    firm_nombre_leg_func = django_filters.CharFilter(name="firmantes__nombre_leg_func")
     
     class Meta:
         model = Proyecto
         fields = ['fk_proyecto_reproduce','estado','tipo_proy','subtipo_proy','codigo_digesto','codigo_exp','codigo_num','codigo_anio'
                 ,'codigo_origen','tipo_camara','tipo','fecha_caducidad','fecha','periodo','od_numero','od_anio','nro_ley','resultado'
-                ,'dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto'] 
+                ,'dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto','firm_persona_fisica_id'
+                ,'firm_orden','firm_cargo','firm_cargo_tipo','firm_nombre_leg_func'] 
         order_by = True

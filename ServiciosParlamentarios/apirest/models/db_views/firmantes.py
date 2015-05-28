@@ -5,7 +5,8 @@ from apirest.utils.constants import Constants
 from apirest.models.expedientes.proyecto import Proyecto
 
 class Firmantes(models.Model):
-    proyecto_id = models.ForeignKey(Proyecto, db_column='expediente_id',related_name='firmantes')
+    
+    proyecto = models.ForeignKey(Proyecto, db_column='expediente_id',related_name='firmantes')
     persona_fisica_id = models.IntegerField(blank=True, null=True,primary_key=True)
     cargo_persona_fisica_id = models.IntegerField(blank=True, null=True)
     cargo_tipo = models.TextField(blank=True)

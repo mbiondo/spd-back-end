@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from apirest.models.expedientes.proyecto import Proyecto
-from apirest.serializers.db_views.giros import GirosSerializer
 
 class ProyectoSerializer(serializers.ModelSerializer):
     

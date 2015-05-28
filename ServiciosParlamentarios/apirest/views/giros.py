@@ -7,18 +7,18 @@ class GirosViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Giros.objects.all()
     serializer_class = GirosSerializer
                     
-    def list(self, request, expediente_pk=None):
+    def list(self, request, proyectos_pk=None):
         """
         Lista los giros de un expediente determinado.
         """
-        self.queryset = self.queryset.filter(expediente_id = expediente_pk)
+        self.queryset = self.queryset.filter(proyecto_id = proyectos_pk)
         
-        return viewsets.ReadOnlyModelViewSet.list(self, request, expediente_pk)
+        return viewsets.ReadOnlyModelViewSet.list(self, request, proyectos_pk)
     
-    def retrieve(self, request, pk=None, expediente_pk=None):        
+    def retrieve(self, request, pk=None, proyectos_pk=None):        
         """
         Devuelve los datos de un giro para el expediente solicitado.
         """
-        self.queryset = self.queryset.filter(giro_id=pk, expediente_id = expediente_pk)
+        self.queryset = self.queryset.filter(giro_id=pk, proyecto_id = proyectos_pk)
                 
-        return viewsets.ReadOnlyModelViewSet.retrieve(self, request, pk, expediente_pk)
+        return viewsets.ReadOnlyModelViewSet.retrieve(self, request, pk, proyectos_pk)

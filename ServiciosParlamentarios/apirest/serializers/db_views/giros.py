@@ -5,4 +5,4 @@ class GirosSerializer(serializers.ModelSerializer):
         
     class Meta:
         model = Giros
-        fields = ('expediente_id','comision_id','giro_id','codigo_exp','comision_nombre','comision_nombre_corto','order_giro')
+        fields = ('proyecto','comision_id','giro_id','codigo_exp','comision_nombre','comision_nombre_corto','order_giro')
