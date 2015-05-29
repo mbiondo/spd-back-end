@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from apirest.models.citacion import Citacion
+from apirest.serializers.organismos.comisiones.comision import ComisionSerializer 
 
 class CitacionSerializer(serializers.ModelSerializer):
 
@@ -10,4 +11,4 @@ class CitacionSerializer(serializers.ModelSerializer):
     class Meta():
         model = Citacion
         fields = ('id','fk_comision_cabecera','fk_lugar','fk_estado','fecha','resumen','observaciones',
-                  'visibilidad','reunion_conjunta', 'comisiones','invitados')
+                  'visibilidad','reunion_conjunta','comisiones','invitados')
