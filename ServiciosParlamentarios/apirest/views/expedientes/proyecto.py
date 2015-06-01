@@ -10,8 +10,7 @@ class ProyectoViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProyectoSerializer
     filter_class = ProyectoFilter
     ordering_fields = '__all__'
-    search_fields = ('id', 'codigo_exp', 'codigo_num', 'codigo_origen', 'codigo_anio', 'sumario', 'tipo_camara','tipo', 
-                     'codigo_estado', 'fecha_caducidad','fecha', 'periodo', 'titulo', 'voces',)
+    search_fields = ( 'sumario', 'titulo', 'voces',)
         
     
     def list(self, request, *args, **kwargs):
