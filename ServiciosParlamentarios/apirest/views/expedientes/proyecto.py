@@ -16,22 +16,13 @@ class ProyectoViewSet(viewsets.ReadOnlyModelViewSet):
     
     def list(self, request, *args, **kwargs):
         """
-        Lista todos los expedientes.
+        Lista todos los proyectos.
         \n
-        Filtros posibles:\n
-        -tipo=[PROYECTO,COMUNICACION,OBSERVACION,COMUNICACION_PEN]\n
-        -tipo_proy=[RESOLUCION,DECRETO,LEY,COMUNICACION,DECLARACION]\n
-        -periodo=[117,118...]\n
-        -fecha_desde=[AAAA-MM-DD]\n
-        -fecha_hasta=[AAAA-MM-DD]\n
-        -firm_orden=[1,2..]\n
-        -firm_cargo_pf_id=[persona_fisica_id]\n
-        -firm_apellido=[apellido del firmante]
         """
         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
     
     def retrieve(self, request, *args, **kwargs):
         """
-        Devuelve el expediente solicitado por id.
+        Devuelve el proyecto solicitado por id.
         """
         return viewsets.ReadOnlyModelViewSet.retrieve(self, request, *args, **kwargs)
