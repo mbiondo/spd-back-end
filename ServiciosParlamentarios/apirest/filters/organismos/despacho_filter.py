@@ -1,9 +1,11 @@
 from rest_framework.compat import django_filters
 from apirest.models.organismos.despacho import Despacho
+from apirest.filters.custom_filter_list import CustomFilterList
 
 class DespachoFilter(django_filters.FilterSet):
     
-    # Dictamen filters.
+    # Despacho filters.
+    id = CustomFilterList(name="id", lookup_type="in")
     tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
     numero = django_filters.NumberFilter(name="numero")
     anio = django_filters.NumberFilter(name="anio")
@@ -11,7 +13,7 @@ class DespachoFilter(django_filters.FilterSet):
       
     class Meta:
         model = Despacho
-        fields = ['tipo','numero','anio','tipo_camara',]
+        fields = ['id','tipo','numero','anio','tipo_camara',]
         order_by = True
         
         

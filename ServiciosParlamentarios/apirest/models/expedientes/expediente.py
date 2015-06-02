@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 from django.db import models       
 from apirest.utils.constants import Constants
-from apirest.models.expedientes.expediente_origina_despacho import ExpedienteOriginaDespacho
-from apirest.models.expedientes.resultado_sobre_expediente import ResultadoSobreExpediente
+# from apirest.models.expedientes.expediente_origina_despacho import ExpedienteOriginaDespacho
+# from apirest.models.expedientes.resultado_sobre_expediente import ResultadoSobreExpediente
 
 class Expediente(models.Model):
     id = models.AutoField(primary_key=True,db_column='expediente_id')

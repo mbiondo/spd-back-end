@@ -1,6 +1,7 @@
 from rest_framework.compat import django_filters
 from django.db.models import Q
 from apirest.models.organismos.comisiones.comision import Comision
+from apirest.filters.custom_filter_list import CustomFilterList
        
 def fecha_filter( queryset, value):
 
@@ -13,6 +14,7 @@ def fecha_filter( queryset, value):
 
 class ComisionFilter(django_filters.FilterSet):
     
+    id = CustomFilterList(name="id", lookup_type="in")
     caracter = django_filters.CharFilter(name='caracter')
     tipo_camara = django_filters.CharFilter(name='tipo_camara')
     fecha = django_filters.CharFilter(action=fecha_filter)
@@ -24,4 +26,4 @@ class ComisionFilter(django_filters.FilterSet):
     
     class Meta:
         model = Comision
-        fields = [ 'caracter', 'tipo_camara','fecha','fecha_desde', 'fecha_hasta', 'nombre']
+        fields = [ 'id','caracter', 'tipo_camara','fecha','fecha_desde', 'fecha_hasta', 'nombre']

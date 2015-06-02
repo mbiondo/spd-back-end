@@ -2,6 +2,7 @@ from rest_framework.compat import django_filters
 from apirest.models.individuos.persona_fisica import PersonaFisica
 from django.db.models import Q
 import datetime
+from apirest.filters.custom_filter_list import CustomFilterList
 
 # def cargo_filter( queryset, value):
 #     
@@ -21,7 +22,7 @@ import datetime
      
 class PersonaFisicaFilter(django_filters.FilterSet):
 #     cargo = django_filters.CharFilter(action=cargo_filter)
- 
+    id = CustomFilterList(name="id", lookup_type="in")
     numero_doc = django_filters.CharFilter(lookup_type='icontains',name="numero_doc")
     
     #historico
@@ -34,4 +35,4 @@ class PersonaFisicaFilter(django_filters.FilterSet):
   
     class Meta:
         model = PersonaFisica
-        fields = ['numero_doc','nombre','apellido','tratamiento','localidad','fecha_desde','fecha_hasta']
+        fields = ['id', 'numero_doc','nombre','apellido','tratamiento','localidad','fecha_desde','fecha_hasta']

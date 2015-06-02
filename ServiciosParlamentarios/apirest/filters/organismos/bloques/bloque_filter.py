@@ -1,15 +1,17 @@
 from rest_framework.compat import django_filters
 from apirest.models.organismos.bloques.bloque import Bloque
 from django.db.models import Q
+from apirest.filters.custom_filter_list import CustomFilterList
 
 class BloqueFilter(django_filters.FilterSet):
-      
+    
+    id = CustomFilterList(name="id", lookup_type="in")
     nombre = django_filters.CharFilter(lookup_type='icontains',name="nombre")
     tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
     
     class Meta:
         model = Bloque
-        fields = ['nombre','tipo_camara']
+        fields = ['id', 'nombre','tipo_camara']
         
 # def fecha_filter( queryset, value):
 # 
