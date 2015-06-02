@@ -1,25 +1,14 @@
 from rest_framework.compat import django_filters
 from apirest.models.expedientes.expediente import Expediente
-from apirest.filters.custom_filter_list import CustomFilterList
 
 class ExpedienteFilter(django_filters.FilterSet):
     
-    tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
-    codigo_origen = django_filters.CharFilter(lookup_type='icontains',name="codigo_origen")
-    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
-    codigo_exp = django_filters.CharFilter(lookup_type='icontains',name="codigo_exp")
-    codigo_num = django_filters.CharFilter(lookup_type='icontains',name="codigo_num")
-    codigo_anio = django_filters.CharFilter(lookup_type='icontains',name="codigo_anio")
     fecha_caducidad = django_filters.DateFilter(name="fecha_caducidad")
-    fecha_desde = django_filters.DateFilter(name="fecha", lookup_type='gte')
-    fecha_hasta = django_filters.DateFilter(name="fecha", lookup_type='lte')
     periodo = django_filters.NumberFilter(name="periodo")
-
      
     class Meta:
         model = Expediente
-        fields = ['tipo','codigo_origen','tipo_camara','codigo_exp','codigo_num','codigo_anio','fecha_desde',
-                  'fecha_hasta','fecha_caducidad','periodo']
+        fields = ['fecha_caducidad','periodo']
         order_by = True
         
 
