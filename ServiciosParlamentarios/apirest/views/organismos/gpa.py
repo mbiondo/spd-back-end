@@ -1,6 +1,7 @@
 from rest_framework import viewsets
 from apirest.models.organismos.grupo_parlamentario_amistad import GrupoParlamentarioAmistad
 from apirest.serializers.organismos.grupo_parlamentario_amistad import GrupoParlamentarioAmistadSerializer
+from apirest.filters.organismos.gpa_filter import GrupoParlamentarioAmistadFilter
 
 
 class GpaViewSet(viewsets.ReadOnlyModelViewSet):
@@ -8,6 +9,7 @@ class GpaViewSet(viewsets.ReadOnlyModelViewSet):
     model = GrupoParlamentarioAmistad
     queryset = GrupoParlamentarioAmistad.objects.all()
     serializer_class = GrupoParlamentarioAmistadSerializer
+    filter_class = GrupoParlamentarioAmistadFilter
     
     def list(self, request, *args, **kwargs):
         """
