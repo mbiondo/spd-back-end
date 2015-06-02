@@ -1,25 +1,15 @@
 from rest_framework.compat import django_filters
 from apirest.models.expedientes.proyecto import Proyecto
 from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.expedientes.expediente_filter import ExpedienteFilter
 
-class ProyectoFilter(django_filters.FilterSet):
-    
-    id = CustomFilterList(name="id", lookup_type="in")
-    tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
-    codigo_origen = django_filters.CharFilter(lookup_type='icontains',name="codigo_origen")
-    tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
-    codigo_exp = django_filters.CharFilter(lookup_type='icontains',name="codigo_exp")
-    codigo_num = django_filters.CharFilter(lookup_type='icontains',name="codigo_num")
-    codigo_anio = django_filters.CharFilter(lookup_type='icontains',name="codigo_anio")
-    fecha_desde = django_filters.DateFilter(name="fecha", lookup_type='gte')
-    fecha_hasta = django_filters.DateFilter(name="fecha", lookup_type='lte')
+class ProyectoFilter(ExpedienteFilter):
     
     codigo_digesto = django_filters.CharFilter(lookup_type='icontains',name="codigo_digesto")
     proyecto_reproduce = django_filters.NumberFilter(name="fk_proyecto_reproduce")
     estado = django_filters.CharFilter(lookup_type='icontains',name="estado")
     tipo_proy = django_filters.CharFilter(lookup_type='icontains',name="tipo_proy")
     subtipo_proy = django_filters.CharFilter(lookup_type='icontains',name="subtipo_proy")
-    codigo_anio = django_filters.CharFilter(lookup_type='icontains',name="codigo_anio")
 
     # Orden del dia filter
     od_numero = django_filters.NumberFilter(name="despachos__ordenes_del_dia__numero")
@@ -46,8 +36,7 @@ class ProyectoFilter(django_filters.FilterSet):
     
     class Meta:
         model = Proyecto
-        fields = ['id','fk_proyecto_reproduce','estado','tipo_proy','subtipo_proy','codigo_digesto','codigo_exp','codigo_num','codigo_anio'
-                ,'codigo_origen','tipo_camara','tipo','fecha_caducidad','fecha_desde','fecha_hasta','periodo','od_numero','od_anio','nro_ley','resultado'
-                ,'dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto','firm_persona_fisica_id'
-                ,'firm_orden','firm_cargo','firm_cargo_tipo','firm_nombre_leg_func'] 
+        fields = ['codigo_digesto','proyecto_reproduce','estado','tipo_proy','subtipo_proy','od_numero','od_anio'
+                ,'nro_ley','resultado','dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto'
+                ,'firm_persona_fisica_id','firm_orden','firm_cargo','firm_cargo_tipo','firm_nombre_leg_func'] 
         order_by = True
