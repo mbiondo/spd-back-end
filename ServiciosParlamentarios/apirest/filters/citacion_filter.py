@@ -6,7 +6,7 @@ class CitacionFilter(django_filters.FilterSet):
     
     id = CustomFilterList(name="id", lookup_type="in")
     lugar = django_filters.CharFilter(lookup_type='icontains',name="fk_lugar__nombre")
-    estado = django_filters.CharFilter(lookup_type='icontains',name="fk_estado__valor")
+    estado = django_filters.CharFilter(lookup_type='icontains',name="estado__valor")
     
     visibilidad = django_filters.NumberFilter(name="visibilidad")
     
