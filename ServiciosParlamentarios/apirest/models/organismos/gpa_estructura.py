@@ -4,7 +4,7 @@ from apirest.utils.constants import Constants
 
 class GpaEstructura(models.Model):
     id = models.IntegerField(primary_key=True, db_column='gpa_estructura_id')
-    fk_grupo_parlamentario_amistad = models.ForeignKey('GrupoParlamentarioAmistad', db_column='fk_grupo_parlamentario_amistad')
+    fk_grupo_parlamentario_amistad = models.ForeignKey('GrupoParlamentarioAmistad', db_column='fk_grupo_parlamentario_amistad', related_name='estructura')
     fk_legislador = models.ForeignKey('Legislador', db_column='fk_legislador')
     cargo = models.TextField(blank=True)
     cargo_muestra_como = models.TextField(blank=True,db_column='cargomuestracomo')
