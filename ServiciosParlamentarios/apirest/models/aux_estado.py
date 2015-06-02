@@ -14,4 +14,7 @@ class AuxEstado(models.Model):
     class Meta:
         managed = False
         db_table = Constants().AUX_ESTADO
-        app_label = Constants().APIREST    
+        app_label = Constants().APIREST
+        
+    def __unicode__(self):
+        return '%s' % (self.valor)

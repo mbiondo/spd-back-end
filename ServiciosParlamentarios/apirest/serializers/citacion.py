@@ -7,8 +7,9 @@ class CitacionSerializer(serializers.ModelSerializer):
 #     fk_comision_cabecera = ComisionSerializer()
 #     comisiones = ComisionSerializer(many=True)
 #     comisiones = ComisionesActualesSerializer(many=True)
+    estado = serializers.StringRelatedField()
     
     class Meta():
         model = Citacion
-        fields = ('id','fk_comision_cabecera','fk_lugar','fk_estado','fecha','resumen','observaciones',
+        fields = ('id','fk_comision_cabecera','fk_lugar','estado','fecha','resumen','observaciones',
                   'visibilidad','reunion_conjunta','comisiones','invitados')
