@@ -1,10 +1,10 @@
 from rest_framework.compat import django_filters
 from apirest.models.publicaciones.tramite_parlamentario import TramiteParlamentario
-from apirest.filters.publicaciones.publicacion import Publicacion
+from apirest.filters.custom_filter_list import CustomFilterList
 
 class TramiteParlamentarioFilter(django_filters.FilterSet):
-    
-    
+
+    id = CustomFilterList(name="id", lookup_type="in")        
     fecha_hora_apertura = django_filters.DateTimeFilter(name="fecha_hora_apertura")
     fecha_hora_cierre = django_filters.DateTimeFilter(name="fecha_hora_cierre")
     numero = django_filters.NumberFilter(name="numero")
@@ -13,4 +13,4 @@ class TramiteParlamentarioFilter(django_filters.FilterSet):
             
     class Meta:
         model = TramiteParlamentario
-        fields = ['fecha_hora_apertura', 'fecha_hora_cierre','numero','visibilidad','fecha_impresion']
+        fields = ['id','fecha_hora_apertura', 'fecha_hora_cierre','numero','visibilidad','fecha_impresion']

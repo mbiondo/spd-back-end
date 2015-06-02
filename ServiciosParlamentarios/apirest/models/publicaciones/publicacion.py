@@ -5,7 +5,7 @@ from apirest.models.periodo import Periodo
 
 class Publicacion(models.Model):
     
-    publicacion_id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True, db_column='publicacion_id')
     periodo = models.ForeignKey(Periodo, db_column='fk_periodo', blank=True, null=True)
     fecha_impresion = models.DateField(blank=True, null=True,db_column='fimpresion')
     tipo = models.TextField(blank=True)

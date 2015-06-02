@@ -3,7 +3,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.publicaciones.publicacion import Publicacion
 
-class BoletinAsuntosTratados(models.Model):
+class BoletinAsuntosTratados(Publicacion):
     
     boletin_asuntos_tratados = models.OneToOneField(Publicacion, parent_link=True)
     numero = models.SmallIntegerField(blank=True, null=True)

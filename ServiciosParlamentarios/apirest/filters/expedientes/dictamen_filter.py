@@ -1,9 +1,11 @@
 from rest_framework.compat import django_filters
 from apirest.models.expedientes.dictamen import Dictamen
+from apirest.filters.custom_filter_list import CustomFilterList
 
 class DictamenFilter(django_filters.FilterSet):
     
     # Dictamen filters.
+    id = CustomFilterList(name="id", lookup_type="in")
     tipo = django_filters.CharFilter(lookup_type='icontains',name="tipo")
     accion = django_filters.CharFilter(lookup_type='icontains',name="accion")
     con_modificacion = django_filters.CharFilter(lookup_type='icontains',name="con_modificacion")
@@ -18,5 +20,5 @@ class DictamenFilter(django_filters.FilterSet):
       
     class Meta:
         model = Dictamen
-        fields = ['tipo','accion','con_modificacion','despacho_tipo_camara','despacho_tipo','despacho_numero']
+        fields = ['id','tipo','accion','con_modificacion','despacho_tipo_camara','despacho_tipo','despacho_numero']
         order_by = True
