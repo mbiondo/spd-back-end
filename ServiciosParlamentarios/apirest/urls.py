@@ -25,7 +25,7 @@ from apirest.views.publicaciones.diario_asuntos_entrados import DiarioAsuntosEnt
 from apirest.views.publicaciones.orden_dia import OrdenDiaViewSet
 from apirest.views.sancion import SancionViewSet
 from apirest.views.expedientes.proyecto import ProyectoViewSet
-
+from apirest.views.expedientes.comunicacion import ComunicacionViewSet
 
 router = DefaultRouter()
 
@@ -52,6 +52,7 @@ router.register(r'diarios_asuntos_entrados', DiarioAsuntosEntradosViewSet)
 router.register(r'ordenes_del_dia', OrdenDiaViewSet)
 router.register(r'sanciones', SancionViewSet)
 router.register(r'proyectos',ProyectoViewSet)
+router.register(r'comunicaciones',ComunicacionViewSet)
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)
