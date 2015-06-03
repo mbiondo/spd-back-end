@@ -6,7 +6,7 @@ from apirest.models.expedientes.proyecto import Proyecto
 class Giros(models.Model):
     proyecto = models.ForeignKey(Proyecto, db_column='expediente_id',related_name='giros')
     comision_id = models.IntegerField(blank=True, null=True)
-    giro_id = models.IntegerField(blank=True, null=True, primary_key=True)
+    id = models.IntegerField(blank=True, null=True, primary_key=True, db_column='giro_id')
     codigo_exp = models.CharField(max_length=14, blank=True,db_column='codigoexp')
     comision_nombre = models.TextField(blank=True)
     comision_nombre_corto = models.TextField(blank=True)

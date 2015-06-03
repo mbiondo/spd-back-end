@@ -7,7 +7,7 @@ from apirest.models.expedientes.proyecto import Proyecto
 class Firmantes(models.Model):
     
     proyecto = models.ForeignKey(Proyecto, db_column='expediente_id',related_name='firmantes')
-    persona_fisica_id = models.IntegerField(blank=True, null=True,primary_key=True)
+    id = models.IntegerField(blank=True, null=True,primary_key=True,db_column='persona_fisica_id')
     cargo_persona_fisica_id = models.IntegerField(blank=True, null=True)
     cargo_tipo = models.TextField(blank=True)
     codigo_exp = models.CharField(max_length=14, blank=True,db_column='codigoexp')

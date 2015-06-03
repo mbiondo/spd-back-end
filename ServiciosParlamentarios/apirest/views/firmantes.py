@@ -21,7 +21,7 @@ class FirmantesViewSet(viewsets.ReadOnlyModelViewSet):
         """
         Devuelve los datos de un firmante para el expediente solicitado.
         """
-        self.queryset = self.queryset.filter(persona_fisica_id=pk, proyecto_id = proyectos_pk)
+        self.queryset = self.queryset.filter(id=pk, proyecto_id = proyectos_pk)
                   
         return viewsets.ReadOnlyModelViewSet.retrieve(self, request, pk, proyectos_pk)
     

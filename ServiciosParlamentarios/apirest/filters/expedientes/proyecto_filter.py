@@ -28,7 +28,7 @@ class ProyectoFilter(ExpedienteFilter):
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
 
     # Firmantes filters
-    firm_persona_fisica_id = django_filters.CharFilter(name="firmantes__persona_fisica_id")
+    firm_persona_fisica_id = django_filters.CharFilter(name="firmantes__id")
     firm_orden = django_filters.CharFilter(name="firmantes__orden")
     firm_cargo = django_filters.CharFilter(name="firmantes__cargo")
     firm_cargo_tipo = django_filters.CharFilter(name="firmantes__cargo_tipo")

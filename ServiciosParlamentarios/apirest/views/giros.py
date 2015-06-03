@@ -19,6 +19,6 @@ class GirosViewSet(viewsets.ReadOnlyModelViewSet):
         """
         Devuelve los datos de un giro para el expediente solicitado.
         """
-        self.queryset = self.queryset.filter(giro_id=pk, proyecto_id = proyectos_pk)
+        self.queryset = self.queryset.filter(id=pk, proyecto_id = proyectos_pk)
                 
         return viewsets.ReadOnlyModelViewSet.retrieve(self, request, pk, proyectos_pk)
