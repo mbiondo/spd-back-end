@@ -28,7 +28,7 @@ class ProyectoFilter(ExpedienteFilter):
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
 
     # Firmantes filters
-    firm_persona_fisica_id = django_filters.CharFilter(name="firmantes__id")
+    firm_id = django_filters.CharFilter(name="firmantes__id")
     firm_orden = django_filters.CharFilter(name="firmantes__orden")
     firm_cargo = django_filters.CharFilter(name="firmantes__cargo")
     firm_cargo_tipo = django_filters.CharFilter(name="firmantes__cargo_tipo")
@@ -38,5 +38,5 @@ class ProyectoFilter(ExpedienteFilter):
         model = Proyecto
         fields = ['codigo_digesto','proyecto_reproduce','estado','tipo_proy','subtipo_proy','od_numero','od_anio'
                 ,'nro_ley','resultado','dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto'
-                ,'firm_persona_fisica_id','firm_orden','firm_cargo','firm_cargo_tipo','firm_nombre_leg_func'] 
+                ,'firm_id','firm_orden','firm_cargo','firm_cargo_tipo','firm_nombre_leg_func'] 
         order_by = True
