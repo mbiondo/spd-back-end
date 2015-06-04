@@ -4,9 +4,10 @@ from apirest.models.expedientes.expediente import Expediente
 from apirest.models.organismos.despacho import Despacho
 from apirest.utils.constants import Constants
 
-class Observacion(models.Model):
-    id = models.ForeignKey(Expediente, primary_key=True, db_column='observacion_id',unique=True)
-    fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho')
+class Observacion(Expediente):
+    
+    observacion = models.OneToOneField(Expediente, parent_link=True)
+    fk_despacho = models.ForeignKey(Despacho, db_column='fk_despacho', blank=True, null=True)
     
     class Meta:
         managed = False
