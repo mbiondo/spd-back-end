@@ -1,12 +1,13 @@
 from rest_framework import viewsets
 from apirest.models.relaciones.citacion_gpa_invita_entidad import CitacionGpaInvitaEntidad
 from apirest.serializers.individuos.citacion_gpa_invita_entidad import CitacionGpaInvitaEntidadSerializer
+from apirest.filters.individuos.invitados_gpa_filter import InvitadosGpaFilter
 
 class CitacionGpaInvitaEntidadViewSet(viewsets.ReadOnlyModelViewSet):
   
     queryset = CitacionGpaInvitaEntidad.objects.all()
     serializer_class = CitacionGpaInvitaEntidadSerializer
-
+    filter_class = InvitadosGpaFilter
     
     def list(self, request, *args, **kwargs):
         """
