@@ -3,8 +3,9 @@ from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.cargos.cargo_persona_fisica import CargoPersonaFisica
         
-class Legislador(models.Model):
-    id = models.ForeignKey(CargoPersonaFisica, primary_key=True, db_column='legislador_id',unique=True)
+class Legislador(CargoPersonaFisica):
+    legislador = models.OneToOneField(CargoPersonaFisica, parent_link=True )
+#     id = models.ForeignKey(CargoPersonaFisica, primary_key=True, db_column='legislador_id',unique=True)
     cargo = models.TextField(blank=True) #SENADOR / DIPUTADO
     distrito = models.TextField(blank=True)
     fecha_incorporacion = models.DateField(blank=True, null=True,db_column='fincorporacion')

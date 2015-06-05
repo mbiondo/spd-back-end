@@ -11,7 +11,10 @@ class LegisladorSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Legislador
-        
+        fields = ['id','cargo','distrito','fecha_incorporacion','fecha_cese','fecha_inicio','fecha_fin','nota',
+                  'matricula','partido','fk_persona_fisica']         
+          
+                  
 # class LegisladorCargoSerializer(serializers.ModelSerializer):
 #     
 #     cargo_persona_fisica = serializers.SerializerMethodField('get_comision_estructura_serializer') 
