@@ -27,6 +27,7 @@ from apirest.views.sancion import SancionViewSet
 from apirest.views.expedientes.proyecto import ProyectoViewSet
 from apirest.views.expedientes.comunicacion import ComunicacionViewSet
 from apirest.views.expedientes.observacion import ObservacionViewSet
+from apirest.views.expedientes.comunicacion_pen import ComunicacionPenViewSet
 
 router = DefaultRouter()
 
@@ -55,6 +56,7 @@ router.register(r'sanciones', SancionViewSet)
 router.register(r'proyectos',ProyectoViewSet)
 router.register(r'comunicaciones',ComunicacionViewSet)
 router.register(r'observaciones',ObservacionViewSet)
+router.register(r'comunicaciones_pen',ComunicacionPenViewSet)
 
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
