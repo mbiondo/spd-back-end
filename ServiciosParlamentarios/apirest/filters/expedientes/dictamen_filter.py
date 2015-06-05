@@ -21,4 +21,3 @@ class DictamenFilter(django_filters.FilterSet):
     class Meta:
         model = Dictamen
         fields = ['id','tipo','accion','con_modificacion','despacho_tipo_camara','despacho_tipo','despacho_numero']
-        order_by = True

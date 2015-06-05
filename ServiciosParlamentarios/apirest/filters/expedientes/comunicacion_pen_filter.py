@@ -9,4 +9,3 @@ class ComunicacionPenFilter(ExpedienteFilter):
     class Meta:
         model = ComunicacionPen
         fields = ['subtipo']
-        order_by = True

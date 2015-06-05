@@ -11,4 +11,3 @@ class ComunicacionFilter(ExpedienteFilter):
     class Meta:
         model = Comunicacion
         fields = ['subtipo','fecha_recepcion','orden']
-        order_by = True
