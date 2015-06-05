@@ -10,7 +10,7 @@ class ObservacionViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ObservacionSerializer
     filter_class = ObservacionFilter
     ordering_fields = '__all__'
-    search_fields = ()
+    search_fields = ('observacion','fk_despacho')
         
     
     def list(self, request, *args, **kwargs):
