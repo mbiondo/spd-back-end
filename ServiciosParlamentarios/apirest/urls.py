@@ -28,6 +28,7 @@ from apirest.views.expedientes.proyecto import ProyectoViewSet
 from apirest.views.expedientes.comunicacion import ComunicacionViewSet
 from apirest.views.expedientes.observacion import ObservacionViewSet
 from apirest.views.expedientes.comunicacion_pen import ComunicacionPenViewSet
+from apirest.views.giro import GiroViewSet
 
 router = DefaultRouter()
 
@@ -58,7 +59,7 @@ router.register(r'comunicaciones',ComunicacionViewSet)
 router.register(r'observaciones',ObservacionViewSet)
 router.register(r'comunicaciones_pen',ComunicacionPenViewSet)
 
-# router.register(r'giros',GirosViewSet)
+router.register(r'giros',GiroViewSet)
 # router.register(r'firmantes',FirmantesViewSet)
 
 

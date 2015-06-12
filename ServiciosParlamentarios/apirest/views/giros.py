@@ -1,11 +1,13 @@
 from rest_framework import viewsets
 from apirest.models.db_views.giros import Giros
 from apirest.serializers.db_views.giros import GirosSerializer
+from apirest.filters.giro_filter import GiroFilter
 
 class GirosViewSet(viewsets.ReadOnlyModelViewSet):
     
     queryset = Giros.objects.all()
     serializer_class = GirosSerializer
+    filter_class = GiroFilter
                     
     def list(self, request, proyectos_pk=None):
         """

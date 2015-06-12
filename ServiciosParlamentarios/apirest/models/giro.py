@@ -21,4 +21,4 @@ class Giro(models.Model):
         managed = False
         db_table = Constants().GIRO
         app_label = Constants().APIREST
-        ordering = ('orden',)
+        ordering = ('id','orden',)
