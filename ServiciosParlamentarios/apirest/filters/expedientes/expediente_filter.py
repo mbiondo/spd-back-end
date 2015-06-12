@@ -20,7 +20,6 @@ class ExpedienteFilter(django_filters.FilterSet):
         model = Expediente
         fields = ['id','tipo_camara','codigo_origen','tipo_camara','codigo_exp','codigo_num','codigo_anio'
                   ,'fecha_desde','fecha_hasta','fecha_caducidad','periodo']
-        order_by = True
         
 
 # CODIGO PRUEBAS INICIALES

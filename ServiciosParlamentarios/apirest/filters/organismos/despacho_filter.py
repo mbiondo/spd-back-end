@@ -14,6 +14,5 @@ class DespachoFilter(django_filters.FilterSet):
     class Meta:
         model = Despacho
         fields = ['id','tipo','numero','anio','tipo_camara',]
-        order_by = True
         
         

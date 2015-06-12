@@ -39,4 +39,3 @@ class ProyectoFilter(ExpedienteFilter):
         fields = ['codigo_digesto','proyecto_reproduce','estado','tipo_proy','subtipo_proy','od_numero','od_anio'
                 ,'nro_ley','resultado','dictamen_camara','giro_comision_id','giro_comision_nombre','giro_comision_nombre_corto'
                 ,'firm_id','firm_orden','firm_cargo','firm_cargo_tipo','firm_nombre_leg_func'] 
-        order_by = True

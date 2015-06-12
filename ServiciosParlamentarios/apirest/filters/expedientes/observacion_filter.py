@@ -18,4 +18,3 @@ class ObservacionFilter(ExpedienteFilter):
         model = Observacion
         fields = ['despacho_id','despacho_tipo','despacho_anio','despacho_numero','despacho_tipo_camara','despacho_art108par2'
                   ,'despacho_modificaciones']
-        order_by = True
