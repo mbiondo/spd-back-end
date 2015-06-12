@@ -58,6 +58,10 @@ router.register(r'comunicaciones',ComunicacionViewSet)
 router.register(r'observaciones',ObservacionViewSet)
 router.register(r'comunicaciones_pen',ComunicacionPenViewSet)
 
+# router.register(r'giros',GirosViewSet)
+# router.register(r'firmantes',FirmantesViewSet)
+
+
 # router.register(r'personas_fisicas', persona_fisica.PersonaFisicaFullViewSet)
 # router.register(r'personas_fisicas_datos_actuales', persona_fisica.PersonaFisicaActualViewSet)
 # router.register(r'legisladores', legislador.LegisladorComisionViewSet)
