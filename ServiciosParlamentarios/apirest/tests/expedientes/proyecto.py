@@ -4,31 +4,33 @@ from rest_framework.test import APITestCase
 class TestProyecto(APITestCase):
     
     # Constantes para corroborar el resultado de los test
-    CANT_PROYECTO = 264390    
+    CANT_PROYECTO = 264474    
     CANT_PROYECTO_ID = 1
     CANT_DICTAMEN_CAMARA = 27493
-    CANT_COMISION = 8293
-    CANT_COMISION_NOMBRE = 7918
-    CANT_FIRMANTES_ID = 264398
-    CANT_TIPO_CAMARA = 175473
+    CANT_COMISION = 8299
+    CANT_COMISION_NOMBRE = 7922
+    CANT_FIRMANTES_ID = 264398 
+    CANT_TIPO_CAMARA = 175534
     CANT_CODIGO_ORIGEN= 2756
     CANT_PERIODO_132 = 12579
     CANT_CODIGO_ORIGEN= 2756
-    CODIGO_EXITO = 200
     CANT_PERIODO_132 = 12579
-    CANT_OD_NUMERO = 26
-    CANT_OD_ANIO = 3115
-    CANT_OD_NUMERO = 26
-    CANT_OD_ANIO = 3115
     CANT_OD_NUMERO = 26
     CANT_OD_ANIO = 3115
     CANT_OD_NUMERO_ANIO = 8    
-    CANT_PROYECTO_LEY = 73043
-    CANT_PROYECTOS_X_FIRMANTE = 1352
+    CANT_PROYECTO_LEY = 73086
+    CANT_PROYECTOS_X_FIRMANTE = 264474
+    CANT_PROYECTOS_X_FIRMANTE_NOMBRE = 1352
     CANT_PROYECTOS_CARGO_FIRMANTE = 1093
     CANT_PROYECTOS_CARGO_TIPO_FIRMANTE = 3691
-    CANT_PROYECTOS_ORDEN_FIRMANTE = 166435
+    CANT_PROYECTOS_ORDEN_FIRMANTE = 166509
+    CANT_CODIGO_NUM_Y_ANIO = 4
+    CANT_RESULTADO_Y_ANIO = 4
+    CANT_COMISION_NOMBRE_Y_CODIGO_ANIO = 466
+    CANT_CODIGO_ANIO_Y_FIRMANTE = 146 
+    CANT_RESULTADO_APROBACION = 647
     
+    CODIGO_EXITO = 200
     CODIGO_NUM = '0001'  
     TIPO_CAMARA = "Diputados"
     SUMARIO = "APROBACION."
@@ -40,8 +42,10 @@ class TestProyecto(APITestCase):
     NUMERO_OD = 1
     ANIO_OD = 2010
     TIPO = "PROYECTO"
-    CANT_RESULTADO_APROBACION = 647
     TIPO_PROY_ARCHIVO = "RESOLUCION"
+    CODIGO_ANIO_RESUTLADO = "2006"
+    CODIGO_ANIO_COMPUESTO  = "2014"
+    
 
 
     # Test: ATRIBUTOS DE PROYECTOS.
@@ -239,7 +243,7 @@ class TestProyecto(APITestCase):
     #Test sobre firmantes.
     def test_firmante_id(self):
         """
-        Prueba que traiga los expedientes que fueron firmados por id de firmante.
+        Prueba que traiga los proyectos que fueron firmados por id de firmante.
         """
         response = self.client.get('/apirest/proyectos/?firm_persona_fisica_id=1566')
         self.assertEqual(response.status_code, self.CODIGO_EXITO)
@@ -250,16 +254,16 @@ class TestProyecto(APITestCase):
         
     def test_firm_nombre_leg_func(self):
         """
-        Prueba que traiga los expedientes que fueron firmados por nombre de firmante.
+        Prueba que traiga los proyectos que fueron firmados por nombre de firmante.
         """
         response = self.client.get('/apirest/proyectos/?firm_nombre_leg_func=GERARDO RUBEN MORALES')
         self.assertEqual(response.status_code, self.CODIGO_EXITO)
-        self.assertEqual(response.data["count"],self.CANT_PROYECTOS_X_FIRMANTE)
+        self.assertEqual(response.data["count"],self.CANT_PROYECTOS_X_FIRMANTE_NOMBRE)
         self.assertEqual(response.data["results"][0]["tipo"], self.TIPO)
         
     def test_firm_cargo(self):
         """
-        Prueba que traiga los expedientes que fueron firmados por cargo de firmante
+        Prueba que traiga los proyectos que fueron firmados por cargo de firmante
         """
         response = self.client.get('/apirest/proyectos/?firm_cargo=Jefe de Gabinete de Ministros')   
         self.assertEqual(response.status_code, self.CODIGO_EXITO)
@@ -270,7 +274,7 @@ class TestProyecto(APITestCase):
         
     def test_firm_cargo_tipo(self):
         """
-        Prueba que traiga los expedientes que fueron firmados por tipo de cargo de firmante
+        Prueba que traiga los proyectos que fueron firmados por tipo de cargo de firmante
         """
         response = self.client.get('/apirest/proyectos/?firm_cargo_tipo=FUNCIONARIO')   
         self.assertEqual(response.status_code, self.CODIGO_EXITO)
@@ -281,7 +285,7 @@ class TestProyecto(APITestCase):
 
     def test_firm_orden(self):
         """
-        Prueba que traiga los expedientes que fueron firmados por tipo de cargo de firmante
+        Prueba que traiga los proyectos que fueron firmados por tipo de cargo de firmante
         """
         response = self.client.get('/apirest/proyectos/?firm_orden=1')   
         self.assertEqual(response.status_code, self.CODIGO_EXITO)
@@ -291,5 +295,45 @@ class TestProyecto(APITestCase):
         self.assertEqual(response.data["results"][0]["tipo"], self.TIPO)      
           
     #Test con filtros combinados. 
-    
+    def test_codigo_anio_y_codigo_num(self):
+        """
+        Prueba que traiga los proyectos pot un anio y numero determinado.
+        """
+        response = self.client.get('/apirest/proyectos/?codigo_num=0001&codigo_anio=1984')   
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["count"],self.CANT_CODIGO_NUM_Y_ANIO)   
+        self.assertEqual(response.data["results"][0]["codigo_num"], self.CODIGO_NUM)
+        self.assertEqual(response.data["results"][0]["codigo_anio"], self.CODIGO_ANIO)
+        self.assertEqual(response.data["results"][0]["tipo"], self.TIPO)       
         
+    def test_codigo_anio_y_resultado(self):
+        """
+        Prueba que traiga los proyectos
+        """
+        response = self.client.get('/apirest/proyectos/?resultado=RETIRO&codigo_anio=2006')   
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["count"],self.CANT_RESULTADO_Y_ANIO)   
+        self.assertEqual(response.data["results"][0]["codigo_anio"], self.CODIGO_ANIO_RESUTLADO)
+        self.assertEqual(response.data["results"][0]["tipo"], self.TIPO)      
+        self.assertEqual(response.data["results"][0]["codigo_origen"], self.CODIGO_ORIGEN)   
+        
+    def test_codigo_anio_y_giro_comision_nombre(self):
+        """
+        Prueba que traiga los proyectos por nombre de comision de un anio determinado.
+        """
+        response = self.client.get('/apirest/proyectos/?giro_comision_nombre=TRANSPORTES&codigo_anio=2014')
+        self.assertEqual(response.data["count"], self.CANT_COMISION_NOMBRE_Y_CODIGO_ANIO)
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["results"][0]["tipo"], self.TIPO)
+        self.assertEqual(response.data["results"][0]["codigo_origen"], self.CODIGO_ORIGEN)  
+        self.assertEqual(response.data["results"][0]["codigo_anio"], self.CODIGO_ANIO_COMPUESTO)
+        
+    def test_codigo_anio_y_firmante_nombre_leg_func(self):
+        """
+        Prueba que traiga los proyectos por nombre de comision de un anio determinado.
+        """
+        response = self.client.get('/apirest/proyectos/?firm_nombre_leg_func=GERARDO RUBEN MORALES&codigo_anio=2014')
+        self.assertEqual(response.data["count"], self.CANT_CODIGO_ANIO_Y_FIRMANTE)
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["results"][0]["tipo"], self.TIPO)
+        self.assertEqual(response.data["results"][0]["codigo_anio"], self.CODIGO_ANIO_COMPUESTO)        
