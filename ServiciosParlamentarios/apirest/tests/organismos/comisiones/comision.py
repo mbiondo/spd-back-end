@@ -3,19 +3,72 @@ from rest_framework.test import APITestCase
 
 class TestComision(APITestCase):
     
-    CANT_COMISIONES_PERMANENTES_2014 = 45
+    CODIGO_EXITO = 200
+    CANT_COMISIONES = 185
+    CARACTER = "P"
+    TIPO_CAMARA = "CD"
+    FECHA_INICIO = "1983-12-10"
+    COMISION_HISTORICA_NOMBRE = "ASUNTOS CONSTITUCIONALES"
+    COMISION_NOMBRE= "PRESUPUESTO Y HACIENDA"
+    COMISION_ORDEN = 1
+    FK_COMISION = 3
     INTEGRANTES_TURISMO_2014 = 31
+    CANT_CARACTER = 73
+    CANT_NOMBRE_COMISION=2
     
     def test_get_comisiones(self):
         """
         Prueba que se obtengan todas las comisiones
         """        
-        response = self.client.get('/apirest/comisiones_detalle/?fecha=2014-10-10&tipo_camara=CD&page=3&caracter=P')        
-        self.assertEqual(response.data["count"], self.CANT_COMISIONES_PERMANENTES_2014)
-
-    def test_integrantes_comision_turismo_2014(self):
+        response = self.client.get('/apirest/comisiones/')        
+        self.assertEqual(response.data["count"], self.CANT_COMISIONES)
+        
+    def test_get_comision_id(self):
         """
-        Prueba que la Comision de Turisimo tenga el numero correcto de integrantes
-        """        
-        response = self.client.get('/apirest/comisiones_detalle/?fecha=2014-10-10&tipo_camara=CD&nombre=TURISMO')        
-        self.assertEqual(len(response.data["results"][0]["integrantes"]), self.INTEGRANTES_CULTURA_2014)
+        Prueba que traiga una comision por id.
+        """
+        response = self.client.get('/apirest/comisiones/3/') 
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["caracter"], self.CARACTER)
+        self.assertEqual(response.data["tipo_camara"], self.TIPO_CAMARA)
+        self.assertEqual(response.data["fecha_inicio"], self.FECHA_INICIO)
+        self.assertEqual(response.data["comision_hist"][0]["nombre"], self.COMISION_HISTORICA_NOMBRE)
+        self.assertEqual(response.data["comision_hist"][0]["orden"], self.COMISION_ORDEN)
+
+    def test_get_comision_por_caracter(self):
+        """
+        Prueba que traiga las comisiones en base al filtro por caracter. 
+        """
+        response = self.client.get('/apirest/comisiones/?caracter=P')
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["count"], self.CANT_CARACTER)
+        self.assertEqual(response.data["results"][0]["caracter"], self.CARACTER)
+        self.assertEqual(response.data["results"][0]["tipo_camara"], self.TIPO_CAMARA)
+        self.assertEqual(response.data["results"][0]["fecha_inicio"], self.FECHA_INICIO)
+        self.assertEqual(response.data["results"][0]["comision_hist"][0]["nombre"], self.COMISION_HISTORICA_NOMBRE)
+        self.assertEqual(response.data["results"][0]["comision_hist"][0]["orden"], self.COMISION_ORDEN)
+    
+    def test_get_tipo_camara(self):
+        """
+        Prueba que traiga las comisiones en base al filtro de tipo camara.
+        """
+        response = self.client.get('/apirest/comisiones/?tipo_camara=CD')
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["count"], self.CANT_CARACTER)
+        self.assertEqual(response.data["results"][0]["caracter"], self.CARACTER)
+        self.assertEqual(response.data["results"][0]["tipo_camara"], self.TIPO_CAMARA)
+        self.assertEqual(response.data["results"][0]["fecha_inicio"], self.FECHA_INICIO)
+        self.assertEqual(response.data["results"][0]["comision_hist"][0]["nombre"], self.COMISION_HISTORICA_NOMBRE)
+        self.assertEqual(response.data["results"][0]["comision_hist"][0]["orden"], self.COMISION_ORDEN)
+    
+    def test_get_comision_nombre(self):
+        """
+        Prueba que traiga las comisiones en base al filtro de nombre de comision.
+        """
+        response = self.client.get('/apirest/comisiones/?nombre=PRESUPUESTO Y HACIENDA')
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["count"], self.CANT_NOMBRE_COMISION)
+        self.assertEqual(response.data["results"][0]["caracter"], self.CARACTER)
+        self.assertEqual(response.data["results"][0]["tipo_camara"], self.TIPO_CAMARA)
+        self.assertEqual(response.data["results"][0]["fecha_inicio"], self.FECHA_INICIO)
+        self.assertEqual(response.data["results"][0]["comision_hist"][0]["nombre"], self.COMISION_NOMBRE)     
