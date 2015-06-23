@@ -17,7 +17,7 @@ class TestBoletinAsuntosTratados(APITestCase):
 #         """
 #         Prueba el servicio para listar los BAT. 
 #         """
-#         response = self.client.get('/apirest/boletin_asuntos_tratados/')
+#         response = self.client.get('/apirest/boletines_asuntos_tratados/')
 #         self.assertEqual(response.status_code, self.CODIGO_EXITO)
 #         self.assertEqual(response.data["count"], self.CANTIDAD_BAT)
         
@@ -25,7 +25,7 @@ class TestBoletinAsuntosTratados(APITestCase):
 #         """
 #         Prueba el servicio para obtener un BAT filtrando por numero.
 #         """
-#         response = self.client.get("/apirest/boletin_asuntos_tratados/?numero=1")
+#         response = self.client.get("/apirest/boletines_asuntos_tratados/?numero=1")
 #         self.assertEqual(response.status_code, self.CODIGO_EXITO)
 #         self.assertEqual(response.data["count"], self.CANTIDAD_BAT_POR_NUMERO)
 #         self.assertEqual(response.data["results"][0]["numero"], self.NUMERO)
@@ -34,6 +34,6 @@ class TestBoletinAsuntosTratados(APITestCase):
 #         """
 #         Prueba el servicio para obtener un bat por id. 
 #         """
-#         response = self.client.get("/apirest/boletin_asuntos_tratados/XXXX/")
+#         response = self.client.get("/apirest/boletines_asuntos_tratados/XXXX/")
 #         self.assertEqual(response.status_code, self.CODIGO_EXITO)
 #         self.assertEqual(response.data["numero"], self.NUMERO)
