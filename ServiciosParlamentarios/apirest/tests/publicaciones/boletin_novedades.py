@@ -16,7 +16,7 @@ class TestBoletinNovedades(APITestCase):
 #         """
 #         Prueba el servicio para listar los BN. 
 #         """
-#         response = self.client.get('/apirest/boletin_novedades/')
+#         response = self.client.get('/apirest/boletines_novedades/')
 #         self.assertEqual(response.status_code, self.CODIGO_EXITO)
 #         self.assertEqual(response.data["count"], self.CANTIDAD_BAE)
 #         
@@ -24,7 +24,7 @@ class TestBoletinNovedades(APITestCase):
 #         """
 #         Prueba el servicio para obtener un BN filtrando por numero.
 #         """
-#         response = self.client.get("/apirest/boletin_novedades/?numero=1")
+#         response = self.client.get("/apirest/boletines_novedades/?numero=1")
 #         self.assertEqual(response.status_code, self.CODIGO_EXITO)
 #         self.assertEqual(response.data["count"], self.CANTIDAD_BAE_POR_NUMERO)
 #         self.assertEqual(response.data["results"][0]["numero"], self.NUMERO)
@@ -34,7 +34,7 @@ class TestBoletinNovedades(APITestCase):
 #         """
 #         Prueba el servicio para obtener un BAT por id. 
 #         """
-#         response = self.client.get("/apirest/boletin_novedades/XXX/")
+#         response = self.client.get("/apirest/boletines_novedades/XXX/")
 #         self.assertEqual(response.status_code, self.CODIGO_EXITO)
 #         self.assertEqual(response.data["numero"], self.NUMERO)
 #         self.assertEqual(response.data["tipo_camara"], self.TIPO_CAMARA)
