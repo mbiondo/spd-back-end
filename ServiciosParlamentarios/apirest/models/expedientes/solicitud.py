@@ -3,8 +3,9 @@ from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.expedientes.expediente import Expediente
 
-class Solicitud(models.Model):
-    id = models.ForeignKey(Expediente, primary_key=True, db_column='solicitud_id',unique=True)
+class Solicitud(Expediente):
+    
+    solicitud = models.OneToOneField(Expediente, parent_link=True)
     subtipo = models.TextField(blank=True)
     
     class Meta:
