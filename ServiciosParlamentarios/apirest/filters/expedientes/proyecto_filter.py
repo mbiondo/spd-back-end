@@ -23,16 +23,16 @@ class ProyectoFilter(ExpedienteFilter):
     dictamen_camara = django_filters.CharFilter(lookup_type='icontains',name="despachos__tipo_camara")
     
     # Giro filters
-    giro_comision_id = django_filters.CharFilter(name="giros__comision_id")
+    giro_comision_id = django_filters.NumberFilter(name="giros__comision_id")
     giro_comision_nombre = django_filters.CharFilter(name="giros__comision_nombre")
     giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
 
     # Firmantes filters
-    firm_id = django_filters.CharFilter(name="firmantes__id")
-    firm_orden = django_filters.CharFilter(name="firmantes__orden")
-    firm_cargo = django_filters.CharFilter(name="firmantes__cargo")
-    firm_cargo_tipo = django_filters.CharFilter(name="firmantes__cargo_tipo")
-    firm_nombre_leg_func = django_filters.CharFilter(name="firmantes__nombre_leg_func")
+    firm_id = django_filters.NumberFilter(name="firmantes__id")
+    firm_orden = django_filters.NumberFilter(name="firmantes__orden")
+    firm_cargo = django_filters.CharFilter(lookup_type='icontains', name="firmantes__cargo")
+    firm_cargo_tipo = django_filters.CharFilter(lookup_type='icontains', name="firmantes__cargo_tipo")
+    firm_nombre_leg_func = django_filters.CharFilter(lookup_type='icontains', name="firmantes__nombre_leg_func")
     
     class Meta:
         model = Proyecto
