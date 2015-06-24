@@ -24,8 +24,7 @@ class ProyectoFilter(ExpedienteFilter):
     
     # Giro filters
     giro_comision_id = django_filters.NumberFilter(name="giros__comision_id")
-    giro_comision_nombre = django_filters.CharFilter(name="giros__comision_nombre")
-    giro_comision_nombre_corto = django_filters.CharFilter(name="giros__comision_nombre_corto")
+    giro_comision_nombre = django_filters.CharFilter(lookup_type='icontains', name="giros__comision_nombre")
 
     # Firmantes filters
     firm_id = django_filters.NumberFilter(name="firmantes__id")
