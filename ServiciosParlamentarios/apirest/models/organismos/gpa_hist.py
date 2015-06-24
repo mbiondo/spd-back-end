@@ -19,4 +19,5 @@ class GpaHist(models.Model):
     class Meta:
         managed = False
         db_table = Constants().GPA_HIST
-        app_label = Constants().APIREST        
+        app_label = Constants().APIREST   
+        ordering = ('-fecha_hasta',)     

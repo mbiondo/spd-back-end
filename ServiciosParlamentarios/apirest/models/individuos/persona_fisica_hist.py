@@ -27,3 +27,4 @@ class PersonaFisicaHist(models.Model):
         managed = False
         db_table = Constants().PERSONA_FISICA_HIST
         app_label = Constants().APIREST
+        ordering = ('-fecha_hasta',)

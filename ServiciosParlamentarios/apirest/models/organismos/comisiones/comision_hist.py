@@ -21,4 +21,5 @@ class ComisionHist(models.Model):
         managed = False
         db_table = Constants().COMISION_HIST
         app_label = Constants().APIREST
+        ordering = ('-fecha_hasta',)
         
