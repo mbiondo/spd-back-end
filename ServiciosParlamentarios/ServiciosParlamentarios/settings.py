@@ -165,5 +165,21 @@ AUTH_CLIENT_CREDENTIALS = {
     'CLIENT_SECRET': 'hyZGfL58D?K4hIeKvGx@9@QGFeKqpYq:GuPuynHTIEuie?:!SJOG!IYszh;=@ph1I4He0-.QZ:r=lWBAB1cr2a9nhp8iAySuNgDTcgn=C!pZHb7wiPPU!5Pim0k8apnk',
 }
 
-AUTHENTICATION = False
+AUTHENTICATION = True
 
+LOGGING = {
+    'version': 1,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        }
+    },    
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        },
+    }
+           
+}
