@@ -5,4 +5,4 @@ class InsistenciaSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Insistencia
-#         fields = ('id','tipo','articulos')
+        fields = ('id','fk_debate','resultado','tipo','titulo','sumario','texto','articulos')
