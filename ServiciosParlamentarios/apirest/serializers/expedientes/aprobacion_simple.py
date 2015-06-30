@@ -5,4 +5,5 @@ class AprobacionSimpleSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = AprobacionSimple 
-        #fields = ('id', 'tipo', 'numero', 'anio')
+        fields = ('id','fk_debate','resultado','tipo','titulo','sumario'
+                  ,'texto', 'numero', 'anio')

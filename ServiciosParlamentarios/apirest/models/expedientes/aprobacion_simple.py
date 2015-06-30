@@ -3,11 +3,12 @@ from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.expedientes.resultado import Resultado
 
-class AprobacionSimple(models.Model):
-    id = models.ForeignKey(Resultado, primary_key=True, db_column='aprobacion_simple_id',unique=True)
-    tipo = models.TextField(blank=True)
+class AprobacionSimple(Resultado):
+    
+    aprobacion_simple = models.OneToOneField(Resultado, parent_link=True, related_name='aprobaciones_simples')
     numero = models.SmallIntegerField(blank=True, null=True)
     anio = models.SmallIntegerField(blank=True, null=True)
+    
     class Meta:
         managed = False
         db_table = Constants().APROBACION_SIMPLE
