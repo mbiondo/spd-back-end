@@ -30,6 +30,8 @@ from apirest.views.expedientes.observacion import ObservacionViewSet
 from apirest.views.expedientes.comunicacion_pen import ComunicacionPenViewSet
 from apirest.views.expedientes.solicitud import SolicitudViewSet
 from apirest.views.giro import GiroViewSet
+from apirest.views.expedientes.insistencia import InsistenciaViewSet
+from apirest.views.expedientes.aprobacion_simple import AprobacionSimpleViewSet
 
 router = DefaultRouter()
 
@@ -44,7 +46,6 @@ router.register(r'personas_fisicas', persona_fisica.PersonaFisicaViewSet)
 router.register(r'lugares', LugarViewSet)
 router.register(r'estados', AuxEstadoViewSet)
 router.register(r'invitados', CitacionInvitaEntidadViewSet)
-router.register(r'resultados',ResultadoViewSet)
 router.register(r'citaciones_gpa', CitacionGpaViewSet)
 router.register(r'gpas', GpaViewSet)
 router.register(r'invitados_gpa', CitacionGpaInvitaEntidadViewSet)
@@ -54,14 +55,17 @@ router.register(r'boletines_asuntos_tratados', BoletinAsuntosTratadosViewSet)
 router.register(r'boletines_novedades', BoletinNovedadesViewSet)
 router.register(r'diarios_asuntos_entrados', DiarioAsuntosEntradosViewSet)
 router.register(r'ordenes_del_dia', OrdenDiaViewSet)
-router.register(r'sanciones', SancionViewSet)
 router.register(r'proyectos',ProyectoViewSet)
 router.register(r'comunicaciones',ComunicacionViewSet)
 router.register(r'observaciones',ObservacionViewSet)
 router.register(r'comunicaciones_pen',ComunicacionPenViewSet)
 router.register(r'solicitudes',SolicitudViewSet)
-
 router.register(r'giros',GiroViewSet)
+
+router.register(r'resultados',ResultadoViewSet)
+router.register(r'sanciones', SancionViewSet)
+router.register(r'insistencias',InsistenciaViewSet)
+router.register(r'aprobaciones_simples',AprobacionSimpleViewSet)
 # router.register(r'firmantes',FirmantesViewSet)
 
 
