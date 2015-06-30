@@ -5,4 +5,6 @@ class SancionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Sancion
-#         fields = ('id','nroley','sancionpromulgada','sancionvetada','codigodigesto','binsistida')
+        fields = ('id','fk_debate','resultado','tipo','titulo','sumario','texto'
+                  ,'nro_ley','sancion_promulgada','sancion_vetada','codigo_digesto',
+                  'insistida')
