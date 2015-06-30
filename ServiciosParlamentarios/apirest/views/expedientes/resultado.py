@@ -16,9 +16,6 @@ class ResultadoViewSet(viewsets.ReadOnlyModelViewSet):
     def list(self, request, *args, **kwargs):
         """
         Lista todos los resultados de un expediente.
-        \n
-        Filtros posibles:\n
-
         """
         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
     

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from apirest.models.expedientes.proyecto import Proyecto
 from apirest.serializers.db_views.firmantes import FirmanteSerializer
+from apirest.serializers.expedientes.resultado import ResultadoSerializer
 
 class ProyectoSerializer(serializers.ModelSerializer):
     
@@ -10,7 +11,8 @@ class ProyectoSerializer(serializers.ModelSerializer):
         model = Proyecto
         fields = ('id','fk_proyecto_reproduce','estado','tipo_proy','subtipo_proy','codigo_digesto'
                 ,'codigo_exp','codigo_num','codigo_origen','codigo_anio','sumario','tipo_camara','tipo'
-                ,'codigo_estado','fecha_caducidad','fecha','periodo','titulo','voces','resultados','despachos','firmantes','giros')
+                ,'codigo_estado','fecha_caducidad','fecha','periodo','titulo','voces','resultados'
+                ,'despachos','firmantes','giros')
         
         
 class ProyectoChildSerializer(serializers.ModelSerializer):

@@ -5,7 +5,8 @@ from apirest.filters.custom_filter_list import CustomFilterList
 class ResultadoFilter(django_filters.FilterSet):
   
     id = CustomFilterList(name="id", lookup_type="in")
-    
+    resultado = CustomFilterList(name="resultado", lookup_type="in") 
+       
     class Meta:
         model = Resultado
-        fields = ('id',)
+        fields = ('id','resultado')
