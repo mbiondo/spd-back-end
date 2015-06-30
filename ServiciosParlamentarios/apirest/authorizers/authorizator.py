@@ -1,13 +1,8 @@
 from rest_framework.response import Response
-from rest_framework.permissions import BasePermission
 import urllib2
 import json
-import httplib
 from apirest.utils.constants import Constants
 from ServiciosParlamentarios import settings
-from apirest.exceptions.authorizationErrors import ServerAuthConnectionException,\
-    NoAuthorizationException, AuthorizationFormatException,\
-    NotAuthorizedException
 from apirest.utils.logger import Logger
 from apirest.utils import utils
 
@@ -17,6 +12,8 @@ def has_permission(func):
         """
         Allows access only to permitted users.
         """
+        if not settings.AUTHENTICATION:
+            return func(_self, request, kwargs)
                         
         if Constants().AUTH_HEADER_KEY_CONST not in request.META:
             return Response(data=Constants().NO_HEADER_EXC, status=Constants().NO_PERMISSION_EXC_CODE)
