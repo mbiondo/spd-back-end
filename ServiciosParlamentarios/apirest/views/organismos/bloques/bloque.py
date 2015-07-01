@@ -4,6 +4,7 @@ from apirest.serializers.organismos.bloques.bloque import BloqueSerializer,\
     BloqueIntegrantesSerializer
 from apirest.filters.organismos.bloques.bloque_filter import BloqueFilter#, BloqueDetalleFilter
 from django.db.models import Q
+from apirest.authorizers.authorizator import has_permission
 
 # class BloqueDetalleViewSet(viewsets.ReadOnlyModelViewSet):
 #     
@@ -38,16 +39,14 @@ class BloqueViewSet(viewsets.ReadOnlyModelViewSet):
     ordering_fields = '__all__'
     search_fields = ('nombre','nro_integrantes','fecha_inicio','fecha_fin','tipo_camara','nota','sigla')    
                  
+    @has_permission                 
     def list(self, request, *args, **kwargs):
         """
         Lista los bloques.
-        \n
-        Filtros posible:\n
-        -nombre=[Nombre bloque]\n
-        -tipo_camapara=[D,S]
         """
         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
     
+    @has_permission
     def retrieve(self, request, *args, **kwargs):
         """
         Devuelve un bloque por id.

@@ -7,6 +7,7 @@ from apirest.filters.individuos.persona_fisica_filter import PersonaFisicaFilter
 # from apirest.filters.persona_fisica_filter import PersonaFisicaFilter
 # from django.db.models import Q
 # import datetime
+from apirest.authorizers.authorizator import has_permission
 
 class PersonaFisicaViewSet(viewsets.ReadOnlyModelViewSet):
     
@@ -15,12 +16,14 @@ class PersonaFisicaViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = PersonaFisicaSerializer
     filter_class = PersonaFisicaFilter
     
+    @has_permission    
     def list(self, request, *args, **kwargs):
         """
         Lista todas las personas fisicas.
         """
         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
-
+    
+    @has_permission
     def retrieve(self, request, *args, **kwargs):
         """
         Devuelve la persona fisica solicitada por id.

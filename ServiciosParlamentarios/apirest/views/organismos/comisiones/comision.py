@@ -2,19 +2,22 @@ from rest_framework import viewsets
 from apirest.models.organismos.comisiones.comision import Comision
 from apirest.serializers.organismos.comisiones.comision import ComisionSerializer#,\
 from apirest.filters.organismos.comisiones.comision_filter import ComisionFilter
-       
+from apirest.authorizers.authorizator import has_permission
+
 class ComisionViewSet(viewsets.ReadOnlyModelViewSet):
   
     queryset = Comision.objects.all()
     serializer_class = ComisionSerializer
     filter_class = ComisionFilter
     
+    @has_permission         
     def list(self, request, *args, **kwargs):
         """
         Lista todas las comisiones ordenados por id.        
         """
         return viewsets.ReadOnlyModelViewSet.list(self, request, *args, **kwargs)
     
+    @has_permission         
     def retrieve(self, request, *args, **kwargs):
         """
         Devuelve la comision solicitada por id.
