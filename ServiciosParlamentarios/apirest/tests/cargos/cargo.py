@@ -4,6 +4,7 @@ import json
 
 class TestCargo(APITestCase):
     
+    CODIGO_EXITO = 200 
     DESCRIPCION = 'Diputado'
 
     def test_get_cargo(self):
@@ -11,7 +12,8 @@ class TestCargo(APITestCase):
         Prueba que se pueda obtener el primer cargo (Diputado).
         """
         response = self.client.get('/apirest/cargos/1/')
-        self.assertEqual(response.data, {'cargo_id': 1, 'descripcion': self.DESCRIPCION})
+        self.assertEqual(response.status_code, self.CODIGO_EXITO)
+        self.assertEqual(response.data["descripcion"], self.DESCRIPCION)
         
     def test_get_cargos(self):
         """
