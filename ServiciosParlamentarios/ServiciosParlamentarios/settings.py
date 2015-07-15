@@ -167,19 +167,43 @@ AUTH_CLIENT_CREDENTIALS = {
 
 AUTHENTICATION = True
 
+from datetime import datetime
+
 LOGGING = {
     'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt': "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
     'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/ServiciosParlamentarios/' + datetime.now().strftime('ServiciosParlamentarios_%d_%m_%Y.log'),
+            'formatter': 'verbose'
+        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-        }
-    },    
-    'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
+            'formatter': 'verbose'
         },
-    }
-           
+    },
+    'loggers': {
+        'django': {
+            'level': 'DEBUG',
+            'handlers': ['file'],
+            'propagate': True
+        },
+        'apirest': {
+            'level': 'DEBUG',
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+    },
 }
