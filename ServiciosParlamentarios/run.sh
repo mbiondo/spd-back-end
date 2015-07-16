@@ -7,7 +7,6 @@ green='\E[1;32m'
 wipe="\033[1m\033[0m"
 
 if [ -d "$SP_PATH" ]; then
-        #nohup python manage.py runserver 10.105.5.55:8000 --noreload &> $SP_PATH/nohup_`date +%Y-%m-%d`.out &
         python manage.py runserver
 else
         echo -e "$red"

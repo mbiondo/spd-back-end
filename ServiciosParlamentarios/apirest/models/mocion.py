@@ -13,7 +13,8 @@ class Mocion(models.Model):
     orden = models.SmallIntegerField(blank=True, null=True)
     nivel = models.SmallIntegerField(blank=True, null=True)
     dictamen = models.TextField(blank=True)
-    
+    fk_plan_labor = models.ForeignKey('PlanLabor', db_column='fk_plan_labor', blank=True, null=True)
+        
     class Meta:
         managed = False
         db_table = Constants().MOCION

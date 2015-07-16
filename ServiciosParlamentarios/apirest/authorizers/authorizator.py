@@ -3,10 +3,12 @@ import urllib2
 import json
 from apirest.utils.constants import Constants
 from ServiciosParlamentarios import settings
-from apirest.utils.logger import Logger
+import logging
 from apirest.utils import utils
 
 def has_permission(func):  
+    
+    logger = logging.getLogger('apirest')
     
     def validate(_self, request, **kwargs):
         """
@@ -33,7 +35,7 @@ def has_permission(func):
         service_name = utils.getServiceName(serv)
         if not service_name:
                 #Bad format
-                Logger.e(Constants().BAD_FORMAT_ERROR)
+                logger.error(Constants().BAD_FORMAT_ERROR)
             
         http_method_type = request.method.lower()
 
