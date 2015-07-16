@@ -205,10 +205,3 @@ class Constants():
     MISSING_TOKEN_CODE=432
     NO_ROL_PERMISSION_CODE=440
     
-    #Logging
-    LOG_PROPERTIES='properties.json'
-    LOGGING_FOLDER_EXC="No permission to log"
-    
-    SERVICES_UNIQUE_NAME='servicios-parlamentarios'
-    
-    #Error message
