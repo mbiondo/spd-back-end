@@ -5,6 +5,39 @@ red='\E[1;31m'
 green='\E[1;32m'
 wipe="\033[1m\033[0m"
 
+usage="
+$(basename "$0") [-h] <ambiente> <version_actual> <version_nueva> <host> <port> -- script para hacer deploy de los Servicios Parlamentarios.
+
+where:
+    -h                  muestra esta ayuda
+    <ambiente>          {local, desa, prod}
+    <version_actual>    versión que esta ejecutandose actualmente en el ambiente
+    <version_nueva>     versión nueva que se ejecutará en el ambiente
+    <host>              ejemplo: api.hcdn.gob.ar
+    <port>              ejemplo: 9000"
+
+while getopts ':hs:' option; do
+    case "$option" in
+      h) echo -e "$red"
+         echo "$usage"
+         echo -e "$wipe"
+         exit 0
+         ;;
+    esac
+done
+shift $((OPTIND - 1))
+    
+if [ ! $# -eq 5 ]; then
+    echo -e "$red"
+    echo "$usage"
+    echo -e "$wipe"
+    exit 0
+fi
+
+echo -e "$green"
+echo "Comenzando a hacer el deploy en $1."
+echo -e "$wipe"
+
 ENVIRONMENT_PATH=/opt/servicios_parlamentarios
 RELEASES_PATH=releases
 
@@ -65,3 +98,7 @@ sudo chmod +x $ENVIRONMENT_PATH/servicios.sh
 
 #Restart crontab
 sudo service cron restart
+
+echo -e "$green"
+echo "El script ha terminado de realizar el deploy en $1."
+echo -e "$wipe"
