@@ -57,5 +57,8 @@ sudo rm -rf spd-back-end/ServiciosParlamentarios/environments
 #Editar servicios.sh con VERSION nueva
 sudo sed -i '9s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_NUEVA'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' $ENVIRONMENT_PATH/servicios.sh
 
+#Dar permisos de ejecución luego de modificar
+sudo chmod +x $ENVIRONMENT_PATH/servicios.sh
+
 #Restart crontab
 sudo service cron restart
