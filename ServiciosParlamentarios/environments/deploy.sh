@@ -30,7 +30,7 @@ sudo service cron stop
 sudo pkill -f $HOST:$PORT
 
 #Mover version anterior a /releases
-if [ ! -d "$RELEASE_ACTUAL" ]; then
+if [ -d "$RELEASE_ACTUAL" ]; then
     sudo mv $RELEASE_ACTUAL $ENVIRONMENT_PATH/$RELEASES_PATH/$RELEASE_ACTUAL
 fi
 
@@ -38,7 +38,7 @@ fi
 sudo mkdir $RELEASE_NUEVA
 
 #Acceder al directorio del nuevo release
-cd $RELEASE_NUEVA
+cd $ENVIRONMENT_PATH/$RELEASE_NUEVA
 
 #git clone del proyecto
 sudo git clone https://github.com/DSDP/spd-back-end.git
@@ -47,15 +47,15 @@ sudo git clone https://github.com/DSDP/spd-back-end.git
 sudo rm -rf spd-back-end/.git
 
 #Move files by environment (desa, prod, local)
-sudo cp spd-back-end/ServiciosParlamentarios/environment/$ENVIRONMENT/run.sh spd-back-end/ServiciosParlamentarios/environment/$ENVIRONMENT/setenv.sh spd-back-end/ServiciosParlamentarios/.
-sudo cp spd-back-end/ServiciosParlamentarios/environment/$ENVIRONMENT/*.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/.
-sudo cp spd-back-end/ServiciosParlamentarios/environment/$ENVIRONMENT/servicios.sh $ENVIRONMENT_PATH/.
+sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/run.sh spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/setenv.sh spd-back-end/ServiciosParlamentarios/.
+sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/*.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/.
+sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/servicios.sh $ENVIRONMENT_PATH/.
 
 #remove environment folder
-sudo rm -rf spd-back-end/ServiciosParlamentarios/environment
+sudo rm -rf spd-back-end/ServiciosParlamentarios/environments
 
 #Editar servicios.sh con VERSION nueva
-sudo sed -i '9s/.*/nohup pythonb \/opt\/servicios_parlamentarios\/'$RELEASE_NUEVA'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' $ENVIRONMENT_PATH/servicios.sh
+sudo sed -i '9s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_NUEVA'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' $ENVIRONMENT_PATH/servicios.sh
 
 #Restart crontab
 sudo service cron restart
