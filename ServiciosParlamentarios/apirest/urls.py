@@ -32,6 +32,8 @@ from apirest.views.expedientes.solicitud import SolicitudViewSet
 from apirest.views.giro import GiroViewSet
 from apirest.views.expedientes.insistencia import InsistenciaViewSet
 from apirest.views.expedientes.aprobacion_simple import AprobacionSimpleViewSet
+from apirest.views.plan_labor import PlanLaborViewSet
+from apirest.views.plp_detalle_estructura import PlpDetalleEstructuraViewSet
 
 router = DefaultRouter()
 
@@ -66,6 +68,8 @@ router.register(r'resultados',ResultadoViewSet)
 router.register(r'sanciones', SancionViewSet)
 router.register(r'insistencias',InsistenciaViewSet)
 router.register(r'aprobaciones_simples',AprobacionSimpleViewSet)
+router.register(r'planes_de_labor',PlanLaborViewSet)
+router.register(r'plp_detalles_estructura',PlpDetalleEstructuraViewSet)
 # router.register(r'firmantes',FirmantesViewSet)
 
 
