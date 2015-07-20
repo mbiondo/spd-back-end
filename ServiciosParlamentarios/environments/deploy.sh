@@ -84,11 +84,11 @@ sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/run.sh sp
 sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/*.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/.
 sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/servicios.sh $ENVIRONMENT_PATH/.
 
-#remove environment folder
-sudo rm -rf spd-back-end/ServiciosParlamentarios/environments
-
 #Setear environment
 sudo spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/setenv.sh
+
+#remove environment folder
+sudo rm -rf spd-back-end/ServiciosParlamentarios/environments
 
 #Editar servicios.sh con VERSION nueva
 sudo sed -i '9s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_NUEVA'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' $ENVIRONMENT_PATH/servicios.sh
