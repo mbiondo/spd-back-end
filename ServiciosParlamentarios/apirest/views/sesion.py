@@ -1,14 +1,14 @@
 from rest_framework import viewsets
 from apirest.serializers.sesion import SesionSerializer
 from apirest.models.sesion import Sesion
-# from apirest.filters.lugar_filter import LugarFilter
+from apirest.filters.sesion_filter import SesionFilter 
 from apirest.authorizers.authorizator import has_permission
 
 class SesionViewSet(viewsets.ReadOnlyModelViewSet):
     
     queryset =  Sesion.objects.all()
     serializer_class = SesionSerializer
-#     filter_class = LugarFilter
+    filter_class = SesionFilter
     
     @has_permission        
     def list (self, request, *args, **kwargs):
