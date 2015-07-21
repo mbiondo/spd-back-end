@@ -80,11 +80,11 @@ sudo git clone https://github.com/DSDP/spd-back-end.git
 sudo rm -rf spd-back-end/.git
 
 #Move files by environment (desa, prod, local)
-sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/run.sh spd-back-end/ServiciosParlamentarios/.
-sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/setenv.sh spd-back-end/ServiciosParlamentarios/.
-sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/settings.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/.
-sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/urls.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/.
-sudo cp spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/servicios.sh $ENVIRONMENT_PATH/.
+sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/run.sh spd-back-end/ServiciosParlamentarios/run.sh
+sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/setenv.sh spd-back-end/ServiciosParlamentarios/setenv.sh
+sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/settings.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/settings.py
+sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/urls.py spd-back-end/ServiciosParlamentarios/ServiciosParlamentarios/urls.py
+sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/servicios.sh $ENVIRONMENT_PATH/servicios.sh
 
 #Setear environment
 sudo spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/setenv.sh
