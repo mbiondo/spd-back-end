@@ -1,5 +1,5 @@
 #!/bin/bash
-LOG=/var/log/ServiciosParlamentarios
+SP_PATH=/var/log/ServiciosParlamentarios
 LOG_FILE=ServiciosParlamentarios_nohup_`date +%d_%m_%Y`.log
 
 pgrep -f 'srv-sparl-5.hcdn.gob.ar:8000' > /dev/null
