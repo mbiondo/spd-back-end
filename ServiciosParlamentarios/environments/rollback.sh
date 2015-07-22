@@ -6,7 +6,7 @@ green='\E[1;32m'
 wipe="\033[1m\033[0m"
 
 usage="
-$(basename "$0") [-h] <ambiente> <version_actual> <version_nueva> <host> <port> -- script para hacer deploy de los Servicios Parlamentarios.
+$(basename "$0") [-h] <ambiente> <version_actual> <version_nueva> <host> <port> -- script para hacer rollback de los Servicios Parlamentarios.
 
 where:
     -h                  muestra esta ayuda
