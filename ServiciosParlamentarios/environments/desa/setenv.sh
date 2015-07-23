@@ -1,7 +1,7 @@
 #!/bin/bash
 
 readonly SP_PATH=/var/log/ServiciosParlamentarios
-readonly USER=oauth
+readonly USER=`whoami`
 
 if [ ! -d "$SP_PATH" ]; then
         sudo mkdir $SP_PATH

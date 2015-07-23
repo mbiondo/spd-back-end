@@ -87,7 +87,7 @@ sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/urls.py s
 sudo mv spd-back-end/ServiciosParlamentarios/environments/$ENVIRONMENT/servicios.sh $ENVIRONMENT_PATH/servicios.sh
 
 #Setear environment
-sudo spd-back-end/ServiciosParlamentarios/setenv.sh
+spd-back-end/ServiciosParlamentarios/setenv.sh
 
 #remove environment folder
 sudo rm -rf spd-back-end/ServiciosParlamentarios/environments
