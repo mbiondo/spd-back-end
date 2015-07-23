@@ -14,7 +14,7 @@ where:
     <version_actual>    versión que esta ejecutandose actualmente en el ambiente
     <version_nueva>     versión nueva que se ejecutará en el ambiente
     <host>              ejemplo: api.hcdn.gob.ar
-    <port>              ejemplo: 9000"
+    <port>              ejemplo: 8000"
 
 while getopts ':hs:' option; do
     case "$option" in

@@ -7,7 +7,7 @@ green='\E[1;32m'
 wipe="\033[1m\033[0m"
 
 if [ -d "$SP_PATH" ]; then
-        python manage.py runsslserver --certificate /usr/share/ca-certificates/hcdn/api.hcdn.gob.ar.crt --key /usr/share/ca-certificates/hcdn/api.hcdn.gob.ar.key --addrport api.hcdn.gob.ar:9000
+        python manage.py runsslserver --certificate /usr/share/ca-certificates/hcdn/api.hcdn.gob.ar.crt --key /usr/share/ca-certificates/hcdn/api.hcdn.gob.ar.key --addrport api.hcdn.gob.ar:8000
         #nohup python /opt/servicios_parlamentarios/current_release/ServiciosParlamentarios/manage.py runsslserver --certificate /usr/share/ca-certificates/hcdn/api.hcdn.gob.ar.crt --key /usr/share/ca-certificates/hcdn/api.hcdn.gob.ar.key --addrport api.hcdn.gob.ar:9000 --noreload >> $SP_PATH/nohup.log 2>&1&
 else
         echo -e "$red"
