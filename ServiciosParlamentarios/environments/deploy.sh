@@ -60,7 +60,7 @@ cd $ENVIRONMENT_PATH
 sudo service cron stop
 
 #Detener la aplicacion
-sudo pkill -f $HOST:$PORT
+sudo pkill -f 'spd-back-end/ServiciosParlamentarios/manage.py'
 
 #Mover version anterior a /releases
 if [ -d "$RELEASE_ACTUAL" ]; then
@@ -92,8 +92,10 @@ spd-back-end/ServiciosParlamentarios/setenv.sh
 #remove environment folder
 sudo rm -rf spd-back-end/ServiciosParlamentarios/environments
 
-#Editar servicios.sh con VERSION nueva
-sudo sed -i '9s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_NUEVA'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' $ENVIRONMENT_PATH/servicios.sh
+#Editar servicios.sh con host, port y VERSION nueva
+sudo sed -i '4s/.*/HOST='$HOST'/' $ENVIRONMENT_PATH/servicios.sh
+sudo sed -i '5s/.*/PORT='$PORT'/' $ENVIRONMENT_PATH/servicios.sh
+sudo sed -i '11s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_NUEVA'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' $ENVIRONMENT_PATH/servicios.sh
 
 #Dar permisos de ejecución luego de modificar
 sudo chmod +x $ENVIRONMENT_PATH/servicios.sh

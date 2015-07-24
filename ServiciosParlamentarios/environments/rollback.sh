@@ -75,7 +75,7 @@ sudo rm -rf $RELEASE_ACTUAL
 sudo mv $RELEASES_PATH/$RELEASE_ANTERIOR $RELEASE_ANTERIOR
 
 #Editar servicios.sh con VERSION nueva
-sudo sed -i '9s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_ANTERIOR'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' servicios.sh
+sudo sed -i '11s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_ANTERIOR'\/spd-back-end\/ServiciosParlamentarios\/manage.py \\/' servicios.sh
 
 #Restart crontab
 sudo service cron restart
