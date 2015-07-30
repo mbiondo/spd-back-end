@@ -176,7 +176,7 @@ class Constants():
     #### AUTHENTICATION SERVER DATA ####
 #     HAS_PERMISSION_SERVICE ='http://10.105.5.55:9000/o/has_permission/{0}/{1}/{2}/'
 #     HAS_PERMISSION_SERVICE ='http://10.105.5.55:9000/o/has_permission/{0}/{1}/{2}/{3}/'
-    HAS_PERMISSION_SERVICE ='http://'+settings.AUTH_SERVER['HOST']+ ':' +settings.AUTH_SERVER['PORT']+'/o/has_permission/{0}/{1}/{2}/{3}/'
+    HAS_PERMISSION_SERVICE ='https://'+settings.AUTH_SERVER['HOST']+ ':' +settings.AUTH_SERVER['PORT']+'/o/has_permission/{0}/{1}/{2}/{3}/'
     AUTH_HEADER_KEY='Authorization'
     AUTH_HEADER_CREDENTIALS='Credential {0} {1}'
     IS_AUTHORIZED_KEY="is_authorized"
