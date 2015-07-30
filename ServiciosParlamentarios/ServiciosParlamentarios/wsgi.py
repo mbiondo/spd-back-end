@@ -10,9 +10,9 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ServiciosParlamentarios.settings")
 
-import logging
-logger = logging.getLogger('apirest')
-logger.info('*** Starting ServiciosParlamentarios ***')
+# import logging
+# logger = logging.getLogger('apirest')
+# logger.info('*** Starting ServiciosParlamentarios ***')
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
