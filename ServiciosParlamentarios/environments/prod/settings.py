@@ -138,7 +138,7 @@ DATABASE_ROUTERS = ['apirest.routers.apirest_router.ApirestRouter','apirest.rout
 
 # Authentication Server
 AUTH_SERVER = {
-    'HOST': '10.105.5.59',
+    'HOST': 'oauth2.hcdn.gob.ar',
     'PORT': '9000',
     'RESOURCE_NAME': 'servicios-parlamentarios',
 }
