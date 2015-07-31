@@ -80,9 +80,6 @@ sudo sed -i '11s/.*/    nohup python \/opt\/servicios_parlamentarios\/'$RELEASE_
 #Restart crontab
 sudo service cron restart
 
-#Remove de rollback.sh script 
-sudo rm rollback.sh
-
 echo -e "$green"
 echo "El script ha terminado de realizar el deploy en $1."
 echo -e "$wipe"
