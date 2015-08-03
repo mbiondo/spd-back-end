@@ -2,8 +2,6 @@ from rest_framework import viewsets
 from apirest.models.db_views.giros import Giros
 from apirest.serializers.db_views.giros import GirosSerializer
 from apirest.authorizers.authorizator import has_permission
-from django.contrib.gis.gdal.prototypes.errcheck import arg_byref
-from django.utils.six import iteritems
 
 class GirosViewSet(viewsets.ReadOnlyModelViewSet):
     
