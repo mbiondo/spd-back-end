@@ -11,13 +11,15 @@ class FirmantesViewSet(viewsets.ReadOnlyModelViewSet):
     search_fields = ()
     
     @has_permission             
-    def list(self, request, proyectos_pk=None):
+    def list(self, request, *args, **kwargs):
         """
         Lista los firmantes de un expediente determinado.
         """
-        self.queryset = self.queryset.filter(proyecto_id = proyectos_pk)
+        proyecto_pk = args[0].get('proyectos_pk')
+        
+        self.queryset = self.queryset.filter(proyecto_id = proyecto_pk)
          
-        return viewsets.ReadOnlyModelViewSet.list(self, request, proyectos_pk)
+        return viewsets.ReadOnlyModelViewSet.list(self, request, proyecto_pk)
     
     @has_permission 
     def retrieve(self, request, pk=None, proyectos_pk=None):        
