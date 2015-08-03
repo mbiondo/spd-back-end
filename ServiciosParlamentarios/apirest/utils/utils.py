@@ -28,7 +28,8 @@ def getServiceName(serv):
         aux_obj = matchObj.group(2)
         
         #Elimino los guiones bajo de los nombres de los servicios
-        serviceName = serviceName.translate(None, '_')
+#         serviceName = serviceName.translate(None, '_')
+        serviceName = serviceName.translate(None, deletechars='_')
         
         # Si es un servicio compuesto (tipo 2)
         if aux_obj: 
