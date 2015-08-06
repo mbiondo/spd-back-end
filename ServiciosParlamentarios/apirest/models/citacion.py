@@ -5,6 +5,7 @@ from apirest.models.relaciones.citacion_comision import CitacionComision
 from apirest.models.lugar import Lugar
 from apirest.models.aux_estado import AuxEstado
 from apirest.models.relaciones.citacion_invita_entidad import CitacionInvitaEntidad
+from apirest.models.relaciones.citacion_contiene_expediente import CitacionContieneExpediente
    
 class Citacion(models.Model):
     
@@ -19,6 +20,8 @@ class Citacion(models.Model):
     reunion_conjunta = models.CharField(max_length=1, blank=True,db_column='breunionconjunta')    
     comisiones = models.ManyToManyField('Comision', through=CitacionComision, related_name='id')
     invitados = models.ManyToManyField(CitacionInvitaEntidad, related_name='invitados')
+    proyectos = models.ManyToManyField('Proyecto',CitacionContieneExpediente, related_name='proyectos')
+    
     
     class Meta:
         managed = False

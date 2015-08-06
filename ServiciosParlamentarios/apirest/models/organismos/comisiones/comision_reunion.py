@@ -3,9 +3,13 @@ from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.citacion import Citacion
 from apirest.models.organismos.comisiones.comision import Comision
+from apirest.models.relaciones.tratamiento_comision_reunion import TratamientoComisionReunion
+from apirest.models.tratamiento import Tratamiento
+
 
 class ComisionReunion(models.Model):
     id = models.AutoField(primary_key=True,db_column='comision_reunion_id')
+    tratamientos = models.ManyToManyField(Tratamiento,through=TratamientoComisionReunion, related_name='tratamientos')
     fk_citacion = models.ForeignKey(Citacion, db_column='fk_citacion', blank=True, null=True)
     fk_comision_cabecera = models.ForeignKey(Comision, db_column='fk_comision_cabecera')
     temario = models.TextField(blank=True)

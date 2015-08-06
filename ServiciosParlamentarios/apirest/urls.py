@@ -36,6 +36,7 @@ from apirest.views.plan_labor import PlanLaborViewSet
 from apirest.views.plp_detalle_estructura import PlpDetalleEstructuraViewSet
 from apirest.views.sesion import SesionViewSet
 from apirest.views.mocion import MocionViewSet
+from apirest.views.organismos.comisiones.comision_reunion import ComisionReunionViewSet
 
 
 router = DefaultRouter()
@@ -75,6 +76,8 @@ router.register(r'planes_de_labor',PlanLaborViewSet)
 router.register(r'plp_detalles_estructura',PlpDetalleEstructuraViewSet)
 router.register(r'sesiones',SesionViewSet)
 router.register(r'mociones',MocionViewSet)
+
+router.register(r'partes',ComisionReunionViewSet)
 # router.register(r'firmantes',FirmantesViewSet)
 
 

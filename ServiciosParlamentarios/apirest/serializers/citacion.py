@@ -13,3 +13,9 @@ class CitacionSerializer(serializers.ModelSerializer):
         model = Citacion
         fields = ('id','fk_comision_cabecera','fk_lugar','estado','fecha','resumen','observaciones',
                   'visibilidad','reunion_conjunta','comisiones','invitados')
+        
+class CitacionComsionReunion(serializers.ModelSerializer):
+    
+    class Meta():
+        model = Citacion
+        fields = ('id','proyectos')

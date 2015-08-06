@@ -1,11 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
 from apirest.utils.constants import Constants
-from apirest.models.citacion import Citacion
+# from apirest.models.citacion import Citacion
 
 class CitacionTemario(models.Model):
     id = models.AutoField(primary_key=True,db_column='citacion_temario_id')
-    fk_citacion = models.ForeignKey(Citacion, db_column='fk_citacion')
+    fk_citacion = models.ForeignKey('Citacion', db_column='fk_citacion')
     orden = models.SmallIntegerField(blank=True, null=True)
     tema = models.TextField(blank=True)
 

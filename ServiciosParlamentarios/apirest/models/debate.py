@@ -1,11 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
 from apirest.utils.constants import Constants
-from apirest.models.organismos.camara_reunion import CamaraReunion
+from apirest.models.organismos.comisiones.comision_reunion import ComisionReunion
 
 class Debate(models.Model):
     id = models.AutoField(primary_key=True,db_column='debate_id')
-    fk_camara_reunion = models.ForeignKey(CamaraReunion, db_column='fk_camara_reunion', blank=True, null=True)
+    fk_camara_reunion = models.ForeignKey(ComisionReunion, db_column='fk_camara_reunion',related_name='debate_comision_reunion')
     fecha = models.DateTimeField(blank=True, null=True)
     orden = models.SmallIntegerField(blank=True, null=True)
     nivel = models.SmallIntegerField(blank=True, null=True)
