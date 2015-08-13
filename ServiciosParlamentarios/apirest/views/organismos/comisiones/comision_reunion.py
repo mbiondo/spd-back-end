@@ -1,13 +1,14 @@
 from rest_framework import viewsets 
 from apirest.models.organismos.comisiones.comision_reunion import ComisionReunion 
 from apirest.serializers.organismos.comisiones.comision_reunion import ComisionReunionSerializer 
+from apirest.filters.organismos.comisiones.comision_reunion_filter import ComisionReunionFilter
 from apirest.authorizers.authorizator import has_permission
 
 class ComisionReunionViewSet(viewsets.ReadOnlyModelViewSet):
   
     queryset = ComisionReunion.objects.all()
     serializer_class = ComisionReunionSerializer
-#     filter_class = ComisionFilter
+    filter_class = ComisionReunionFilter
     
     @has_permission         
     def list(self, request, *args, **kwargs):
