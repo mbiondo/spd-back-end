@@ -1,23 +1,24 @@
 from rest_framework import serializers
 from apirest.models.organismos.comisiones.comision import Comision
 from apirest.serializers.organismos.comisiones.comision_hist import ComisionHistSerializer
-
+from apirest.serializers.organismos.comisiones.com_estructura import ComEstructuraIdSerializer
 
 class ComisionSerializer(serializers.ModelSerializer):
         
     comision_hist = ComisionHistSerializer(many=True)
     
+    estructura = serializers.SerializerMethodField()
+    
+    def get_estructura(self, obj):
+        serializer = ComEstructuraIdSerializer(obj.estructura.filter(fecha_hasta__isnull=True), many=True)
+
+        return serializer.data
+    
     class Meta:
         model = Comision
-        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion', 'comision_hist')
+        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion', 'comision_hist', 'estructura')
 
-
-class ComisionChildSerializer(serializers.ModelSerializer):
-        
-    class Meta:
-        model = Comision
-        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion')
-        
+       
         
 class ComisionExpedienteSerializer(serializers.ModelSerializer):
     
@@ -35,18 +36,7 @@ class ComisionExpedienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comision
         fields = ('id', 'caracter', 'tipo_camara', 'fecha_inicio', 'fecha_fin', 'sigla', 'norma_creacion', 'nombre')
-           
-class ComisionExpedienteIdSerializer(serializers.ModelSerializer):
-     
-    class Meta:
-        model = Comision
-        fields = ('id',)
 
-# class ComisionSerializer(serializers.ModelSerializer):
-#     
-#     class Meta:
-#         model = Comision
-#         fields = ('id','caracter','tipocamara','finicio','ffin','sigla','normacreacion')
         
 # class ComisionIntegrantesSerializer(serializers.ModelSerializer):
 #     
