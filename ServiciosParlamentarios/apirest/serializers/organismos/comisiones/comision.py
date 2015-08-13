@@ -10,9 +10,7 @@ class ComisionSerializer(serializers.ModelSerializer):
     estructura = serializers.SerializerMethodField()
     
     def get_estructura(self, obj):
-        serializer = ComEstructuraIdSerializer(obj.estructura.filter(fecha_hasta__isnull=True), many=True)
-
-        return serializer.data
+        return obj.estructura.filter(fecha_hasta__isnull=True).values_list('id', flat=True)
     
     class Meta:
         model = Comision
