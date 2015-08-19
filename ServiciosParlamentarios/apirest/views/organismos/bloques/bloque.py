@@ -1,7 +1,6 @@
 from rest_framework import viewsets
 from apirest.models.organismos.bloques.bloque import Bloque
-from apirest.serializers.organismos.bloques.bloque import BloqueSerializer,\
-    BloqueIntegrantesSerializer
+from apirest.serializers.organismos.bloques.bloque import BloqueSerializer
 from apirest.filters.organismos.bloques.bloque_filter import BloqueFilter#, BloqueDetalleFilter
 from django.db.models import Q
 from apirest.authorizers.authorizator import has_permission
