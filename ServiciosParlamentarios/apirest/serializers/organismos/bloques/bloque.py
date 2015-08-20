@@ -2,9 +2,6 @@ from rest_framework import serializers
 from apirest.models.organismos.bloques.bloque import Bloque
 from datetime import datetime
 from django.db.models import Q
-# from apirest.serializers.organismos.bloques.bloque_estructura import BloqueEstructuraSerializer
-# from apirest.models.db_views.bloque_detalle import BloqueDetalle
-# from apirest.serializers.db_views.bloque_detalle import BloqueDetalleSerializer
 from datetime import date
 
 class BloqueSerializer(serializers.ModelSerializer):
@@ -16,7 +13,7 @@ class BloqueSerializer(serializers.ModelSerializer):
     
     class Meta: 
         model = Bloque
-        fields = ('id','nombre','nro_integrantes','fecha_inicio','fecha_fin','tipo_camara','nota','sigla','legisladores','legisladores_historico')
+        fields = ('id','nombre','nro_integrantes','fecha_inicio','fecha_fin','tipo_camara','nota','sigla','legisladores')
 
 # class BloqueIntegrantesSerializer(serializers.ModelSerializer):      
 #     

@@ -28,7 +28,7 @@ class TestBloque(APITestCase):
         self.assertEqual(response.data["nombre"], self.NOMBRE_BLOQUE)
         self.assertEqual(response.data["tipo_camara"], self.TIPO_CAMARA)
         
-    def test_get_bloque_integrantes(self):
+    def test_get_bloque_filtro_nombre__fecha_tipo(self):
         """
         Prueba que se obtengan los datos correctos de un bloque y sus integrantes actuales.
         """        
