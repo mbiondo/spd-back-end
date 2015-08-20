@@ -1,2 +1,3 @@
 from comision_reunion import TestComisionReunion
 from comision import TestComision
+from com_estructura import TestComEstructura

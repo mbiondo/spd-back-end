@@ -35,7 +35,7 @@ class TestComision(APITestCase):
         self.assertEqual(response.data["fecha_inicio"], self.FECHA_INICIO)
         self.assertEqual(response.data["comision_hist"][0]["nombre"], self.COMISION_HISTORICA_NOMBRE)
         self.assertEqual(response.data["comision_hist"][0]["orden"], self.COMISION_ORDEN)
-        self.assertEqual(response.data["legisladores"].count(), self.CANT_INTEGRANTES_COMISION)
+        self.assertEqual(len(response.data["legisladores"]), self.CANT_INTEGRANTES_COMISION)
  
     def test_get_comision_por_caracter(self):
         """
@@ -49,7 +49,7 @@ class TestComision(APITestCase):
         self.assertEqual(response.data["results"][0]["fecha_inicio"], self.FECHA_INICIO)
         self.assertEqual(response.data["results"][0]["comision_hist"][0]["nombre"], self.COMISION_HISTORICA_NOMBRE)
         self.assertEqual(response.data["results"][0]["comision_hist"][0]["orden"], self.COMISION_ORDEN)
-        self.assertEqual(response.data["legisladores"].count(), self.CANT_INTEGRANTES_COMISION)
+        self.assertEqual(len(response.data["results"][0]["legisladores"]), self.CANT_INTEGRANTES_COMISION)
      
     def test_get_tipo_camara(self):
         """
