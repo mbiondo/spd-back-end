@@ -18,7 +18,6 @@ class BloqueSerializer(serializers.ModelSerializer):
         model = Bloque
         fields = ('id','nombre','nro_integrantes','fecha_inicio','fecha_fin','tipo_camara','nota','sigla','legisladores','legisladores_historico')
 
-
 # class BloqueIntegrantesSerializer(serializers.ModelSerializer):      
 #     
 #     date = None 
