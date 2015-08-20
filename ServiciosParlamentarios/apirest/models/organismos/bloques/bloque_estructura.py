@@ -7,7 +7,6 @@ from apirest.models.individuos.legislador import Legislador
 class BloqueEstructura(models.Model):
     id = models.AutoField(primary_key=True,db_column='bloque_estructura_id')
     fk_bloque = models.ForeignKey(Bloque, db_column='fk_bloque',related_name='legisladores')
-    legisladores_historico = models.ForeignKey(Bloque, db_column='fk_bloque',related_name='legisladores_historico')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador',related_name='legislador')
     cargo = models.TextField(blank=True)
     cargo_muestra_como = models.TextField(blank=True, db_column='cargomuestracomo')
