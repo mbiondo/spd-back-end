@@ -1,6 +1,6 @@
 from rest_framework.compat import django_filters
 from apirest.models.expedientes.proyecto import Proyecto
-from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.custom_filter import CustomFilterList
 from apirest.filters.expedientes.expediente_filter import ExpedienteFilter
 
 class ProyectoFilter(ExpedienteFilter):

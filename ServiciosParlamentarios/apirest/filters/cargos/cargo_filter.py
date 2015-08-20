@@ -1,6 +1,6 @@
 from rest_framework.compat import django_filters
 from apirest.models.cargos.cargo import Cargo
-from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.custom_filter import CustomFilterList
 
 class CargoFilter(django_filters.FilterSet):
 

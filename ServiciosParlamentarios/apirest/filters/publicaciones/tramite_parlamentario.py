@@ -1,6 +1,6 @@
 from rest_framework.compat import django_filters
 from apirest.models.publicaciones.tramite_parlamentario import TramiteParlamentario
-from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.custom_filter import CustomFilterList
 
 class TramiteParlamentarioFilter(django_filters.FilterSet):
 

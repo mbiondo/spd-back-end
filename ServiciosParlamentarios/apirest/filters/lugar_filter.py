@@ -1,5 +1,5 @@
 from rest_framework.compat import django_filters
-from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.custom_filter import CustomFilterList
 from apirest.models.lugar import Lugar
 
 class LugarFilter(django_filters.FilterSet):

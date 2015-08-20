@@ -1,7 +1,7 @@
 from rest_framework.compat import django_filters
 from django.db.models import Q
 from apirest.models.organismos.comisiones.comision_reunion import ComisionReunion
-from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.custom_filter import CustomFilterList
 
 
 class ComisionReunionFilter(django_filters.FilterSet):

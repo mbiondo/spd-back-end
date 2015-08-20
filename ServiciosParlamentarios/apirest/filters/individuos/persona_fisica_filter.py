@@ -2,7 +2,7 @@ from rest_framework.compat import django_filters
 from apirest.models.individuos.persona_fisica import PersonaFisica
 from django.db.models import Q
 import datetime
-from apirest.filters.custom_filter_list import CustomFilterList
+from apirest.filters.custom_filter import CustomFilterList
 
 # def cargo_filter( queryset, value):
 #     
