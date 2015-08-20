@@ -1,0 +1,1 @@
+from persona_fisica import TestPersonaFisica

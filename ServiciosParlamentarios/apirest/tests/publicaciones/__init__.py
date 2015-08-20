@@ -1,0 +1,6 @@
+from boletin_asuntos_entrados import TestBoletinAsuntosEntrados
+from boletin_asuntos_tratados import TestBoletinAsuntosTratados
+from boletin_novedades import TestBoletinNovedades
+from diario_asuntos_entrados import TestDiarioAsuntosEntrados
+from orden_dia import TestOrdenDia
+from tramite_parlamentario import TestTramiteParlamentario

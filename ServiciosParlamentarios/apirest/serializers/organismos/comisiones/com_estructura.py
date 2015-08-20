@@ -6,8 +6,3 @@ class ComEstructuraSerializer(serializers.ModelSerializer):
     class Meta:
         model = ComEstructura
 #         fields = ('id','fk_comision', 'fk_legislador','cargo','cargomuestracomo','jerarquia','estado','fdesde','fhasta','nota')
-
-class ComEstructuraIdSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ComEstructura
-        fields = ('id',)

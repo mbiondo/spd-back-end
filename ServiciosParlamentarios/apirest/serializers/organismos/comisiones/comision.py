@@ -1,20 +1,22 @@
 from rest_framework import serializers
 from apirest.models.organismos.comisiones.comision import Comision
 from apirest.serializers.organismos.comisiones.comision_hist import ComisionHistSerializer
-from apirest.serializers.organismos.comisiones.com_estructura import ComEstructuraIdSerializer
+from apirest.serializers.organismos.comisiones.com_estructura import ComEstructuraSerializer
+from django.db.models import Q
+from datetime import date
 
 class ComisionSerializer(serializers.ModelSerializer):
         
     comision_hist = ComisionHistSerializer(many=True)
     
-    estructura = serializers.SerializerMethodField()
+    legisladores = serializers.SerializerMethodField()
     
-    def get_estructura(self, obj):
-        return obj.estructura.filter(fecha_hasta__isnull=True).values_list('id', flat=True)
+    def get_legisladores(self, obj):
+        return obj.legisladores.filter(Q(fecha_hasta__gte=date.today()) | Q(fecha_hasta__isnull=True)).values_list('id', flat=True)
     
     class Meta:
         model = Comision
-        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion', 'comision_hist', 'estructura')
+        fields = ( 'id','caracter','tipo_camara','fecha_inicio','fecha_fin','sigla','norma_creacion', 'comision_hist', 'legisladores')
 
        
         

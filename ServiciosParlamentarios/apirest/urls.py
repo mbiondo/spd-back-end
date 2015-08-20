@@ -37,6 +37,7 @@ from apirest.views.plp_detalle_estructura import PlpDetalleEstructuraViewSet
 from apirest.views.sesion import SesionViewSet
 from apirest.views.mocion import MocionViewSet
 from apirest.views.organismos.comisiones.comision_reunion import ComisionReunionViewSet
+from apirest.views.organismos.comisiones.com_estructura import ComEstructuraViewSet
 
 
 router = DefaultRouter()
@@ -45,6 +46,7 @@ router.register(r'bloques', bloque.BloqueViewSet)
 router.register(r'cargos', cargo.CargoViewSet)
 router.register(r'citaciones', CitacionViewSet)
 router.register(r'comisiones', comision.ComisionViewSet)
+router.register(r'legisladores_comisiones', ComEstructuraViewSet)
 router.register(r'despachos',DespachoViewSet)
 router.register(r'dictamenes', DictamenViewSet)
 router.register(r'legisladores', legislador.LegisladorViewSet)

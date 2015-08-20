@@ -1,0 +1,2 @@
+from comision_reunion import TestComisionReunion
+from comision import TestComision

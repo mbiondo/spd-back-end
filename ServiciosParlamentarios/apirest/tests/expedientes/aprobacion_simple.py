@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from rest_framework.test import APITestCase
 
-class TestResultado(APITestCase):
+class TestAprobacionSimple(APITestCase):
     
     # Constantes para corroborar el resultado de los test
     CANT_RESULTADOS_APROBACION_SIMPLE = 44763

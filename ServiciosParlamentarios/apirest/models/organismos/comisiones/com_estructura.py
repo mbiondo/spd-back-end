@@ -6,7 +6,7 @@ from apirest.models.individuos.legislador import Legislador
 
 class ComEstructura(models.Model):
     id = models.AutoField(primary_key=True,db_column='com_estructura_id')
-    fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='estructura')
+    fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='legisladores')
     fk_legislador = models.ForeignKey(Legislador, db_column='fk_legislador')
     cargo = models.TextField(blank=True)
     cargo_muestra_como = models.TextField(blank=True,db_column='cargomuestracomo')
