@@ -7,7 +7,7 @@ class BloqueFilter(django_filters.FilterSet):
     id = CustomFilterList(name="id", lookup_type="in")
     nombre = django_filters.CharFilter(lookup_type='icontains',name="nombre")
     tipo_camara = django_filters.CharFilter(lookup_type='icontains',name="tipo_camara")
-    
+  
     fecha = FechaFilter()
     fecha_desde = django_filters.DateTimeFilter(lookup_type='gte',name="fecha_desde")
     fecha_hasta = django_filters.DateTimeFilter(lookup_type='lte',name="fecha_hasta")
@@ -16,5 +16,5 @@ class BloqueFilter(django_filters.FilterSet):
     
     class Meta:
         model = Bloque
-        fields = ['id', 'nombre','tipo_camara','fecha','fecha_desde','fecha_hasta','sigla']
+        fields = ['id', 'nombre','fecha','fecha_desde','fecha_hasta','sigla']
         
