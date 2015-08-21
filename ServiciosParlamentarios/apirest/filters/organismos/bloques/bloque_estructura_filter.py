@@ -8,7 +8,7 @@ class BloquEstructuraFilter(django_filters.FilterSet):
     
     legislador = django_filters.NumberFilter(name="fk_legislador")
     
-    fecha = FechaFilter
+    fecha = FechaFilter()
     fecha_desde = django_filters.DateTimeFilter(lookup_type='gte',name="fecha_desde")
     fecha_hasta = django_filters.DateTimeFilter(lookup_type='lte',name="fecha_hasta") 
     
