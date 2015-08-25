@@ -4,6 +4,7 @@ from django.db import models
 from apirest.utils.constants import Constants
 
 class LegisladoresDetalle(models.Model):
+    id = models.IntegerField(blank=True, null=True, db_column='id_legislador')
     nombre_legislador = models.TextField(blank=True)
     fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
     fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')

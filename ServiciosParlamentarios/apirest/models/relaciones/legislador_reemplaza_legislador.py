@@ -9,6 +9,7 @@ class LegisladorReemplazaLegislador(models.Model):
     fk_legislador_reemplazado = models.ForeignKey(Legislador, db_column='fk_legislador_reemplazado')
     fecha_inicio = models.DateField(blank=True, null=True,db_column='finicio')
     fecha_fin = models.DateField(blank=True, null=True,db_column='ffin')
+    observaciones = models.TextField(blank=True)
 
     class Meta:
         managed = False
