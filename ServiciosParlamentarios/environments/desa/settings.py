@@ -166,7 +166,7 @@ AUTH_CLIENT_CREDENTIALS = {
 }
 
 
-AUTHENTICATION = True
+AUTHENTICATION = False#True
 
 from datetime import datetime
 
