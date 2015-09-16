@@ -14,7 +14,8 @@ class CitacionFilter(django_filters.FilterSet):
     fecha_hasta = django_filters.DateTimeFilter(lookup_type='lte',name="fecha")
     
     comision = django_filters.CharFilter(lookup_type='icontains',name="comisiones__comision_hist__nombre")
+    comision_id = django_filters.CharFilter(lookup_type='icontains',name="comisiones__id")
         
     class Meta:
         model = Citacion
-        fields = ['id','lugar', 'estado', 'visibilidad','fecha_desde','fecha_hasta','comision']
+        fields = ['id','lugar', 'estado', 'visibilidad','fecha_desde','fecha_hasta','comision','comision_id']
