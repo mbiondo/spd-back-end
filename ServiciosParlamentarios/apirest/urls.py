@@ -40,6 +40,7 @@ from apirest.views.organismos.comisiones.comision_reunion import ComisionReunion
 from apirest.views.organismos.comisiones.com_estructura import ComEstructuraViewSet
 from apirest.views.organismos.bloques.bloque_estructura import BloqueEstructuraViewSet
 from apirest.views.periodo import PeriodoViewSet
+from apirest.views.debate import DebateViewSet
 
 
 router = DefaultRouter()
@@ -83,6 +84,7 @@ router.register(r'mociones',MocionViewSet)
 
 router.register(r'partes',ComisionReunionViewSet)
 router.register(r'periodos',PeriodoViewSet)
+router.register(r'debates',DebateViewSet)
 
 router.register(r'legisladores_bloques',BloqueEstructuraViewSet)
 # router.register(r'firmantes',FirmantesViewSet)
