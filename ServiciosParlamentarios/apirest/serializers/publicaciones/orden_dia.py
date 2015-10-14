@@ -3,11 +3,14 @@ from apirest.models.publicaciones.orden_dia import OrdenDia
 
 class OrdenDiaSerializer(serializers.ModelSerializer):
     
-    periodo = serializers.SerializerMethodField()
     proyectos = serializers.SerializerMethodField()
-    
+    periodo = serializers.SerializerMethodField()    
+
     def get_periodo(self, obj):
-        return obj.periodo.nro_periodo
+        if(obj.periodo is not None):
+            return obj.periodo.nro_periodo
+        else:
+            return None
     
     def get_proyectos(self, obj):
         return obj.despacho.proyectos.values_list('id', flat=True)
