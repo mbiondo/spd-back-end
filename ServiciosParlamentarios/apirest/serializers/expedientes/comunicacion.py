@@ -5,7 +5,7 @@ class ComunicacionSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comunicacion 
-        field= ('id','subtipo','fecha_recepcion','orden')
+        fields= ('id','subtipo','fecha_recepcion','orden')
 
 class ComunicacionChildSerializer(serializers.ModelSerializer):
     
