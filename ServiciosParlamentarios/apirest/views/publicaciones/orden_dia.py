@@ -10,7 +10,7 @@ class OrdenDiaViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = OrdenDiaSerializer
     filter_class = OrdenDiaFilter
     ordering_fields = '__all__'
-    search_fields = ()
+    search_fields = ('numero', 'despacho__proyectos__codigo_exp', 'despacho__sumario')
     
     def get_queryset(self):
         message = self.request.GET.get('publicadas')
