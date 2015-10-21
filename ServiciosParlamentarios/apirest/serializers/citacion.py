@@ -7,7 +7,7 @@ class CitacionSerializer(serializers.ModelSerializer):
 
 #     fk_comision_cabecera = ComisionSerializer()
 #     comisiones = ComisionSerializer(many=True)
-#     comisiones = ComisionesActualesSerializer(many=True)
+    comisiones = ComisionSerializer(many=True)
     estado = serializers.StringRelatedField()
     temario = CitacionTemarioSerializer(many=True)
     

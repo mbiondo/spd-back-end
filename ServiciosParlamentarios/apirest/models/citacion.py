@@ -18,7 +18,7 @@ class Citacion(models.Model):
     observaciones = models.TextField(blank=True)
     visibilidad = models.IntegerField(blank=True, null=True)
     reunion_conjunta = models.CharField(max_length=1, blank=True,db_column='breunionconjunta')    
-    comisiones = models.ManyToManyField('Comision', through=CitacionComision, related_name='id')
+    comisiones = models.ManyToManyField('Comision', through=CitacionComision, related_name='comisiones')
     invitados = models.ManyToManyField(CitacionInvitaEntidad, related_name='invitados')
     proyectos = models.ManyToManyField('Proyecto',CitacionContieneExpediente, related_name='proyectos')
     
