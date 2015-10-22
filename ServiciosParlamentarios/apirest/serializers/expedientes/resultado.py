@@ -6,3 +6,10 @@ class ResultadoSerializer(serializers.ModelSerializer):
     class Meta: 
         model = Resultado
         fields = ('id','fk_debate','resultado','tipo','titulo','sumario','texto')
+        
+class ResultadoComunicacionSerializer(serializers.ModelSerializer):
+
+    
+    class Meta: 
+        model = Resultado
+        fields = ('resultados',)

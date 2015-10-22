@@ -5,4 +5,4 @@ class ComunicacionResultadoSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = ComunicacionResultado 
-#         fields = ('id','fk_resultado','fk_comunicacion')           
+#         fields = ('id','resultado','comunicacion')           

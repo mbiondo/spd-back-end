@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 from apirest.utils.constants import Constants
 from apirest.models.debate import Debate
+from apirest.models.expedientes.comunicacion_resultado import ComunicacionResultado 
 
 class Resultado(models.Model):
     
@@ -12,6 +13,7 @@ class Resultado(models.Model):
     titulo = models.TextField(blank=True)
     sumario = models.TextField(blank=True)
     texto = models.TextField(blank=True)
+    comunicaciones = models.ManyToManyField('Comunicacion', through=ComunicacionResultado, related_name='resultados_com')    
     
     class Meta:
         managed = False
