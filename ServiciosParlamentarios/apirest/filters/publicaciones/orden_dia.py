@@ -11,7 +11,8 @@ class OrdenDiaFilter(django_filters.FilterSet):
     fk_despacho = django_filters.NumberFilter(name="despacho")
     cod_proyecto = django_filters.CharFilter(lookup_type='icontains',name="despacho__proyectos__codigo_exp")
     id_proyecto = django_filters.CharFilter(lookup_type='icontains',name="despacho__proyectos__id")    
-        
+    periodo = CustomFilterList(name="periodo__nro_periodo", lookup_type="in")
+
     class Meta:
         model = OrdenDia
-        fields = ['id','anio','numero','fecha_art113','despacho','cod_proyecto','id_proyecto']
+        fields = ['id','anio','numero','fecha_art113','despacho','cod_proyecto','id_proyecto',"periodo"]
