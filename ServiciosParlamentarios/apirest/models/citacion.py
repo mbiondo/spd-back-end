@@ -18,9 +18,10 @@ class Citacion(models.Model):
     observaciones = models.TextField(blank=True)
     visibilidad = models.IntegerField(blank=True, null=True)
     reunion_conjunta = models.CharField(max_length=1, blank=True,db_column='breunionconjunta')    
-    comisiones = models.ManyToManyField('Comision', through=CitacionComision, related_name='comisiones')
+    #comisiones = models.ManyToManyField('Comision', through='CitacionComision', related_name='citacion')
+    citacion_comision = models.ManyToManyField(CitacionComision)
     invitados = models.ManyToManyField(CitacionInvitaEntidad, related_name='invitados')
-    proyectos = models.ManyToManyField('Proyecto',CitacionContieneExpediente, related_name='proyectos')
+    proyectos = models.ManyToManyField('Proyecto',through=CitacionContieneExpediente, related_name='proyectos')
     
     
     class Meta:

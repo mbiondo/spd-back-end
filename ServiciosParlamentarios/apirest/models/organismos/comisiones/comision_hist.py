@@ -5,7 +5,7 @@ from apirest.utils.constants import Constants
        
 class ComisionHist(models.Model):
     id = models.AutoField(primary_key=True, db_column='comision_hist_id')
-    fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='comision_hist')
+    #fk_comision = models.ForeignKey(Comision, db_column='fk_comision', related_name='comision_hist')
     nombre = models.TextField(blank=True)
     nombre_corto = models.TextField(blank=True,db_column='nombrecorto')
     competencia = models.TextField(blank=True)

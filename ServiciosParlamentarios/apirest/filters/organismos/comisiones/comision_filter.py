@@ -9,10 +9,10 @@ class ComisionFilter(django_filters.FilterSet):
     tipo_camara = django_filters.CharFilter(name='tipo_camara')
     fecha = FechaFilter()
     
-    fecha_desde = django_filters.DateTimeFilter(lookup_type='gte',name="comision_hist__fecha_desde")
-    fecha_hasta = django_filters.DateTimeFilter(lookup_type='lte',name="comision_hist__fecha_hasta")
+    fecha_desde = django_filters.DateTimeFilter(lookup_type='gte',name="comision_comision_hist__comision_hist__fecha_desde")
+    fecha_hasta = django_filters.DateTimeFilter(lookup_type='lte',name="comision_comision_hist__comision_hist__fecha_hasta")
     
-    nombre = django_filters.CharFilter(lookup_type='icontains', name='comision_hist__nombre')
+    nombre = django_filters.CharFilter(lookup_type='icontains', name='comision_comision_hist__comision_hist__nombre')
     
     class Meta:
         model = Comision

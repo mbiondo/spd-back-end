@@ -1,10 +1,12 @@
 from rest_framework import serializers
 from apirest.models.expedientes.proyecto import Proyecto
 from apirest.serializers.db_views.firmantes import FirmanteSerializer
+from apirest.serializers.db_views.giros import GirosSerializer
 from apirest.serializers.expedientes.resultado import ResultadoSerializer
 
 class ProyectoSerializer(serializers.ModelSerializer):
     
+    giros = GirosSerializer(many=True)
     firmantes = FirmanteSerializer(many=True)
     
     class Meta:
