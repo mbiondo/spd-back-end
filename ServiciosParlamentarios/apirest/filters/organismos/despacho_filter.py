@@ -2,7 +2,7 @@ from rest_framework.compat import django_filters
 from apirest.models.organismos.despacho import Despacho
 from apirest.filters.custom_filter import CustomFilterList
 
-class DespachoFilter(django_filters.FilterSet):
+class DespachoFilter(CustomFilterList):
     
     # Despacho filters.
     id = CustomFilterList(name="id", lookup_type="in")
