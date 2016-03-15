@@ -124,6 +124,7 @@ REST_FRAMEWORK = {
         'rest_framework.filters.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
+        'apirest.filters.coalesce_filter_backend'
     ), #pip install django-filter
     'DEFAULT_RENDERER_CLASSES': (
         'apirest.utils.JSONURenderer.JSONURenderer',
