@@ -12,7 +12,7 @@ class CitacionSerializer(serializers.ModelSerializer):
 	class Meta():
 		model = Citacion
 		fields = ('id','fk_comision_cabecera','fk_lugar','estado','fecha','resumen','observaciones',
-				  'visibilidad','reunion_conjunta','citacion_comision','invitados','temario')
+				  'visibilidad','reunion_conjunta','citacion_comision','invitados','temario', 'comisiones')
 		
 class CitacionComsionReunion(serializers.ModelSerializer):
 	
