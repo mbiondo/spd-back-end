@@ -65,10 +65,10 @@ WSGI_APPLICATION = 'ServiciosParlamentarios.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'apirest',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'dp_prod', #PROD
+        'USER': 'postgres',
+        'PASSWORD': 'XBdFBU3hDGZe',
+        'HOST': '186.33.210.54',
         'PORT': '5432',
     },
     'pap_nueva_pruebas': {
