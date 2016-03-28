@@ -4,6 +4,7 @@ from apirest.models.publicaciones.orden_dia import OrdenDia
 class OrdenDiaSerializer(serializers.ModelSerializer):
     
     proyectos = serializers.SerializerMethodField()
+    mensajes = serializers.SerializerMethodField()
     periodo = serializers.SerializerMethodField()    
 
     def get_periodo(self, obj):
@@ -14,13 +15,16 @@ class OrdenDiaSerializer(serializers.ModelSerializer):
     
     def get_proyectos(self, obj):
         return obj.despacho.proyectos.values_list('id', flat=True)
+
+    def get_mensajes(self, obj):
+        return obj.despacho.mensajes.values_list('id', flat=True)        
         
     class Meta:
         model = OrdenDia
-        fields = ('id','periodo','fecha_impresion','tipo','visibilidad','despacho','numero','anio','fecha_art113','proyectos')
+        fields = ('id','periodo','fecha_impresion','tipo','visibilidad','despacho','numero','anio','fecha_art113','proyectos', 'mensajes')
         
 # class OrdenDiaSerializerId(serializers.ModelSerializer):
 #     
 #     class Meta: 
 #         model = OrdenDia
-#         fields = ('orden_dia_id')
+#         fields = ('orden_dia_id') 

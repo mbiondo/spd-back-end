@@ -65,26 +65,26 @@ WSGI_APPLICATION = 'ServiciosParlamentarios.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dp_prod', #PROD
-        'USER': 'postgres',
-        'PASSWORD': 'XBdFBU3hDGZe',
+        'NAME': 'dp_prod',    #name of the django database
+        'USER': 'postgres',     #user of the django database
+        'PASSWORD': 'XBdFBU3hDGZe',       #password of the django database
         'HOST': '186.33.210.54',
         'PORT': '5432',
     },
     'pap_nueva_pruebas': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dp_desa', #PROD
-        'USER': 'postgres',
-        'PASSWORD': 'dx2ruFnHCq',
-        'HOST': '10.105.5.55',
+        'NAME': 'dp_prod',    #name of the django database
+        'USER': 'postgres',     #user of the django database
+        'PASSWORD': 'XBdFBU3hDGZe',       #password of the django database
+        'HOST': '186.33.210.54',
         'PORT': '5432',
     },
     'pap_nueva_pruebas_test': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dp_desa_test', #TEST
-        'USER': 'postgres',
-        'PASSWORD': 'dx2ruFnHCq',
-        'HOST': '10.105.5.55',
+        'NAME': 'dp_prod',    #name of the django database
+        'USER': 'postgres',     #user of the django database
+        'PASSWORD': 'XBdFBU3hDGZe',       #password of the django database
+        'HOST': '186.33.210.54',
         'PORT': '5432',
     }
 }
@@ -123,6 +123,7 @@ REST_FRAMEWORK = {
         'rest_framework.filters.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
+        'apirest.filters.coalesce_filter_backend.CoalesceFilterBackend'
     ), #pip install django-filter
     'DEFAULT_RENDERER_CLASSES': (
         'apirest.utils.JSONURenderer.JSONURenderer',
@@ -160,11 +161,11 @@ AUTH_SERVER = {
 
 # Oauth2 client credentials
 AUTH_CLIENT_CREDENTIALS = {
-    'CLIENT_ID': 'Fys93.lLfE.M4vCvUMlqw20?pSLH7h5Zou7wyXmr',
-    'CLIENT_SECRET': 'W_gJPlSeua?M4fjW3d24fds3AI3!czrTNXg?1-:CMUhWGWkk3=2=W2p.PN:=w;TC;TQxcHec!WTHdRiomuVJQ5kiZaSv?BagS8mqkav-rSmp7:PpXUzw5mJQd_!SLacp',
+    'CLIENT_ID': 'b=5ScaFmagIxpaAriSV;.?P@AfzMdh7Y9LnRDukY',
+    'CLIENT_SECRET': 'hyZGfL58D?K4hIeKvGx@9@QGFeKqpYq:GuPuynHTIEuie?:!SJOG!IYszh;=@ph1I4He0-.QZ:r=lWBAB1cr2a9nhp8iAySuNgDTcgn=C!pZHb7wiPPU!5Pim0k8apnk',
 }
 
-AUTHENTICATION = True
+AUTHENTICATION = False
 
 from datetime import datetime
 
